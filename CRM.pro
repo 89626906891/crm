@@ -17,13 +17,19 @@ SOURCES += main.cpp\
         authdialog.cpp \
     mainwindow.cpp \
     neworder.cpp \
-    crmmodel.cpp
+    crmmodel.cpp \
+    workers.cpp \
+    newworker.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
     neworder.h \
-    crmmodel.h
+    crmmodel.h \
+    workers.h \
+    newworker.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \
-    neworder.ui
+    neworder.ui \
+    workers.ui \
+    newworker.ui

@@ -4,8 +4,9 @@
 #include <QWidget>
 
 #include <QDataWidgetMapper>
-
-
+#include <QSqlTableModel>
+#include <QSqlRelationalDelegate>
+#include <QSqlRelationalTableModel>
 
 namespace Ui {
 class newOrder;
@@ -19,12 +20,14 @@ public:
     explicit newOrder(QWidget *parent = 0);
     ~newOrder();
 
-    void setModel(QAbstractItemModel *model);
+    void setModel(QSqlRelationalTableModel *model);
+    void setRelModel(QSqlTableModel *relModel);
 
     QDataWidgetMapper *mapper;
-
+    QSqlTableModel *relModel;
 signals:
     void ready();
+    void signalCancelOrder();
 
 private slots:
     void on_applyButton_clicked();

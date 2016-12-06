@@ -16,39 +16,29 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    QSqlDatabase baze = QSqlDatabase::addDatabase("QMYSQL");
-//    baze.setHostName("localhost");
-//    baze.setDatabaseName("CRM");
-//    baze.setUserName("root");
-//    baze.setPassword("qqwwee");
-//    if(!baze.open())
-//    {
-//        qDebug() << baze.lastError().text();
-//    }
-//    else{
-//        qDebug() << "ok";
-//    }
+
 
     QSqlDatabase baze = QSqlDatabase::database();//baze.database();
     Q_ASSERT(baze.isOpen());
-//    model =  new QSqlTableModel(this,baze);
-//    model->setTable("orders");
-//    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-//    model->select();
+
     model = new CRMModel(this,baze);
     ui->tableView->setModel(model);
+  //  ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableView->resizeColumnsToContents();
     ui->tableView->hideColumn(0);
-    ui->tableView->hideColumn(4);
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("name"),new QSqlRelationalDelegate(ui->tableView)); //для combobox работники
 
     new_o = new newOrder();
     new_o->setParent(this,Qt::Window);
     new_o->setModel(model);
 
 
+
     ui->calendarWidget = new QCalendarWidget();
+    model->setFilter(QString("exec_date = '%1'").arg(QDate::currentDate().toString("yyyy-MM-dd"))); //установка фильтра модели на текущую дату
 
     connect(new_o,SIGNAL(ready()),this,SLOT(orderAccepted()));
+    connect(new_o,SIGNAL(signalCancelOrder()),this,SLOT(orderCancled()));
 
 }
 
@@ -57,13 +47,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
-{
-
-    new_o->mapper->setCurrentModelIndex(index);
-    new_o->show();
-}
 
 
 void MainWindow::on_addOrderButton_clicked()
@@ -78,6 +61,12 @@ void MainWindow::orderAccepted()
 {
 
     qDebug() << "adding new order" << model->submitAll();
+
+}
+
+void MainWindow::orderCancled()
+{
+    qDebug() << "cancel" << model->submitAll();
 }
 
 
@@ -106,6 +95,7 @@ void MainWindow::on_delButton_clicked()
      else
      {
         qDebug() << "deleting cancled";
+        model->submitAll();
      }
 
    }
@@ -119,16 +109,43 @@ void MainWindow::on_delButton_clicked()
 
 
 
-
-
-   //
-
-
 void MainWindow::on_calendarWidget_clicked(const QDate &date)
 {
-    QMessageBox::information(NULL,"вы выбрали дату:",date.toString());
-   //model->setFilter("exec_date="+date.toString("yyyy-MM-dd"));
-  // setFilter("'date2'>" + date.toString("'yyyy-MM-dd'"));
-  // model->select();
+    model->setFilter(QString("exec_date = '%1'").arg(date.toString("yyyy-MM-dd")));
+    qDebug() <<"selected:" << date.toString("yyyy-MM-dd");
 
+}
+
+void MainWindow::on_actionAdd_worker_triggered()
+{
+    workers_window = new workers;
+    workers_window->show();
+}
+
+void MainWindow::on_editOrderPushButton_clicked()
+{
+    int selectedOrder = ui->tableView->currentIndex().row();
+    qDebug() << "order to edit = " <<selectedOrder;
+    new_o->mapper->setCurrentModelIndex(model->index(selectedOrder,0));
+    new_o->show();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    qDebug() << "OK clicked";
+    model->submitAll();
+//    ui->tableView->selectAll();
+}
+
+void MainWindow::on_actionAdd_order_triggered()
+{
+    const int row = model->rowCount();
+    qDebug() << "inserting row" <<  model->insertRow(row);
+    new_o->mapper->setCurrentModelIndex(model->index(row,0));
+    new_o->show();
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    close();
 }

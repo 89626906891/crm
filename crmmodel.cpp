@@ -1,11 +1,24 @@
 #include "crmmodel.h"
 
 CRMModel::CRMModel(QObject *parent, QSqlDatabase db)
-    : QSqlTableModel(parent, db)//, m_value(9000)
+    : QSqlRelationalTableModel(parent, db)
 {
-    // executed after object creation
-    //m_value = 1;
+
     setTable("orders");
-    setEditStrategy(QSqlTableModel::OnManualSubmit);
+    setEditStrategy(QSqlRelationalTableModel::OnManualSubmit);
+    setJoinMode(QSqlRelationalTableModel::LeftJoin);
+    setRelation(fieldIndex("worker_id"),QSqlRelation("workers","worker_id","name"));
     select();
 }
+
+//Qt::ItemFlags CRMModel::flags(const QModelIndex &index) const
+//{
+//    if(index.column() == fieldIndex("name"))
+//            {
+//                 return QSqlQueryModel::flags(index)| Qt::ItemIsEditable;
+//            }
+//                 return QSqlQueryModel::flags(index);
+//}
+
+
+

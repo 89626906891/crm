@@ -2,16 +2,26 @@
 #define CRMMODEL_H
 
 #include <QObject>
-#include <QSqlTableModel>
+#include <QSqlRelationalTableModel>
+#include <QSqlQueryModel>
+#include <QSqlQuery>
 
-class CRMModel : public QSqlTableModel
+class CRMModel : public QSqlRelationalTableModel
 {
     Q_OBJECT
 public:
-    //CRMModel(); // *1
-    CRMModel(QObject *parent = Q_NULLPTR, QSqlDatabase db = QSqlDatabase()); // *2 // if we call CRMModel() the application will not know what to call *1 or *2
+
+    CRMModel(QObject *parent = Q_NULLPTR, QSqlDatabase db = QSqlDatabase());
 private:
     int m_value;
+
+    // QAbstractItemModel interface
+public:
+
+
+    // QAbstractItemModel interface
+public:
+//    Qt::ItemFlags flags(const QModelIndex &index) const;
 };
 
 
