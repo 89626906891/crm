@@ -1,0 +1,26 @@
+#include "checkdelegate.h"
+
+checkdelegate::checkdelegate()
+{
+    
+}
+
+QWidget *checkdelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    
+}
+
+void checkdelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+{
+    
+}
+
+void checkdelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
+{
+    
+}
+
+void checkdelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    
+}

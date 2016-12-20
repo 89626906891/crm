@@ -5,6 +5,7 @@
 #include <QSqlRelationalTableModel>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include <QDebug>
 
 class CRMModel : public QSqlRelationalTableModel
 {
@@ -15,13 +16,10 @@ public:
 private:
     int m_value;
 
-    // QAbstractItemModel interface
 public:
-
-
-    // QAbstractItemModel interface
-public:
-//    Qt::ItemFlags flags(const QModelIndex &index) const;
+// Qt::ItemFlags flags(const QModelIndex &index) const;
+//    QVariant data(const QModelIndex &index, int role) const;
+//    bool setData(const QModelIndex &index, const QVariant &value, int role);
 };
 
 

@@ -6,14 +6,10 @@ newworker::newworker(QWidget *parent) :
     ui(new Ui::newworker)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Добавление нового работника");
 
     workerMapper = new QDataWidgetMapper(this);
     workerMapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
-
-
-
-
-
 
 }
 
@@ -35,4 +31,16 @@ void newworker::on_pushButton_clicked()
     qDebug() << "creating new worker" << workerMapper->submit();
     emit workerReady();
     close();
+}
+
+void newworker::on_pushButton_2_clicked()
+{
+    emit signal_workerCanclel();
+    close();
+}
+
+void newworker::closeEvent(QCloseEvent *event)
+{
+    emit sigWorkerClose();
+    event->accept();
 }

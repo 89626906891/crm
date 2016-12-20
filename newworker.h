@@ -5,6 +5,8 @@
 #include <QDataWidgetMapper>
 #include <QDebug>
 #include <QSqlRelationalTableModel>
+#include <QCloseEvent>
+
 
 namespace Ui {
 class newworker;
@@ -25,15 +27,23 @@ public:
 
 signals:
     void workerReady();
+    void signal_workerCanclel();
+    void sigWorkerClose();
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::newworker *ui;
 
 
 
+
+    // QWidget interface
+protected:
+    void closeEvent(QCloseEvent *event);
 };
 
 #endif // NEWWORKER_H

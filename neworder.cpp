@@ -10,6 +10,7 @@ newOrder::newOrder(QWidget *parent) :   //добавляем заначение 
     ui(new Ui::newOrder)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Добавление нового заказа");
 
     mapper = new QDataWidgetMapper(this);
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
@@ -65,6 +66,13 @@ void newOrder::on_closeButton_clicked()
 {
     emit signalCancelOrder();
     close();
+}
+
+//переопределяем нажатие на кестик
+void newOrder::closeEvent(QCloseEvent *event)
+{
+    emit sigClose();
+    event->accept();
 }
 
 

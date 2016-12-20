@@ -19,17 +19,31 @@ SOURCES += main.cpp\
     neworder.cpp \
     crmmodel.cpp \
     workers.cpp \
-    newworker.cpp
+    newworker.cpp \
+    discounts.cpp \
+    newdiscount.cpp \
+    checkboxdelegate.cpp \
+    about.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
     neworder.h \
     crmmodel.h \
     workers.h \
-    newworker.h
+    newworker.h \
+    discounts.h \
+    newdiscount.h \
+    checkboxdelegate.h \
+    about.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \
     neworder.ui \
     workers.ui \
-    newworker.ui
+    newworker.ui \
+    discounts.ui \
+    newdiscount.ui \
+    about.ui
+
+RESOURCES += \
+    resources.qrc

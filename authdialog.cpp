@@ -6,6 +6,8 @@ AuthDialog::AuthDialog(QWidget *parent) :
     ui(new Ui::AuthDialog)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Авторизация");
+
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");

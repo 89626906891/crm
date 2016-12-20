@@ -5,18 +5,23 @@
 //#include <QSqlTableModel>
 #include <QCalendarWidget>
 #include <QSqlRelationalDelegate>
+
 #include <QSqlTableModel>
 #include <QDebug>
-
-
+#include <QSqlRecord>
+#include <QDesktopWidget>
+#include <QRect>
+#include <QPoint>
 
 #include "crmmodel.h"
-
-
-
 #include "neworder.h"
 #include "delorderdialog.h"
 #include "workers.h"
+#include "discounts.h"
+#include "checkboxdelegate.h"
+#include "about.h"
+
+
 
 namespace Ui {
 class MainWindow;
@@ -59,15 +64,31 @@ private slots:
 
     void on_actionExit_triggered();
 
+
+    void slot_comboWorkersBox_currentIndexChanged(const QString &arg1);
+
+    //void on_todayPushButton_clicked();
+
+    void on_todayPushButton_clicked();
+
+    void on_actionAddDiscount_triggered();
+
+    void on_actionInfo_triggered();
+    void moveToCenter();
+
 private:
     Ui::MainWindow *ui;
 
     newOrder *new_o;
     delOrderDialog *del_o;
     workers *workers_window;
+    discounts *discounts_window;
+    about *about_window;
 
-
+    QString clickedDay;
     int typeIndex;
+    QSqlQuery *todayOrdersQuery;
+    QSqlQuery *currentDayTotalOrdersQuery;
 
 
 

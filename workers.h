@@ -29,8 +29,10 @@ private slots:
 
     void on_tableView_doubleClicked(const QModelIndex &index);
     void workerAccepted();
+    void workerCancled();
 
     void on_workersTableView_doubleClicked(const QModelIndex &index);
+
 
 private:
     Ui::workers *ui;

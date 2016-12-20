@@ -6,6 +6,7 @@ workers::workers(QWidget *parent) :
     ui(new Ui::workers)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Работники");
 
 
     QSqlDatabase baze = QSqlDatabase::database();
@@ -30,6 +31,8 @@ workers::workers(QWidget *parent) :
 
 
     connect(newWorker_window,SIGNAL(workerReady()),this,SLOT(workerAccepted()));
+    connect(newWorker_window,SIGNAL(signal_workerCanclel()),this,SLOT(workerCancled())); //отмена по кнопке
+    connect(newWorker_window,SIGNAL(sigWorkerClose()),this,SLOT(workerCancled())); //отмена по крестику
 
 }
 
@@ -56,8 +59,17 @@ void workers::on_tableView_doubleClicked(const QModelIndex &index)
 
 void workers::workerAccepted()
 {
+
     qDebug() << "adding new worker" << workersModel->submitAll();
-    workersModel->select();
+
+    qDebug() << "apdating workers model" << workersModel->select(); //все равно не обновляет
+
+}
+
+void workers::workerCancled()
+{
+    qDebug() << "worker canceled";
+    workersModel->revertAll();
 }
 
 void workers::on_workersTableView_doubleClicked(const QModelIndex &index)

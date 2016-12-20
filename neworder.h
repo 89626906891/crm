@@ -7,6 +7,7 @@
 #include <QSqlTableModel>
 #include <QSqlRelationalDelegate>
 #include <QSqlRelationalTableModel>
+#include <QCloseEvent>
 
 namespace Ui {
 class newOrder;
@@ -28,6 +29,7 @@ public:
 signals:
     void ready();
     void signalCancelOrder();
+    void sigClose();
 
 private slots:
     void on_applyButton_clicked();
@@ -39,6 +41,10 @@ private:
 
 
 
+
+    // QWidget interface
+protected:
+    void closeEvent(QCloseEvent *event);
 };
 
 #endif // NEWORDER_H
