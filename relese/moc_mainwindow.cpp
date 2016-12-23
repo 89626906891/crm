@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[21];
-    char stringdata0[418];
+    QByteArrayData data[27];
+    char stringdata0[516];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,8 +48,14 @@ QT_MOC_LITERAL(15, 299, 26), // "on_todayPushButton_clicked"
 QT_MOC_LITERAL(16, 326, 30), // "on_actionAddDiscount_triggered"
 QT_MOC_LITERAL(17, 357, 23), // "on_actionInfo_triggered"
 QT_MOC_LITERAL(18, 381, 12), // "moveToCenter"
-QT_MOC_LITERAL(19, 394, 13), // "setUserLogout"
-QT_MOC_LITERAL(20, 408, 9) // "whoOnline"
+QT_MOC_LITERAL(19, 394, 8), // "QWidget&"
+QT_MOC_LITERAL(20, 403, 6), // "widget"
+QT_MOC_LITERAL(21, 410, 8), // "QWidget*"
+QT_MOC_LITERAL(22, 419, 13), // "setUserLogout"
+QT_MOC_LITERAL(23, 433, 9), // "whoOnline"
+QT_MOC_LITERAL(24, 443, 18), // "showOrdersForToday"
+QT_MOC_LITERAL(25, 462, 27), // "on_logoutPushButton_clicked"
+QT_MOC_LITERAL(26, 490, 25) // "on_actionLogout_triggered"
 
     },
     "MainWindow\0on_addOrderButton_clicked\0"
@@ -64,7 +70,10 @@ QT_MOC_LITERAL(20, 408, 9) // "whoOnline"
     "arg1\0on_todayPushButton_clicked\0"
     "on_actionAddDiscount_triggered\0"
     "on_actionInfo_triggered\0moveToCenter\0"
-    "setUserLogout\0whoOnline"
+    "QWidget&\0widget\0QWidget*\0setUserLogout\0"
+    "whoOnline\0showOrdersForToday\0"
+    "on_logoutPushButton_clicked\0"
+    "on_actionLogout_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,7 +83,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -82,23 +91,28 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   99,    2, 0x08 /* Private */,
-       3,    0,  100,    2, 0x08 /* Private */,
-       4,    0,  101,    2, 0x08 /* Private */,
-       5,    0,  102,    2, 0x08 /* Private */,
-       6,    1,  103,    2, 0x08 /* Private */,
-       8,    0,  106,    2, 0x08 /* Private */,
-       9,    0,  107,    2, 0x08 /* Private */,
-      10,    0,  108,    2, 0x08 /* Private */,
-      11,    0,  109,    2, 0x08 /* Private */,
-      12,    0,  110,    2, 0x08 /* Private */,
-      13,    1,  111,    2, 0x08 /* Private */,
-      15,    0,  114,    2, 0x08 /* Private */,
-      16,    0,  115,    2, 0x08 /* Private */,
-      17,    0,  116,    2, 0x08 /* Private */,
-      18,    0,  117,    2, 0x08 /* Private */,
-      19,    0,  118,    2, 0x08 /* Private */,
-      20,    0,  119,    2, 0x08 /* Private */,
+       1,    0,  124,    2, 0x08 /* Private */,
+       3,    0,  125,    2, 0x08 /* Private */,
+       4,    0,  126,    2, 0x08 /* Private */,
+       5,    0,  127,    2, 0x08 /* Private */,
+       6,    1,  128,    2, 0x08 /* Private */,
+       6,    0,  131,    2, 0x28 /* Private | MethodCloned */,
+       8,    0,  132,    2, 0x08 /* Private */,
+       9,    0,  133,    2, 0x08 /* Private */,
+      10,    0,  134,    2, 0x08 /* Private */,
+      11,    0,  135,    2, 0x08 /* Private */,
+      12,    0,  136,    2, 0x08 /* Private */,
+      13,    1,  137,    2, 0x08 /* Private */,
+      15,    0,  140,    2, 0x08 /* Private */,
+      16,    0,  141,    2, 0x08 /* Private */,
+      17,    0,  142,    2, 0x08 /* Private */,
+      18,    1,  143,    2, 0x08 /* Private */,
+      18,    1,  146,    2, 0x08 /* Private */,
+      22,    0,  149,    2, 0x08 /* Private */,
+      23,    0,  150,    2, 0x08 /* Private */,
+      24,    0,  151,    2, 0x08 /* Private */,
+      25,    0,  152,    2, 0x08 /* Private */,
+      26,    0,  153,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -111,8 +125,13 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   14,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 19,   20,
+    QMetaType::Void, 0x80000000 | 21,   20,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -133,19 +152,35 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->orderAccepted(); break;
         case 3: _t->orderCancled(); break;
         case 4: _t->on_calendarWidget_clicked((*reinterpret_cast< const QDate(*)>(_a[1]))); break;
-        case 5: _t->on_actionAdd_worker_triggered(); break;
-        case 6: _t->on_editOrderPushButton_clicked(); break;
-        case 7: _t->on_pushButton_clicked(); break;
-        case 8: _t->on_actionAdd_order_triggered(); break;
-        case 9: _t->on_actionExit_triggered(); break;
-        case 10: _t->slot_comboWorkersBox_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 11: _t->on_todayPushButton_clicked(); break;
-        case 12: _t->on_actionAddDiscount_triggered(); break;
-        case 13: _t->on_actionInfo_triggered(); break;
-        case 14: _t->moveToCenter(); break;
-        case 15: _t->setUserLogout(); break;
-        case 16: _t->whoOnline(); break;
+        case 5: _t->on_calendarWidget_clicked(); break;
+        case 6: _t->on_actionAdd_worker_triggered(); break;
+        case 7: _t->on_editOrderPushButton_clicked(); break;
+        case 8: _t->on_pushButton_clicked(); break;
+        case 9: _t->on_actionAdd_order_triggered(); break;
+        case 10: _t->on_actionExit_triggered(); break;
+        case 11: _t->slot_comboWorkersBox_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 12: _t->on_todayPushButton_clicked(); break;
+        case 13: _t->on_actionAddDiscount_triggered(); break;
+        case 14: _t->on_actionInfo_triggered(); break;
+        case 15: _t->moveToCenter((*reinterpret_cast< QWidget(*)>(_a[1]))); break;
+        case 16: _t->moveToCenter((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
+        case 17: _t->setUserLogout(); break;
+        case 18: _t->whoOnline(); break;
+        case 19: _t->showOrdersForToday(); break;
+        case 20: _t->on_logoutPushButton_clicked(); break;
+        case 21: _t->on_actionLogout_triggered(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 16:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QWidget* >(); break;
+            }
+            break;
         }
     }
 }
@@ -175,13 +210,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 22;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
-            *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 17;
+        if (_id < 22)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 22;
     }
     return _id;
 }

@@ -39,6 +39,7 @@ private:
     QMessageBox *enterMess;
     MainWindow *win;
 
+
 };
 
 #endif // AUTHDIALOG_H

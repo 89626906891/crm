@@ -12,6 +12,9 @@
 #include <QDesktopWidget>
 #include <QRect>
 #include <QPoint>
+#include <QTimer>
+
+
 
 #include "crmmodel.h"
 #include "neworder.h"
@@ -20,7 +23,6 @@
 #include "discounts.h"
 #include "checkboxdelegate.h"
 #include "about.h"
-
 
 
 
@@ -54,7 +56,7 @@ private slots:
 //    void slotDelOrder();
 
 
-    void on_calendarWidget_clicked(const QDate &date);
+    void on_calendarWidget_clicked(const QDate &date = QDate::currentDate()); //сколько заказов на выбранный день, по умолчанию ткущий день
     void on_actionAdd_worker_triggered();
     void on_editOrderPushButton_clicked();
     void on_pushButton_clicked();
@@ -67,11 +69,18 @@ private slots:
     void on_todayPushButton_clicked();
     void on_actionAddDiscount_triggered();
     void on_actionInfo_triggered();
-    void moveToCenter(); //отцентровка открывающихся окон
+
+    void moveToCenter(QWidget& widget); //перегрузка функций
+    void moveToCenter(QWidget* widget);//отцентровка открывающихся окон
 
     void setUserLogout();
     void whoOnline();
+    void showOrdersForToday();
 
+
+    void on_logoutPushButton_clicked();
+
+    void on_actionLogout_triggered();
 
 
 private:
@@ -89,6 +98,8 @@ private:
     QSqlQuery *currentDayTotalOrdersQuery;
 
     QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации
+
+ //    AuthDialog *auth;
 
 
 

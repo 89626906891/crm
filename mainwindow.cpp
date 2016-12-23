@@ -14,9 +14,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    moveToCenter(); //вызываем функцию чтобы окно открывалось по центру экрана
+    moveToCenter(this);
+
     this->setWindowTitle("CRM");
-    whoOnline(); //получаем из базы кто сейчас онлайн
+
+    //получаем из базы кто сейчас онлайн
+    //и создаем таймер который каждую секунду проверяет кто онлайн
+    whoOnline();
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(whoOnline()));
+    timer->start(1000);
 
 
 
@@ -39,38 +46,21 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->calendarWidget = new QCalendarWidget();
 
-    //выводим кол-во добавленных заказов за день
-    todayOrdersQuery = new QSqlQuery;
-    todayOrdersQuery->prepare("SELECT * FROM orders WHERE add_date = :date");
-    todayOrdersQuery->bindValue(":date", QDate::currentDate().toString("yyyy-MM-dd"));
-    todayOrdersQuery->exec();
-    int ordersCounter;
-    while(todayOrdersQuery->next())
-    {
-        ordersCounter++;
-    }
-    //QString orderz = QVariant(ordersCounter).toString();
-    QString orderz = QString::number(ordersCounter);
-    qDebug() << "add orders for today:" << orderz;
-    ui->ordersForTodaylabel->setText(orderz);
+    //выводим кол-во добавленных заказов за день(обновляем раз в секунду)
+    showOrdersForToday();
+    QTimer *timerShowOrders = new QTimer(this);
+    connect(timerShowOrders, SIGNAL(timeout()), this, SLOT(showOrdersForToday()));
+    timerShowOrders->start(1000);
+
+
 
 
 
 
     model->setFilter(QString("exec_date = '%1'").arg(QDate::currentDate().toString("yyyy-MM-dd"))); //установка фильтра модели на текущую дату
 
-    //выводим кол-во заказов на выбранный день в календаре (устанавливаем при мерво запуске)
-    currentDayTotalOrdersQuery = new QSqlQuery;
-    currentDayTotalOrdersQuery->prepare("SELECT * FROM orders WHERE exec_date = :x");
-    currentDayTotalOrdersQuery->bindValue(":x", QDate::currentDate().toString("yyyy-MM-dd"));
-    currentDayTotalOrdersQuery->exec();
-    int currentDayOrdersCounter;
-    while(currentDayTotalOrdersQuery->next())
-    {
-       currentDayOrdersCounter++;
-    }
-    QString currentDayOrderz = QString::number(currentDayOrdersCounter);
-    ui->currentDayordersLabel->setText(currentDayOrderz);
+    //сколько заказов на выбранный день, по умолчанию текущий
+    on_calendarWidget_clicked();
 
     //выбранный день (начальные настройки)
     ui->findDatelabel->setText(QDate::currentDate().toString("yyyy-MM-dd"));
@@ -112,6 +102,7 @@ void MainWindow::on_addOrderButton_clicked()
 
     new_o->mapper->setCurrentModelIndex(model->index(row,0));
     new_o->show();
+    moveToCenter(new_o);
 }
 
 void MainWindow::orderAccepted()
@@ -136,11 +127,11 @@ void MainWindow::on_delButton_clicked()
   if (selectedRow >=0)
   {
     int n = QMessageBox::warning(0,
-    "Warning",
-    "DELETE ORDER????"
-    "\n Do you want to save the changes?",
-    "Yes",
-    "No",
+    "ВНИМАНИЕ",
+    "ТОЧНО СТЕРЕТЬ ЗАКАЗ????"
+    "\n ТЫ УВЕРЕН?",
+    "ДА",
+    "Нет",
      QString(),
      0,
      1
@@ -172,14 +163,12 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
     clickedDay = date.toString("yyyy-MM-dd");
     model->setFilter(QString("exec_date = '%1'").arg(date.toString("yyyy-MM-dd")));
     qDebug() <<"selected:" << date.toString("yyyy-MM-dd");
-
-
     //выводим кол-во заказов на выбранный день в календаре
     currentDayTotalOrdersQuery = new QSqlQuery;
     currentDayTotalOrdersQuery->prepare("SELECT * FROM orders WHERE exec_date = :d");
     currentDayTotalOrdersQuery->bindValue(":d", date.toString("yyyy-MM-dd"));
     currentDayTotalOrdersQuery->exec();
-    int currentDayOrdersCounter;
+    int currentDayOrdersCounter = 0;
     while(currentDayTotalOrdersQuery->next())
     {
        currentDayOrdersCounter++;
@@ -196,6 +185,7 @@ void MainWindow::on_actionAdd_worker_triggered()
 {
     workers_window = new workers;
     workers_window->show();
+    moveToCenter(workers_window);
 }
 
 void MainWindow::on_editOrderPushButton_clicked()
@@ -206,6 +196,7 @@ void MainWindow::on_editOrderPushButton_clicked()
         qDebug() << "order to edit = " << selectedOrder;
         new_o->mapper->setCurrentModelIndex(model->index(selectedOrder,0));
         new_o->show();
+        moveToCenter(new_o);
     }
     else
     {
@@ -228,6 +219,7 @@ void MainWindow::on_actionAdd_order_triggered()
     qDebug() << "inserting row" <<  model->insertRow(row);
     new_o->mapper->setCurrentModelIndex(model->index(row,0));
     new_o->show();
+    moveToCenter(new_o);
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -262,23 +254,34 @@ void MainWindow::on_actionAddDiscount_triggered()
 {
     discounts_window = new discounts;
     discounts_window->show();
+    moveToCenter(discounts_window);
 }
 
 void MainWindow::on_actionInfo_triggered()
 {
     about_window = new about;
     about_window->show();
+    moveToCenter(about_window);
 }
 
-void MainWindow::moveToCenter()
+
+
+//отцентровка окна
+void MainWindow::moveToCenter(QWidget& widget)
 {
     QDesktopWidget desktop;
-    QRect rect = desktop.availableGeometry(desktop.primaryScreen()); // прямоугольник с размерами экрана
+    QRect rect = desktop.availableGeometry(desktop.primaryScreen());
     QPoint center = rect.center(); //координаты центра экрана
-    center.setX(center.x() - (this->width()/2));  // учитываем половину ширины окна
-    center.setY(center.y() - (this->height()/2));  // .. половину высоты
-    move(center);
+    center.setX(center.x() - (widget.width()/2));
+    center.setY(center.y() - (widget.height()/2));
+    widget.move(center);
 }
+//отцентровка с использованием перегрузки функции
+void MainWindow::moveToCenter(QWidget* widget)
+{
+    moveToCenter(*widget);
+}
+
 
 void MainWindow::setUserOnline(QString user)
 {
@@ -308,6 +311,7 @@ void MainWindow::setUserLogout()
 }
 
 //извлекаем данные данные кто онлайн
+
 void MainWindow::whoOnline()
 {
     QVector<QString> stringVector;
@@ -325,6 +329,24 @@ void MainWindow::whoOnline()
     }
     statusBar()->showMessage(str);
 }
+
+void MainWindow::showOrdersForToday()
+{
+    todayOrdersQuery = new QSqlQuery;
+    todayOrdersQuery->prepare("SELECT * FROM orders WHERE add_date = :date");
+    todayOrdersQuery->bindValue(":date", QDate::currentDate().toString("yyyy-MM-dd"));
+    todayOrdersQuery->exec();
+    int ordersCounter = 0;
+    while(todayOrdersQuery->next())
+    {
+        ordersCounter++;
+    }
+    //QString orderz = QVariant(ordersCounter).toString();
+    QString orderz = QString::number(ordersCounter);
+    //qDebug() << "add orders for today:" << orderz;
+    ui->ordersForTodaylabel->setText(orderz);
+}
+
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
@@ -349,4 +371,13 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 
+void MainWindow::on_logoutPushButton_clicked()
+{
+
+}
+
+void MainWindow::on_actionLogout_triggered()
+{
+
+}
 
