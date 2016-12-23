@@ -310,16 +310,20 @@ void MainWindow::setUserLogout()
 //извлекаем данные данные кто онлайн
 void MainWindow::whoOnline()
 {
+    QVector<QString> stringVector;
     QSqlQuery whoOnlineQuery;
     whoOnlineQuery.exec("SELECT login FROM users WHERE online='1'");
-    for (int i = 0; i < whoOnlineQuery.numRowsAffected(); ++i)
-   // while(whoOnlineQuery.next())
+    while(whoOnlineQuery.next())
     {
-       QVector<QString> vector;
-       vector.append(whoOnlineQuery.value(i).toString());
-       qDebug() << vector;
-       // statusBar()->showMessage(vector);
+      stringVector.push_back(whoOnlineQuery.value(0).toString());
+      stringVector.push_back("  ");
     }
+    QString str;
+    for (int i=0; i<stringVector.size(); i++)
+    {
+        str += QString(stringVector.at(i));
+    }
+    statusBar()->showMessage(str);
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
