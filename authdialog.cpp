@@ -78,7 +78,10 @@ void AuthDialog::on_enterButton_clicked()
 
            if (ui->loginLineEdit->text() == user)
            {
+               isAuth(user);
                win = new MainWindow();
+               //передаю в главное окно залогиневшегося пользователя
+               win->setUserOnline(user);
                win->show();
                this->close();
            }
@@ -95,4 +98,27 @@ void AuthDialog::on_enterButton_clicked()
         }
 
     }
+}
+//заносим время и статус онлайн пользователей при авторизации
+void AuthDialog::isAuth(QString user)
+{
+    qDebug() << "New user is logged. Welcome:" << user;
+
+    QSqlQuery lastloginQuery;
+    lastloginQuery.prepare(QString("UPDATE users SET lastlogin='%1' WHERE login='%2'")
+                .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"))
+                .arg(user)
+              );
+
+    if(!lastloginQuery.exec())
+    {
+        qDebug() << "can't update LASTLOGIN";
+    }
+    QSqlQuery isLoginQuery;
+    isLoginQuery.prepare(QString("UPDATE users SET online='1' WHERE login='%1'").arg(user));
+    if(!isLoginQuery.exec())
+    {
+        qDebug() << "can't update ONLINE";
+    }
+
 }

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[19];
-    char stringdata0[394];
+    QByteArrayData data[21];
+    char stringdata0[418];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,7 +47,9 @@ QT_MOC_LITERAL(14, 294, 4), // "arg1"
 QT_MOC_LITERAL(15, 299, 26), // "on_todayPushButton_clicked"
 QT_MOC_LITERAL(16, 326, 30), // "on_actionAddDiscount_triggered"
 QT_MOC_LITERAL(17, 357, 23), // "on_actionInfo_triggered"
-QT_MOC_LITERAL(18, 381, 12) // "moveToCenter"
+QT_MOC_LITERAL(18, 381, 12), // "moveToCenter"
+QT_MOC_LITERAL(19, 394, 13), // "setUserLogout"
+QT_MOC_LITERAL(20, 408, 9) // "whoOnline"
 
     },
     "MainWindow\0on_addOrderButton_clicked\0"
@@ -61,7 +63,8 @@ QT_MOC_LITERAL(18, 381, 12) // "moveToCenter"
     "slot_comboWorkersBox_currentIndexChanged\0"
     "arg1\0on_todayPushButton_clicked\0"
     "on_actionAddDiscount_triggered\0"
-    "on_actionInfo_triggered\0moveToCenter"
+    "on_actionInfo_triggered\0moveToCenter\0"
+    "setUserLogout\0whoOnline"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,7 +74,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -79,21 +82,23 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   89,    2, 0x08 /* Private */,
-       3,    0,   90,    2, 0x08 /* Private */,
-       4,    0,   91,    2, 0x08 /* Private */,
-       5,    0,   92,    2, 0x08 /* Private */,
-       6,    1,   93,    2, 0x08 /* Private */,
-       8,    0,   96,    2, 0x08 /* Private */,
-       9,    0,   97,    2, 0x08 /* Private */,
-      10,    0,   98,    2, 0x08 /* Private */,
-      11,    0,   99,    2, 0x08 /* Private */,
-      12,    0,  100,    2, 0x08 /* Private */,
-      13,    1,  101,    2, 0x08 /* Private */,
-      15,    0,  104,    2, 0x08 /* Private */,
-      16,    0,  105,    2, 0x08 /* Private */,
-      17,    0,  106,    2, 0x08 /* Private */,
-      18,    0,  107,    2, 0x08 /* Private */,
+       1,    0,   99,    2, 0x08 /* Private */,
+       3,    0,  100,    2, 0x08 /* Private */,
+       4,    0,  101,    2, 0x08 /* Private */,
+       5,    0,  102,    2, 0x08 /* Private */,
+       6,    1,  103,    2, 0x08 /* Private */,
+       8,    0,  106,    2, 0x08 /* Private */,
+       9,    0,  107,    2, 0x08 /* Private */,
+      10,    0,  108,    2, 0x08 /* Private */,
+      11,    0,  109,    2, 0x08 /* Private */,
+      12,    0,  110,    2, 0x08 /* Private */,
+      13,    1,  111,    2, 0x08 /* Private */,
+      15,    0,  114,    2, 0x08 /* Private */,
+      16,    0,  115,    2, 0x08 /* Private */,
+      17,    0,  116,    2, 0x08 /* Private */,
+      18,    0,  117,    2, 0x08 /* Private */,
+      19,    0,  118,    2, 0x08 /* Private */,
+      20,    0,  119,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -107,6 +112,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -136,6 +143,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 12: _t->on_actionAddDiscount_triggered(); break;
         case 13: _t->on_actionInfo_triggered(); break;
         case 14: _t->moveToCenter(); break;
+        case 15: _t->setUserLogout(); break;
+        case 16: _t->whoOnline(); break;
         default: ;
         }
     }
@@ -166,13 +175,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 17)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 17;
     }
     return _id;
 }

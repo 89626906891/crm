@@ -36,6 +36,7 @@ public:
     QAction *actionInfo;
     QAction *actionAdd_worker;
     QAction *actionAddDiscount;
+    QAction *actionLogout;
     QWidget *centralwidget;
     QTableView *tableView;
     QPushButton *addOrderButton;
@@ -52,6 +53,7 @@ public:
     QLabel *findDatelabel;
     QLabel *currentDayordersLabel_2;
     QLabel *label;
+    QPushButton *logoutPushButton;
     QStatusBar *statusbar;
     QMenuBar *menuBar;
     QMenu *menuMenu;
@@ -74,6 +76,8 @@ public:
         actionAdd_worker->setObjectName(QStringLiteral("actionAdd_worker"));
         actionAddDiscount = new QAction(MainWindow);
         actionAddDiscount->setObjectName(QStringLiteral("actionAddDiscount"));
+        actionLogout = new QAction(MainWindow);
+        actionLogout->setObjectName(QStringLiteral("actionLogout"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         tableView = new QTableView(centralwidget);
@@ -126,6 +130,9 @@ public:
         label = new QLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(530, 166, 151, 31));
+        logoutPushButton = new QPushButton(centralwidget);
+        logoutPushButton->setObjectName(QStringLiteral("logoutPushButton"));
+        logoutPushButton->setGeometry(QRect(530, 130, 151, 27));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -148,6 +155,7 @@ public:
         menuBar->addAction(menuWorkers->menuAction());
         menuBar->addAction(menuAbout->menuAction());
         menuMenu->addAction(actionAdd_order);
+        menuMenu->addAction(actionLogout);
         menuMenu->addAction(actionExit);
         menuAbout->addAction(actionInfo);
         menuWorkers->addAction(actionAdd_worker);
@@ -166,6 +174,7 @@ public:
         actionInfo->setText(QApplication::translate("MainWindow", "info", 0));
         actionAdd_worker->setText(QApplication::translate("MainWindow", "add worker", 0));
         actionAddDiscount->setText(QApplication::translate("MainWindow", "addDiscount", 0));
+        actionLogout->setText(QApplication::translate("MainWindow", "logout", 0));
         addOrderButton->setText(QApplication::translate("MainWindow", "add order", 0));
         delButton->setText(QApplication::translate("MainWindow", "del order", 0));
         editOrderPushButton->setText(QApplication::translate("MainWindow", "edit order", 0));
@@ -177,6 +186,7 @@ public:
         findDatelabel->setText(QString());
         currentDayordersLabel_2->setText(QApplication::translate("MainWindow", "\320\264\320\276\320\261\320\260\320\262\320\273\320\265\320\275\320\275\320\276 \320\267\320\260 \321\201\320\265\320\263\320\276\320\264\320\275\321\217", 0));
         label->setText(QApplication::translate("MainWindow", "\320\222\321\213\320\261\321\200\320\260\321\202\321\214 \321\200\320\260\320\261\320\276\321\202\320\275\320\270\320\272\320\260:", 0));
+        logoutPushButton->setText(QApplication::translate("MainWindow", "logout", 0));
         menuMenu->setTitle(QApplication::translate("MainWindow", "menu", 0));
         menuAbout->setTitle(QApplication::translate("MainWindow", "about", 0));
         menuWorkers->setTitle(QApplication::translate("MainWindow", "workers", 0));

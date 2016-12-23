@@ -9,14 +9,15 @@
 #include <QDateTime>
 #include <QMessageBox>
 
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    moveToCenter();
+    moveToCenter(); //вызываем функцию чтобы окно открывалось по центру экрана
     this->setWindowTitle("CRM");
+    whoOnline(); //получаем из базы кто сейчас онлайн
+
 
 
 
@@ -254,7 +255,7 @@ void MainWindow::slot_comboWorkersBox_currentIndexChanged(const QString &arg1)
 void MainWindow::on_todayPushButton_clicked()
 {
     ui->calendarWidget->showToday();
-    //не работает!
+    //не работает!!!!!!!!!
 }
 
 void MainWindow::on_actionAddDiscount_triggered()
@@ -278,3 +279,70 @@ void MainWindow::moveToCenter()
     center.setY(center.y() - (this->height()/2));  // .. половину высоты
     move(center);
 }
+
+void MainWindow::setUserOnline(QString user)
+{
+    userOnline = user;  //запоминаем полученную переменую, запоминаем пользователя
+}
+
+void MainWindow::setUserLogout()
+{
+    qDebug() << "user "+this->userOnline+" is logout";
+
+    QSqlQuery logoutTimeQuery;
+    logoutTimeQuery.prepare(QString("UPDATE users SET lastlogout='%1' WHERE login='%2'")
+                .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"))
+                .arg(this->userOnline)
+              );
+
+    if(!logoutTimeQuery.exec())
+    {
+        qDebug() << "can't update logoutTime";
+    }
+    QSqlQuery logoutQuery;
+    logoutQuery.prepare(QString("UPDATE users SET online='0' WHERE login='%1'").arg(this->userOnline));
+    if(!logoutQuery.exec())
+    {
+        qDebug() << "can't update LOGOUT";
+    }
+}
+
+//извлекаем данные данные кто онлайн
+void MainWindow::whoOnline()
+{
+    QSqlQuery whoOnlineQuery;
+    whoOnlineQuery.exec("SELECT login FROM users WHERE online='1'");
+    for (int i = 0; i < whoOnlineQuery.numRowsAffected(); ++i)
+   // while(whoOnlineQuery.next())
+    {
+       QVector<QString> vector;
+       vector.append(whoOnlineQuery.value(i).toString());
+       qDebug() << vector;
+       // statusBar()->showMessage(vector);
+    }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    QMessageBox msgBox;
+    msgBox.setText("Вы уверены, что хотите выйти из CRM?");
+    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    int result = msgBox.exec();
+    switch (result)
+    {
+      case QMessageBox::Yes:
+          this->setUserLogout();  //если выходим то записываем в базу 0
+          event->accept();
+          break;
+      case QMessageBox::No:
+          event->ignore();
+          break;
+      default:
+          MainWindow::closeEvent(event);
+          break;
+    }
+}
+
+
+

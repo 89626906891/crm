@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QMessageBox>
 #include <QSqlQuery>
+#include <QDateTime>
 
 
 #include "mainwindow.h"
@@ -25,6 +26,7 @@ public:
 
 private slots:
     void on_enterButton_clicked();
+    void isAuth(QString user);
 
 private:
     Ui::AuthDialog *ui;

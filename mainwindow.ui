@@ -212,6 +212,19 @@
      <string>Выбрать работника:</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="logoutPushButton">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>130</y>
+      <width>151</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>logout</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -228,6 +241,7 @@
      <string>menu</string>
     </property>
     <addaction name="actionAdd_order"/>
+    <addaction name="actionLogout"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
@@ -276,6 +290,11 @@
   <action name="actionAddDiscount">
    <property name="text">
     <string>addDiscount</string>
+   </property>
+  </action>
+  <action name="actionLogout">
+   <property name="text">
+    <string>logout</string>
    </property>
   </action>
  </widget>

@@ -23,6 +23,7 @@
 
 
 
+
 namespace Ui {
 class MainWindow;
 }
@@ -36,6 +37,7 @@ public:
     ~MainWindow();
 
     CRMModel *model;
+    void setUserOnline(QString user); //получаем из окна авторизации кто залогинелся
 
 
 private slots:
@@ -53,28 +55,24 @@ private slots:
 
 
     void on_calendarWidget_clicked(const QDate &date);
-
     void on_actionAdd_worker_triggered();
-
     void on_editOrderPushButton_clicked();
-
     void on_pushButton_clicked();
-
     void on_actionAdd_order_triggered();
-
     void on_actionExit_triggered();
-
-
     void slot_comboWorkersBox_currentIndexChanged(const QString &arg1);
 
     //void on_todayPushButton_clicked();
 
     void on_todayPushButton_clicked();
-
     void on_actionAddDiscount_triggered();
-
     void on_actionInfo_triggered();
-    void moveToCenter();
+    void moveToCenter(); //отцентровка открывающихся окон
+
+    void setUserLogout();
+    void whoOnline();
+
+
 
 private:
     Ui::MainWindow *ui;
@@ -90,10 +88,16 @@ private:
     QSqlQuery *todayOrdersQuery;
     QSqlQuery *currentDayTotalOrdersQuery;
 
+    QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации
 
 
 
 
+
+
+    // QWidget interface
+protected:
+    void closeEvent(QCloseEvent *event);
 };
 
 #endif // MAINWINDOW_H
