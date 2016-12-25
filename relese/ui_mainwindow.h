@@ -65,7 +65,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1180, 768);
+        MainWindow->resize(1667, 768);
         actionAdd_order = new QAction(MainWindow);
         actionAdd_order->setObjectName(QStringLiteral("actionAdd_order"));
         actionExit = new QAction(MainWindow);
@@ -82,7 +82,7 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(0, 220, 1111, 481));
+        tableView->setGeometry(QRect(0, 220, 1601, 481));
         addOrderButton = new QPushButton(centralwidget);
         addOrderButton->setObjectName(QStringLiteral("addOrderButton"));
         addOrderButton->setGeometry(QRect(530, 10, 151, 27));
@@ -100,7 +100,7 @@ public:
         editOrderPushButton->setGeometry(QRect(530, 70, 151, 27));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(1120, 500, 51, 27));
+        pushButton->setGeometry(QRect(1610, 490, 51, 27));
         ComboWorkersBox = new QComboBox(centralwidget);
         ComboWorkersBox->setObjectName(QStringLiteral("ComboWorkersBox"));
         ComboWorkersBox->setGeometry(QRect(690, 170, 151, 27));
@@ -139,7 +139,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1180, 25));
+        menuBar->setGeometry(QRect(0, 0, 1667, 25));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
         menuAbout = new QMenu(menuBar);

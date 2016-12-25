@@ -68,7 +68,8 @@ void CheckBoxDelegate::setModelData(QWidget *editor,QAbstractItemModel *model,co
 }
 
 
-void CheckBoxDelegate::updateEditorGeometry(QWidget *editor,const QStyleOptionViewItem &option,const QModelIndex &index) const {
+void CheckBoxDelegate::updateEditorGeometry(QWidget *editor,const QStyleOptionViewItem &option,const QModelIndex &index) const
+{
   if(index.isValid())
   {
     editor->setGeometry(option.rect);

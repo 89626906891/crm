@@ -23,7 +23,10 @@ SOURCES += main.cpp\
     discounts.cpp \
     newdiscount.cpp \
     checkboxdelegate.cpp \
-    about.cpp
+    about.cpp \
+    comboboxstatusdelegate.cpp \
+    phonenumberdelegate.cpp \
+    salarydelegate.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -34,7 +37,10 @@ HEADERS  += authdialog.h \
     discounts.h \
     newdiscount.h \
     checkboxdelegate.h \
-    about.h
+    about.h \
+    comboboxstatusdelegate.h \
+    phonenumberdelegate.h \
+    salarydelegate.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \

@@ -8,7 +8,33 @@ CRMModel::CRMModel(QObject *parent, QSqlDatabase db)
     setEditStrategy(QSqlRelationalTableModel::OnManualSubmit);
     setJoinMode(QSqlRelationalTableModel::LeftJoin);
     setRelation(fieldIndex("worker_id"),QSqlRelation("workers","worker_id","name"));
+    setRelation(fieldIndex("order_status"),QSqlRelation("status","idstatus","status_name"));
+    setRelation(fieldIndex("payment_id"),QSqlRelation("payment_type","payment_type_id","payment_name"));
+
     select();
+}
+
+
+// неправильно работает
+
+QVariant CRMModel::data(const QModelIndex &index, int role) const
+{
+    if(role == Qt::BackgroundColorRole)
+    {
+        if(QSqlRelationalTableModel::data(this->index(index.row(), 13)).toString() == "cancel")
+        {
+            return QColor(Qt::yellow);
+        }
+    }
+    else if(role==Qt::EditRole)
+    {
+        return QSqlRelationalTableModel::data(index,role);
+    }
+    else if(role == Qt::DisplayRole)
+    {
+        return QSqlRelationalTableModel::data(index,role);
+    }
+    return QVariant();
 }
 
 

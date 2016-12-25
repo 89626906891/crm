@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    moveToCenter(this);
+    this->showMaximized();
+    //moveToCenter(this);
 
     this->setWindowTitle("CRM");
 
@@ -37,8 +38,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView->resizeColumnsToContents();
     ui->tableView->setAlternatingRowColors(true);
     ui->tableView->hideColumn(0);
+
+
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("name"),new QSqlRelationalDelegate(ui->tableView)); //для combobox работники
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("status_name"),new QSqlRelationalDelegate(ui->tableView)); //для комбобокса со статусом заказа
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("payment_name"),new QSqlRelationalDelegate(ui->tableView)); //способ оплаты
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone"), new PhoneNumberDelegate(ui->tableView)); //делаем маску для телефона
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone2"), new PhoneNumberDelegate(ui->tableView));
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("salary"), new salaryDelegate(ui->tableView)); //чтобы отображалась валюта
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("checked"),new CheckBoxDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
+
     new_o = new newOrder();
     new_o->setParent(this,Qt::Window);
     new_o->setModel(model);
@@ -209,6 +218,19 @@ void MainWindow::on_editOrderPushButton_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     qDebug() << "OK clicked";
+
+
+
+//    int changedRow =   currentIndex().row();
+//    if (changedRow >=0)
+//    {
+//        qDebug() << "changedRow = " << changedRow;
+
+//    }
+
+
+
+
     model->submitAll();
 //    ui->tableView->selectAll();
 }

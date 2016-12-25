@@ -22,6 +22,9 @@
 #include "workers.h"
 #include "discounts.h"
 #include "checkboxdelegate.h"
+//#include "comboboxstatusdelegate.h"
+#include "phonenumberdelegate.h"
+#include "salarydelegate.h"
 #include "about.h"
 
 
