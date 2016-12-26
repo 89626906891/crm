@@ -15,15 +15,18 @@ CRMModel::CRMModel(QObject *parent, QSqlDatabase db)
 }
 
 
-// неправильно работает
-
+// закрашиваем в таблице поля цветом по значению
 QVariant CRMModel::data(const QModelIndex &index, int role) const
 {
     if(role == Qt::BackgroundColorRole)
     {
-        if(QSqlRelationalTableModel::data(this->index(index.row(), 13)).toString() == "cancel")
+        if(QSqlRelationalTableModel::data(this->index(index.row(), 16)).toString() == "bank")
         {
             return QColor(Qt::yellow);
+        }
+        else if(QSqlRelationalTableModel::data(this->index(index.row(), 16)).toString() == "yandex")
+        {
+            return QColor(Qt::green);
         }
     }
     else if(role==Qt::EditRole)

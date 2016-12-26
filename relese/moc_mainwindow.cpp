@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[27];
-    char stringdata0[516];
+    QByteArrayData data[29];
+    char stringdata0[586];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -55,7 +55,9 @@ QT_MOC_LITERAL(22, 419, 13), // "setUserLogout"
 QT_MOC_LITERAL(23, 433, 9), // "whoOnline"
 QT_MOC_LITERAL(24, 443, 18), // "showOrdersForToday"
 QT_MOC_LITERAL(25, 462, 27), // "on_logoutPushButton_clicked"
-QT_MOC_LITERAL(26, 490, 25) // "on_actionLogout_triggered"
+QT_MOC_LITERAL(26, 490, 25), // "on_actionLogout_triggered"
+QT_MOC_LITERAL(27, 516, 31), // "on_lastOrdersPushButton_clicked"
+QT_MOC_LITERAL(28, 548, 37) // "on_lastCancelOrdersPushButton..."
 
     },
     "MainWindow\0on_addOrderButton_clicked\0"
@@ -73,7 +75,9 @@ QT_MOC_LITERAL(26, 490, 25) // "on_actionLogout_triggered"
     "QWidget&\0widget\0QWidget*\0setUserLogout\0"
     "whoOnline\0showOrdersForToday\0"
     "on_logoutPushButton_clicked\0"
-    "on_actionLogout_triggered"
+    "on_actionLogout_triggered\0"
+    "on_lastOrdersPushButton_clicked\0"
+    "on_lastCancelOrdersPushButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -83,7 +87,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      22,   14, // methods
+      24,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -91,28 +95,30 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  124,    2, 0x08 /* Private */,
-       3,    0,  125,    2, 0x08 /* Private */,
-       4,    0,  126,    2, 0x08 /* Private */,
-       5,    0,  127,    2, 0x08 /* Private */,
-       6,    1,  128,    2, 0x08 /* Private */,
-       6,    0,  131,    2, 0x28 /* Private | MethodCloned */,
-       8,    0,  132,    2, 0x08 /* Private */,
-       9,    0,  133,    2, 0x08 /* Private */,
-      10,    0,  134,    2, 0x08 /* Private */,
-      11,    0,  135,    2, 0x08 /* Private */,
-      12,    0,  136,    2, 0x08 /* Private */,
-      13,    1,  137,    2, 0x08 /* Private */,
-      15,    0,  140,    2, 0x08 /* Private */,
-      16,    0,  141,    2, 0x08 /* Private */,
-      17,    0,  142,    2, 0x08 /* Private */,
-      18,    1,  143,    2, 0x08 /* Private */,
-      18,    1,  146,    2, 0x08 /* Private */,
-      22,    0,  149,    2, 0x08 /* Private */,
-      23,    0,  150,    2, 0x08 /* Private */,
-      24,    0,  151,    2, 0x08 /* Private */,
-      25,    0,  152,    2, 0x08 /* Private */,
-      26,    0,  153,    2, 0x08 /* Private */,
+       1,    0,  134,    2, 0x08 /* Private */,
+       3,    0,  135,    2, 0x08 /* Private */,
+       4,    0,  136,    2, 0x08 /* Private */,
+       5,    0,  137,    2, 0x08 /* Private */,
+       6,    1,  138,    2, 0x08 /* Private */,
+       6,    0,  141,    2, 0x28 /* Private | MethodCloned */,
+       8,    0,  142,    2, 0x08 /* Private */,
+       9,    0,  143,    2, 0x08 /* Private */,
+      10,    0,  144,    2, 0x08 /* Private */,
+      11,    0,  145,    2, 0x08 /* Private */,
+      12,    0,  146,    2, 0x08 /* Private */,
+      13,    1,  147,    2, 0x08 /* Private */,
+      15,    0,  150,    2, 0x08 /* Private */,
+      16,    0,  151,    2, 0x08 /* Private */,
+      17,    0,  152,    2, 0x08 /* Private */,
+      18,    1,  153,    2, 0x08 /* Private */,
+      18,    1,  156,    2, 0x08 /* Private */,
+      22,    0,  159,    2, 0x08 /* Private */,
+      23,    0,  160,    2, 0x08 /* Private */,
+      24,    0,  161,    2, 0x08 /* Private */,
+      25,    0,  162,    2, 0x08 /* Private */,
+      26,    0,  163,    2, 0x08 /* Private */,
+      27,    0,  164,    2, 0x08 /* Private */,
+      28,    0,  165,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -132,6 +138,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 19,   20,
     QMetaType::Void, 0x80000000 | 21,   20,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -169,6 +177,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 19: _t->showOrdersForToday(); break;
         case 20: _t->on_logoutPushButton_clicked(); break;
         case 21: _t->on_actionLogout_triggered(); break;
+        case 22: _t->on_lastOrdersPushButton_clicked(); break;
+        case 23: _t->on_lastCancelOrdersPushButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -210,13 +220,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 22)
+        if (_id < 24)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 24;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 22)
+        if (_id < 24)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 22;
+        _id -= 24;
     }
     return _id;
 }

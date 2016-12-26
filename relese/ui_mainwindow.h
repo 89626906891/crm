@@ -54,6 +54,8 @@ public:
     QLabel *currentDayordersLabel_2;
     QLabel *label;
     QPushButton *logoutPushButton;
+    QPushButton *lastOrdersPushButton;
+    QPushButton *lastCancelOrdersPushButton;
     QStatusBar *statusbar;
     QMenuBar *menuBar;
     QMenu *menuMenu;
@@ -65,7 +67,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1667, 768);
+        MainWindow->resize(1741, 1036);
         actionAdd_order = new QAction(MainWindow);
         actionAdd_order->setObjectName(QStringLiteral("actionAdd_order"));
         actionExit = new QAction(MainWindow);
@@ -82,7 +84,7 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(0, 220, 1601, 481));
+        tableView->setGeometry(QRect(10, 220, 1661, 751));
         addOrderButton = new QPushButton(centralwidget);
         addOrderButton->setObjectName(QStringLiteral("addOrderButton"));
         addOrderButton->setGeometry(QRect(530, 10, 151, 27));
@@ -100,7 +102,7 @@ public:
         editOrderPushButton->setGeometry(QRect(530, 70, 151, 27));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(1610, 490, 51, 27));
+        pushButton->setGeometry(QRect(1680, 486, 51, 31));
         ComboWorkersBox = new QComboBox(centralwidget);
         ComboWorkersBox->setObjectName(QStringLiteral("ComboWorkersBox"));
         ComboWorkersBox->setGeometry(QRect(690, 170, 151, 27));
@@ -133,13 +135,19 @@ public:
         logoutPushButton = new QPushButton(centralwidget);
         logoutPushButton->setObjectName(QStringLiteral("logoutPushButton"));
         logoutPushButton->setGeometry(QRect(530, 130, 151, 27));
+        lastOrdersPushButton = new QPushButton(centralwidget);
+        lastOrdersPushButton->setObjectName(QStringLiteral("lastOrdersPushButton"));
+        lastOrdersPushButton->setGeometry(QRect(850, 170, 151, 27));
+        lastCancelOrdersPushButton = new QPushButton(centralwidget);
+        lastCancelOrdersPushButton->setObjectName(QStringLiteral("lastCancelOrdersPushButton"));
+        lastCancelOrdersPushButton->setGeometry(QRect(1010, 170, 151, 27));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         MainWindow->setStatusBar(statusbar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1667, 25));
+        menuBar->setGeometry(QRect(0, 0, 1741, 25));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
         menuAbout = new QMenu(menuBar);
@@ -187,6 +195,8 @@ public:
         currentDayordersLabel_2->setText(QApplication::translate("MainWindow", "\320\264\320\276\320\261\320\260\320\262\320\273\320\265\320\275\320\275\320\276 \320\267\320\260 \321\201\320\265\320\263\320\276\320\264\320\275\321\217", 0));
         label->setText(QApplication::translate("MainWindow", "\320\222\321\213\320\261\321\200\320\260\321\202\321\214 \321\200\320\260\320\261\320\276\321\202\320\275\320\270\320\272\320\260:", 0));
         logoutPushButton->setText(QApplication::translate("MainWindow", "logout", 0));
+        lastOrdersPushButton->setText(QApplication::translate("MainWindow", "lastOrders", 0));
+        lastCancelOrdersPushButton->setText(QApplication::translate("MainWindow", "lastCancelOrders", 0));
         menuMenu->setTitle(QApplication::translate("MainWindow", "menu", 0));
         menuAbout->setTitle(QApplication::translate("MainWindow", "about", 0));
         menuWorkers->setTitle(QApplication::translate("MainWindow", "workers", 0));

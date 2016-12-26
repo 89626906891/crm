@@ -55,6 +55,8 @@ public:
         label_2 = new QLabel(AuthDialog);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(30, 91, 71, 31));
+        QWidget::setTabOrder(enterButton, passwordLineEdit);
+        QWidget::setTabOrder(passwordLineEdit, loginLineEdit);
 
         retranslateUi(AuthDialog);
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1667</width>
-    <height>768</height>
+    <width>1741</width>
+    <height>1036</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>220</y>
-      <width>1601</width>
-      <height>481</height>
+      <width>1661</width>
+      <height>751</height>
      </rect>
     </property>
    </widget>
@@ -85,10 +85,10 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>1610</x>
-      <y>490</y>
+      <x>1680</x>
+      <y>486</y>
       <width>51</width>
-      <height>27</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -225,6 +225,32 @@
      <string>logout</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="lastOrdersPushButton">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>170</y>
+      <width>151</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>lastOrders</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lastCancelOrdersPushButton">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>170</y>
+      <width>151</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>lastCancelOrders</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -232,7 +258,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1667</width>
+     <width>1741</width>
      <height>25</height>
     </rect>
    </property>

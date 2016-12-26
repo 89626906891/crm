@@ -37,9 +37,11 @@ MainWindow::MainWindow(QWidget *parent) :
   //  ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableView->resizeColumnsToContents();
     ui->tableView->setAlternatingRowColors(true);
+    ui->tableView->horizontalHeader()->setStretchLastSection(true);
     ui->tableView->hideColumn(0);
-
-
+    ui->tableView->hideColumn(14);
+    ui->tableView->hideColumn(15);
+    ui->tableView->hideColumn(17);
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("name"),new QSqlRelationalDelegate(ui->tableView)); //для combobox работники
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("status_name"),new QSqlRelationalDelegate(ui->tableView)); //для комбобокса со статусом заказа
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("payment_name"),new QSqlRelationalDelegate(ui->tableView)); //способ оплаты
@@ -106,7 +108,7 @@ void MainWindow::on_addOrderButton_clicked()
 // возможно так нельзя делать
 
     QSqlRecord recordAddDate = model->record();
-    recordAddDate.setValue(model->fieldIndex("add_date"),QDate::currentDate().toString("yyyy-MM-dd"));
+    recordAddDate.setValue(model->fieldIndex("add_date"),QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
     qDebug() << "filling add_date field" << model->insertRecord(row,recordAddDate);
 
     new_o->mapper->setCurrentModelIndex(model->index(row,0));
@@ -138,13 +140,7 @@ void MainWindow::on_delButton_clicked()
     int n = QMessageBox::warning(0,
     "ВНИМАНИЕ",
     "ТОЧНО СТЕРЕТЬ ЗАКАЗ????"
-    "\n ТЫ УВЕРЕН?",
-    "ДА",
-    "Нет",
-     QString(),
-     0,
-     1
-     );
+    "\n ТЫ УВЕРЕН?", "ДА","Нет", QString(), 0,1);
      if(!n)
      {
         qDebug() << "deleting row:" << model->removeRow(selectedRow);
@@ -171,6 +167,7 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
 {
     clickedDay = date.toString("yyyy-MM-dd");
     model->setFilter(QString("exec_date = '%1'").arg(date.toString("yyyy-MM-dd")));
+    model->sort(7,Qt::AscendingOrder);
     qDebug() <<"selected:" << date.toString("yyyy-MM-dd");
     //выводим кол-во заказов на выбранный день в календаре
     currentDayTotalOrdersQuery = new QSqlQuery;
@@ -218,21 +215,7 @@ void MainWindow::on_editOrderPushButton_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     qDebug() << "OK clicked";
-
-
-
-//    int changedRow =   currentIndex().row();
-//    if (changedRow >=0)
-//    {
-//        qDebug() << "changedRow = " << changedRow;
-
-//    }
-
-
-
-
     model->submitAll();
-//    ui->tableView->selectAll();
 }
 
 void MainWindow::on_actionAdd_order_triggered()
@@ -356,16 +339,14 @@ void MainWindow::showOrdersForToday()
 {
     todayOrdersQuery = new QSqlQuery;
     todayOrdersQuery->prepare("SELECT * FROM orders WHERE add_date = :date");
-    todayOrdersQuery->bindValue(":date", QDate::currentDate().toString("yyyy-MM-dd"));
+    todayOrdersQuery->bindValue(":date", QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
     todayOrdersQuery->exec();
     int ordersCounter = 0;
     while(todayOrdersQuery->next())
     {
         ordersCounter++;
     }
-    //QString orderz = QVariant(ordersCounter).toString();
     QString orderz = QString::number(ordersCounter);
-    //qDebug() << "add orders for today:" << orderz;
     ui->ordersForTodaylabel->setText(orderz);
 }
 
@@ -403,3 +384,32 @@ void MainWindow::on_actionLogout_triggered()
 
 }
 
+
+void MainWindow::on_lastOrdersPushButton_clicked()
+{
+    qDebug() << "lastOrdersPushButton_clicked ";
+
+    //model->setFilter(QString("add_date = '%1'").arg(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss")));
+    model->sort(5, Qt::DescendingOrder);
+
+
+
+
+//    QSortFilterProxyModel *proxymodel = new QSortFilterProxyModel(this);
+//    proxymodel->setSourceModel(model);
+//    proxymodel->sort();
+//    //proxymodel->setFilter(QString("add_date = '%1'").arg(QDate::currentDate().toString("yyyy-MM-dd")));
+//    ui->tableView->setModel(proxymodel);
+ //   proxymodel->select();
+
+//
+
+}
+
+void MainWindow::on_lastCancelOrdersPushButton_clicked()
+{
+    qDebug() << "lastCancelOrdersPushButton_clicked ";
+    //model->setFilter(QString( "status_name = 'cancel'"));
+    model->setFilter( QString(tr("status_name = 'cancel'")));
+    model->select();
+}

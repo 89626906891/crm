@@ -12,11 +12,12 @@ newOrder::newOrder(QWidget *parent) :   //добавляем заначение 
     ui->setupUi(this);
     this->setWindowTitle("Добавление нового заказа");
 
+
     mapper = new QDataWidgetMapper(this);
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
 
-
-
+    ui->phoneLineEdit->setInputMask("+7 (999) 999-99-99");
+    ui->phone2lineEdit->setInputMask("+7 (999) 999-99-99");
 
 }
 

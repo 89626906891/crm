@@ -13,6 +13,7 @@
 #include <QRect>
 #include <QPoint>
 #include <QTimer>
+#include <QSortFilterProxyModel>
 
 
 
@@ -86,6 +87,10 @@ private slots:
     void on_actionLogout_triggered();
 
 
+    void on_lastOrdersPushButton_clicked();
+
+    void on_lastCancelOrdersPushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -102,14 +107,7 @@ private:
 
     QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации
 
- //    AuthDialog *auth;
 
-
-
-
-
-
-    // QWidget interface
 protected:
     void closeEvent(QCloseEvent *event);
 };
