@@ -61,7 +61,8 @@ SOURCES       = ../main.cpp \
 		../about.cpp \
 		../comboboxstatusdelegate.cpp \
 		../phonenumberdelegate.cpp \
-		../salarydelegate.cpp qrc_resources.cpp \
+		../salarydelegate.cpp \
+		../buttondelegate.cpp qrc_resources.cpp \
 		moc_authdialog.cpp \
 		moc_mainwindow.cpp \
 		moc_neworder.cpp \
@@ -72,9 +73,9 @@ SOURCES       = ../main.cpp \
 		moc_newdiscount.cpp \
 		moc_checkboxdelegate.cpp \
 		moc_about.cpp \
-		moc_comboboxstatusdelegate.cpp \
 		moc_phonenumberdelegate.cpp \
-		moc_salarydelegate.cpp
+		moc_salarydelegate.cpp \
+		moc_buttondelegate.cpp
 OBJECTS       = main.o \
 		authdialog.o \
 		mainwindow.o \
@@ -89,6 +90,7 @@ OBJECTS       = main.o \
 		comboboxstatusdelegate.o \
 		phonenumberdelegate.o \
 		salarydelegate.o \
+		buttondelegate.o \
 		qrc_resources.o \
 		moc_authdialog.o \
 		moc_mainwindow.o \
@@ -100,9 +102,9 @@ OBJECTS       = main.o \
 		moc_newdiscount.o \
 		moc_checkboxdelegate.o \
 		moc_about.o \
-		moc_comboboxstatusdelegate.o \
 		moc_phonenumberdelegate.o \
-		moc_salarydelegate.o
+		moc_salarydelegate.o \
+		moc_buttondelegate.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -181,7 +183,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../about.h \
 		../comboboxstatusdelegate.h \
 		../phonenumberdelegate.h \
-		../salarydelegate.h ../main.cpp \
+		../salarydelegate.h \
+		../buttondelegate.h ../main.cpp \
 		../authdialog.cpp \
 		../mainwindow.cpp \
 		../neworder.cpp \
@@ -194,7 +197,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../about.cpp \
 		../comboboxstatusdelegate.cpp \
 		../phonenumberdelegate.cpp \
-		../salarydelegate.cpp
+		../salarydelegate.cpp \
+		../buttondelegate.cpp
 QMAKE_TARGET  = CRM
 DESTDIR       = 
 TARGET        = CRM
@@ -366,8 +370,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../authdialog.h ../mainwindow.h ../neworder.h ../crmmodel.h ../workers.h ../newworker.h ../discounts.h ../newdiscount.h ../checkboxdelegate.h ../about.h ../comboboxstatusdelegate.h ../phonenumberdelegate.h ../salarydelegate.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../main.cpp ../authdialog.cpp ../mainwindow.cpp ../neworder.cpp ../crmmodel.cpp ../workers.cpp ../newworker.cpp ../discounts.cpp ../newdiscount.cpp ../checkboxdelegate.cpp ../about.cpp ../comboboxstatusdelegate.cpp ../phonenumberdelegate.cpp ../salarydelegate.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../authdialog.h ../mainwindow.h ../neworder.h ../crmmodel.h ../workers.h ../newworker.h ../discounts.h ../newdiscount.h ../checkboxdelegate.h ../about.h ../comboboxstatusdelegate.h ../phonenumberdelegate.h ../salarydelegate.h ../buttondelegate.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../main.cpp ../authdialog.cpp ../mainwindow.cpp ../neworder.cpp ../crmmodel.cpp ../workers.cpp ../newworker.cpp ../discounts.cpp ../newdiscount.cpp ../checkboxdelegate.cpp ../about.cpp ../comboboxstatusdelegate.cpp ../phonenumberdelegate.cpp ../salarydelegate.cpp ../buttondelegate.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../authdialog.ui ../mainwindow.ui ../neworder.ui ../workers.ui ../newworker.ui ../discounts.ui ../newdiscount.ui ../about.ui $(DISTDIR)/
 
 
@@ -397,9 +401,9 @@ compiler_rcc_clean:
 qrc_resources.cpp: ../resources.qrc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name resources ../resources.qrc -o qrc_resources.cpp
 
-compiler_moc_header_make_all: moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_comboboxstatusdelegate.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp
+compiler_moc_header_make_all: moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp moc_buttondelegate.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_comboboxstatusdelegate.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp
+	-$(DEL_FILE) moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp moc_buttondelegate.cpp
 moc_authdialog.cpp: ../mainwindow.h \
 		../crmmodel.h \
 		../neworder.h \
@@ -409,9 +413,10 @@ moc_authdialog.cpp: ../mainwindow.h \
 		../discounts.h \
 		../newdiscount.h \
 		../checkboxdelegate.h \
-		../comboboxstatusdelegate.h \
 		../phonenumberdelegate.h \
+		../salarydelegate.h \
 		../about.h \
+		../buttondelegate.h \
 		../authdialog.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../authdialog.h -o moc_authdialog.cpp
 
@@ -423,9 +428,10 @@ moc_mainwindow.cpp: ../crmmodel.h \
 		../discounts.h \
 		../newdiscount.h \
 		../checkboxdelegate.h \
-		../comboboxstatusdelegate.h \
 		../phonenumberdelegate.h \
+		../salarydelegate.h \
 		../about.h \
+		../buttondelegate.h \
 		../mainwindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../mainwindow.h -o moc_mainwindow.cpp
 
@@ -455,14 +461,14 @@ moc_checkboxdelegate.cpp: ../checkboxdelegate.h
 moc_about.cpp: ../about.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../about.h -o moc_about.cpp
 
-moc_comboboxstatusdelegate.cpp: ../comboboxstatusdelegate.h
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../comboboxstatusdelegate.h -o moc_comboboxstatusdelegate.cpp
-
 moc_phonenumberdelegate.cpp: ../phonenumberdelegate.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../phonenumberdelegate.h -o moc_phonenumberdelegate.cpp
 
 moc_salarydelegate.cpp: ../salarydelegate.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../salarydelegate.h -o moc_salarydelegate.cpp
+
+moc_buttondelegate.cpp: ../buttondelegate.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../buttondelegate.h -o moc_buttondelegate.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -513,9 +519,10 @@ main.o: ../main.cpp ../authdialog.h \
 		../discounts.h \
 		../newdiscount.h \
 		../checkboxdelegate.h \
-		../comboboxstatusdelegate.h \
 		../phonenumberdelegate.h \
-		../about.h
+		../salarydelegate.h \
+		../about.h \
+		../buttondelegate.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 authdialog.o: ../authdialog.cpp ../authdialog.h \
@@ -528,9 +535,10 @@ authdialog.o: ../authdialog.cpp ../authdialog.h \
 		../discounts.h \
 		../newdiscount.h \
 		../checkboxdelegate.h \
-		../comboboxstatusdelegate.h \
 		../phonenumberdelegate.h \
+		../salarydelegate.h \
 		../about.h \
+		../buttondelegate.h \
 		ui_authdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o authdialog.o ../authdialog.cpp
 
@@ -543,9 +551,10 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../discounts.h \
 		../newdiscount.h \
 		../checkboxdelegate.h \
-		../comboboxstatusdelegate.h \
 		../phonenumberdelegate.h \
+		../salarydelegate.h \
 		../about.h \
+		../buttondelegate.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
@@ -581,7 +590,7 @@ about.o: ../about.cpp ../about.h \
 		ui_about.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o about.o ../about.cpp
 
-comboboxstatusdelegate.o: ../comboboxstatusdelegate.cpp ../comboboxstatusdelegate.h
+comboboxstatusdelegate.o: ../comboboxstatusdelegate.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o comboboxstatusdelegate.o ../comboboxstatusdelegate.cpp
 
 phonenumberdelegate.o: ../phonenumberdelegate.cpp ../phonenumberdelegate.h
@@ -589,6 +598,9 @@ phonenumberdelegate.o: ../phonenumberdelegate.cpp ../phonenumberdelegate.h
 
 salarydelegate.o: ../salarydelegate.cpp ../salarydelegate.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o salarydelegate.o ../salarydelegate.cpp
+
+buttondelegate.o: ../buttondelegate.cpp ../buttondelegate.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o buttondelegate.o ../buttondelegate.cpp
 
 qrc_resources.o: qrc_resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
@@ -623,14 +635,14 @@ moc_checkboxdelegate.o: moc_checkboxdelegate.cpp
 moc_about.o: moc_about.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_about.o moc_about.cpp
 
-moc_comboboxstatusdelegate.o: moc_comboboxstatusdelegate.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_comboboxstatusdelegate.o moc_comboboxstatusdelegate.cpp
-
 moc_phonenumberdelegate.o: moc_phonenumberdelegate.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_phonenumberdelegate.o moc_phonenumberdelegate.cpp
 
 moc_salarydelegate.o: moc_salarydelegate.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_salarydelegate.o moc_salarydelegate.cpp
+
+moc_buttondelegate.o: moc_buttondelegate.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_buttondelegate.o moc_buttondelegate.cpp
 
 ####### Install
 

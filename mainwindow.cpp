@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("payment_name"),new QSqlRelationalDelegate(ui->tableView)); //способ оплаты
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone"), new PhoneNumberDelegate(ui->tableView)); //делаем маску для телефона
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone2"), new PhoneNumberDelegate(ui->tableView));
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), new buttonDelegate(ui->tableView)); //кнопка в таблице
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("salary"), new salaryDelegate(ui->tableView)); //чтобы отображалась валюта
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("checked"),new CheckBoxDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
 
@@ -62,10 +63,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QTimer *timerShowOrders = new QTimer(this);
     connect(timerShowOrders, SIGNAL(timeout()), this, SLOT(showOrdersForToday()));
     timerShowOrders->start(1000);
-
-
-
-
 
 
     model->setFilter(QString("exec_date = '%1'").arg(QDate::currentDate().toString("yyyy-MM-dd"))); //установка фильтра модели на текущую дату
@@ -335,17 +332,22 @@ void MainWindow::whoOnline()
     statusBar()->showMessage(str);
 }
 
+//если будут коллизии первым делом проверить select. В базе datetime а тут проверяем по date
 void MainWindow::showOrdersForToday()
 {
-    todayOrdersQuery = new QSqlQuery;
-    todayOrdersQuery->prepare("SELECT * FROM orders WHERE add_date = :date");
-    todayOrdersQuery->bindValue(":date", QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-    todayOrdersQuery->exec();
+
+    QSqlQuery todayOrdersQuery;
+    todayOrdersQuery.prepare(QString("SELECT * FROM orders WHERE add_date LIKE '%1%'").arg(QDate::currentDate().toString("yyyy-MM-dd ")));
+    if(!todayOrdersQuery.exec())
+    {
+         qDebug() <<"error SELECTing todayOrdersQuery" << QDate::currentDate().toString("yyyy-MM-dd");
+    }
     int ordersCounter = 0;
-    while(todayOrdersQuery->next())
+    while(todayOrdersQuery.next())
     {
         ordersCounter++;
     }
+
     QString orderz = QString::number(ordersCounter);
     ui->ordersForTodaylabel->setText(orderz);
 }

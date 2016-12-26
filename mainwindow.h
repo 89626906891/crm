@@ -27,6 +27,7 @@
 #include "phonenumberdelegate.h"
 #include "salarydelegate.h"
 #include "about.h"
+#include "buttondelegate.h"
 
 
 
@@ -102,7 +103,7 @@ private:
 
     QString clickedDay;
     int typeIndex;
-    QSqlQuery *todayOrdersQuery;
+  //  QSqlQuery *todayOrdersQuery;
     QSqlQuery *currentDayTotalOrdersQuery;
 
     QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации

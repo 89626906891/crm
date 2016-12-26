@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     about.cpp \
     comboboxstatusdelegate.cpp \
     phonenumberdelegate.cpp \
-    salarydelegate.cpp
+    salarydelegate.cpp \
+    buttondelegate.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -40,7 +41,8 @@ HEADERS  += authdialog.h \
     about.h \
     comboboxstatusdelegate.h \
     phonenumberdelegate.h \
-    salarydelegate.h
+    salarydelegate.h \
+    buttondelegate.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \
