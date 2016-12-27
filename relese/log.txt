@@ -429,3 +429,61 @@
 2016-12-27 19:16:50.434 INFInfo:selected: "2016-12-27"
 2016-12-27 19:16:56.618 INFInfo:newCRMuser canceled
 2016-12-27 19:16:59.313 INFInfo:"user admin is logout"
+2016-12-27 19:57:55.458 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 19:57:55.620 INFInfo:selected: "2016-12-27"
+2016-12-27 20:04:20.760 INFInfo:"user admin is logout"
+2016-12-27 20:16:12.582 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 20:16:12.726 INFInfo:selected: "2016-12-27"
+2016-12-27 20:16:36.813 DBG default:filling add_date field true
+2016-12-27 20:16:38.033 DBG default:cancel
+2016-12-27 20:16:44.652 INFInfo:OK clicked
+2016-12-27 20:16:48.643 INFInfo:selected: "2016-12-26"
+2016-12-27 20:16:48.996 INFInfo:selected: "2016-12-21"
+2016-12-27 20:16:49.299 INFInfo:selected: "2016-12-10"
+2016-12-27 20:16:49.827 INFInfo:selected: "2016-12-18"
+2016-12-27 20:16:50.260 INFInfo:selected: "2016-12-27"
+2016-12-27 20:17:12.673 INFInfo:"user admin is logout"
+2016-12-27 20:23:49.577 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 20:23:49.710 INFInfo:selected: "2016-12-27"
+2016-12-27 20:24:19.948 INFInfo:"user admin is logout"
+2016-12-27 20:41:58.909 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 20:41:59.029 INFInfo:selected: "2016-12-27"
+2016-12-27 20:42:05.304 INFInfo:newCRMuser canceled
+2016-12-27 20:42:08.253 INFInfo:creating new CRMuser false
+2016-12-27 20:42:08.327 INFInfo:adding new CRMuser true
+2016-12-27 20:42:08.327 INFInfo:apdating CRMuserModel true
+2016-12-27 20:42:08.327 INFInfo:newCRMuser canceled
+2016-12-27 20:42:11.384 INFInfo:newCRMuser canceled
+2016-12-27 20:42:17.457 INFInfo:creating new CRMuser false
+2016-12-27 20:42:17.495 INFInfo:adding new CRMuser true
+2016-12-27 20:42:17.495 INFInfo:apdating CRMuserModel true
+2016-12-27 20:42:17.496 INFInfo:newCRMuser canceled
+2016-12-27 20:42:19.441 INFInfo:creating new CRMuser false
+2016-12-27 20:42:19.441 INFInfo:adding new CRMuser true
+2016-12-27 20:42:19.442 INFInfo:apdating CRMuserModel true
+2016-12-27 20:42:19.442 INFInfo:newCRMuser canceled
+2016-12-27 20:42:21.993 INFInfo:creating new CRMuser false
+2016-12-27 20:42:22.072 INFInfo:adding new CRMuser true
+2016-12-27 20:42:22.072 INFInfo:apdating CRMuserModel true
+2016-12-27 20:42:22.073 INFInfo:newCRMuser canceled
+2016-12-27 20:42:27.689 INFInfo:creating new CRMuser false
+2016-12-27 20:42:27.689 INFInfo:adding new CRMuser true
+2016-12-27 20:42:27.690 INFInfo:apdating CRMuserModel true
+2016-12-27 20:42:27.690 INFInfo:newCRMuser canceled
+2016-12-27 20:42:29.648 INFInfo:newCRMuser canceled
+2016-12-27 20:42:54.178 INFInfo:"user admin is logout"
+2016-12-27 20:43:01.021 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 20:43:01.148 INFInfo:selected: "2016-12-27"
+2016-12-27 20:43:06.012 INFInfo:creating new CRMuser false
+2016-12-27 20:43:06.013 INFInfo:adding new CRMuser true
+2016-12-27 20:43:06.013 INFInfo:apdating CRMuserModel true
+2016-12-27 20:43:06.013 INFInfo:newCRMuser canceled
+2016-12-27 20:43:07.912 INFInfo:newCRMuser canceled
+2016-12-27 20:43:20.423 INFInfo:"user admin is logout"
+2016-12-27 20:43:31.772 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 20:43:31.913 INFInfo:selected: "2016-12-27"
+2016-12-27 20:43:37.747 INFInfo:creating new CRMuser true
+2016-12-27 20:43:37.799 INFInfo:adding new CRMuser true
+2016-12-27 20:43:37.800 INFInfo:apdating CRMuserModel true
+2016-12-27 20:43:37.800 INFInfo:newCRMuser canceled
+2016-12-27 20:44:03.890 INFInfo:"user admin is logout"

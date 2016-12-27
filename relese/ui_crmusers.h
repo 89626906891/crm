@@ -25,7 +25,6 @@ class Ui_CRMusers
 public:
     QTableView *tableView;
     QPushButton *addCrmUserPushButton;
-    QPushButton *blockuserPushButton;
 
     void setupUi(QWidget *CRMusers)
     {
@@ -38,9 +37,6 @@ public:
         addCrmUserPushButton = new QPushButton(CRMusers);
         addCrmUserPushButton->setObjectName(QStringLiteral("addCrmUserPushButton"));
         addCrmUserPushButton->setGeometry(QRect(20, 10, 99, 27));
-        blockuserPushButton = new QPushButton(CRMusers);
-        blockuserPushButton->setObjectName(QStringLiteral("blockuserPushButton"));
-        blockuserPushButton->setGeometry(QRect(590, 10, 99, 27));
 
         retranslateUi(CRMusers);
 
@@ -51,7 +47,6 @@ public:
     {
         CRMusers->setWindowTitle(QApplication::translate("CRMusers", "Form", 0));
         addCrmUserPushButton->setText(QApplication::translate("CRMusers", "addCrmUser", 0));
-        blockuserPushButton->setText(QApplication::translate("CRMusers", "blockUser", 0));
     } // retranslateUi
 
 };

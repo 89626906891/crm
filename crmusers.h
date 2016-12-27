@@ -26,9 +26,6 @@ public:
 private slots:
     void on_addCrmUserPushButton_clicked();
 
-
-    void on_blockuserPushButton_clicked();
-
     void on_tableView_doubleClicked(const QModelIndex &index);
 
     void CRMuserAccepted();

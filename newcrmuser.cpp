@@ -45,4 +45,6 @@ void newCrmUser::setModel(QSqlRelationalTableModel *CRMusersModel)
     crmUserMapper->addMapping(ui->loginlineEdit,1);
     crmUserMapper->addMapping(ui->passwordlineEdit,2);
     crmUserMapper->addMapping(ui->accesscheckBox,6);
+    crmUserMapper->addMapping(ui->activecheckBox,10);
+
 }

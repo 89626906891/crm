@@ -47,11 +47,6 @@ void CRMusers::on_addCrmUserPushButton_clicked()
     moveToCenter(newcrmuser_window);
 }
 
-void CRMusers::on_blockuserPushButton_clicked()
-{
-
-}
-
 void CRMusers::on_tableView_doubleClicked(const QModelIndex &index)
 {
     newcrmuser_window->crmUserMapper->setCurrentModelIndex(index);

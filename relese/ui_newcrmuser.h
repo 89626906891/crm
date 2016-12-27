@@ -34,6 +34,7 @@ public:
     QCheckBox *accesscheckBox;
     QLabel *label_3;
     QLineEdit *passwordlineEdit;
+    QCheckBox *activecheckBox;
 
     void setupUi(QWidget *newCrmUser)
     {
@@ -68,6 +69,9 @@ public:
         passwordlineEdit->setObjectName(QStringLiteral("passwordlineEdit"));
         passwordlineEdit->setGeometry(QRect(140, 80, 331, 27));
         passwordlineEdit->setEchoMode(QLineEdit::Password);
+        activecheckBox = new QCheckBox(newCrmUser);
+        activecheckBox->setObjectName(QStringLiteral("activecheckBox"));
+        activecheckBox->setGeometry(QRect(140, 150, 97, 22));
 
         retranslateUi(newCrmUser);
 
@@ -83,6 +87,7 @@ public:
         okpushButton->setText(QApplication::translate("newCrmUser", "ok", 0));
         accesscheckBox->setText(QApplication::translate("newCrmUser", "full access", 0));
         label_3->setText(QApplication::translate("newCrmUser", "password", 0));
+        activecheckBox->setText(QApplication::translate("newCrmUser", "isActive", 0));
     } // retranslateUi
 
 };
