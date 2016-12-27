@@ -69,3 +69,191 @@
 2016-12-27 12:11:05.419 DBG default:New user is logged. Welcome: "admin"
 2016-12-27 12:11:05.573 INFInfo:selected: "2016-12-27"
 2016-12-27 12:11:11.644 INFInfo:"user admin is logout"
+2016-12-27 12:12:55.761 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 12:12:55.886 INFInfo:selected: "2016-12-27"
+2016-12-27 12:14:07.158 INFInfo:selected: "2016-12-30"
+2016-12-27 12:14:07.727 INFInfo:selected: "2016-12-27"
+2016-12-27 12:14:08.470 INFInfo:selected: "2016-12-28"
+2016-12-27 12:14:09.215 INFInfo:selected: "2016-12-27"
+2016-12-27 12:14:41.176 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_tableView_doubleClicked(QModelIndex)
+2016-12-27 12:14:45.507 DBG default:worker canceled
+2016-12-27 12:14:47.779 DBG default:worker canceled
+2016-12-27 12:14:49.971 DBG default:worker canceled
+2016-12-27 12:14:53.379 DBG default:worker canceled
+2016-12-27 12:14:54.532 DBG default:inserting row into workers true
+2016-12-27 12:14:55.891 DBG default:worker canceled
+2016-12-27 12:15:13.471 INFInfo:OK clicked
+2016-12-27 12:15:14.737 DBG default:lastCancelOrdersPushButton_clicked 
+2016-12-27 12:15:18.989 INFInfo:selected: "2016-12-27"
+2016-12-27 12:15:34.174 INFInfo:"user admin is logout"
+2016-12-27 12:23:50.121 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 12:23:50.250 INFInfo:selected: "2016-12-27"
+2016-12-27 12:24:21.551 DBG default:filling add_date field true
+2016-12-27 12:24:58.545 DBG default:adding new order true
+2016-12-27 12:24:58.545 DBG default:cancel
+2016-12-27 12:24:59.870 INFInfo:selected: "2016-12-28"
+2016-12-27 12:25:06.068 DBG default:order is Checked
+2016-12-27 12:25:12.157 INFInfo:selected: "2016-12-28"
+2016-12-27 12:25:18.412 DBG default:order is Checked
+2016-12-27 12:25:27.623 INFInfo:OK clicked
+2016-12-27 12:25:29.118 INFInfo:selected: "2016-12-28"
+2016-12-27 12:25:40.531 INFInfo:order to edit =  0
+2016-12-27 12:25:42.755 DBG default:cancel
+2016-12-27 12:25:45.147 INFInfo:order to edit =  0
+2016-12-27 12:25:46.059 DBG default:cancel
+2016-12-27 12:25:51.347 DBG default:order is UnChecked
+2016-12-27 12:25:55.347 INFInfo:order to edit =  0
+2016-12-27 12:27:08.642 DBG default:cancel
+2016-12-27 12:27:12.146 DBG default:filling add_date field true
+2016-12-27 12:27:14.954 DBG default:cancel
+2016-12-27 12:27:18.052 DBG default:deleting row: true
+2016-12-27 12:27:22.123 INFInfo:selected: "2016-12-28"
+2016-12-27 12:27:24.565 INFInfo:selected: "2016-12-27"
+2016-12-27 12:27:45.924 INFInfo:selected: "2016-12-27"
+2016-12-27 12:27:58.041 DBG default:"55"
+2016-12-27 12:27:59.122 DBG default:"55"
+2016-12-27 12:27:59.122 DBG default:"55"
+2016-12-27 12:28:01.225 DBG default:discount canceled
+2016-12-27 12:28:04.530 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_tableView_doubleClicked(QModelIndex)
+2016-12-27 12:29:02.963 DBG default:worker selected =  "misha"
+2016-12-27 12:29:02.963 INFInfo:"2016-12-27"
+2016-12-27 12:29:04.571 DBG default:worker selected =  "gus"
+2016-12-27 12:29:04.571 INFInfo:"2016-12-27"
+2016-12-27 12:29:05.819 DBG default:worker selected =  "vasya"
+2016-12-27 12:29:05.819 INFInfo:"2016-12-27"
+2016-12-27 12:29:10.165 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 12:29:11.641 INFInfo:selected: "2016-12-28"
+2016-12-27 12:29:12.683 INFInfo:selected: "2016-12-27"
+2016-12-27 12:29:13.584 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 12:29:16.809 DBG default:lastCancelOrdersPushButton_clicked 
+2016-12-27 12:29:20.314 INFInfo:selected: "2016-12-28"
+2016-12-27 12:29:20.746 INFInfo:selected: "2016-12-29"
+2016-12-27 12:29:21.131 INFInfo:selected: "2016-12-27"
+2016-12-27 12:29:24.960 DBG default:18
+2016-12-27 12:29:24.960 DBG default:15
+2016-12-27 12:29:30.232 DBG default:18
+2016-12-27 12:29:30.232 DBG default:15
+2016-12-27 12:29:43.186 INFInfo:selected: "2016-12-27"
+2016-12-27 12:29:43.698 INFInfo:selected: "2016-12-23"
+2016-12-27 12:29:46.570 INFInfo:selected: "2016-12-27"
+2016-12-27 12:30:18.962 INFInfo:OK clicked
+2016-12-27 12:30:20.114 INFInfo:selected: "2016-12-30"
+2016-12-27 12:30:31.153 INFInfo:selected: "2016-12-29"
+2016-12-27 12:30:31.530 INFInfo:selected: "2016-12-27"
+2016-12-27 12:30:39.817 INFInfo:"user admin is logout"
+2016-12-27 12:40:21.628 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 12:40:21.775 INFInfo:selected: "2016-12-27"
+2016-12-27 12:40:40.367 INFInfo:order to edit =  10
+2016-12-27 12:40:52.855 DBG default:cancel
+2016-12-27 12:41:43.816 INFInfo:selected: "2016-12-28"
+2016-12-27 12:41:44.289 INFInfo:selected: "2016-12-29"
+2016-12-27 12:41:44.673 INFInfo:selected: "2016-12-26"
+2016-12-27 12:41:45.080 INFInfo:selected: "2016-12-26"
+2016-12-27 12:41:45.481 INFInfo:selected: "2016-12-27"
+2016-12-27 12:42:01.241 INFInfo:"user admin is logout"
+2016-12-27 15:18:52.087 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:18:52.219 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_plusButton_clicked()
+2016-12-27 15:18:52.219 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_minusButton_clicked()
+2016-12-27 15:18:52.224 INFInfo:selected: "2016-12-27"
+2016-12-27 15:18:53.743 DBG default:filling add_date field true
+2016-12-27 15:18:59.547 DBG default:cancel
+2016-12-27 15:19:01.778 INFInfo:"user admin is logout"
+2016-12-27 15:23:07.115 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:23:07.247 INFInfo:selected: "2016-12-27"
+2016-12-27 15:23:08.627 DBG default:filling add_date field true
+2016-12-27 15:23:20.086 DBG default:cancel
+2016-12-27 15:23:22.396 INFInfo:"user admin is logout"
+2016-12-27 15:24:18.129 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:24:18.264 INFInfo:selected: "2016-12-27"
+2016-12-27 15:24:24.187 DBG default:filling add_date field true
+2016-12-27 15:24:43.996 DBG default:cancel
+2016-12-27 15:24:51.156 INFInfo:order to edit =  14
+2016-12-27 15:24:52.564 DBG default:cancel
+2016-12-27 15:24:57.663 DBG default:deleting cancled
+2016-12-27 15:25:02.813 INFInfo:selected: "2016-12-28"
+2016-12-27 15:25:03.310 INFInfo:selected: "2016-12-29"
+2016-12-27 15:25:03.870 INFInfo:selected: "2016-12-30"
+2016-12-27 15:25:24.214 INFInfo:selected: "2016-12-27"
+2016-12-27 15:25:28.747 DBG default:18
+2016-12-27 15:25:28.747 DBG default:14
+2016-12-27 15:25:32.307 DBG default:18
+2016-12-27 15:25:32.307 DBG default:14
+2016-12-27 15:25:42.643 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 15:26:01.443 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 15:26:02.051 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 15:26:06.742 INFInfo:OK clicked
+2016-12-27 15:26:07.643 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 15:26:11.331 DBG default:lastCancelOrdersPushButton_clicked 
+2016-12-27 15:26:17.042 INFInfo:OK clicked
+2016-12-27 15:26:21.149 INFInfo:selected: "2016-12-27"
+2016-12-27 15:26:27.170 INFInfo:OK clicked
+2016-12-27 15:26:30.451 DBG default:lastCancelOrdersPushButton_clicked 
+2016-12-27 15:26:37.293 DBG default:deleting row: true
+2016-12-27 15:26:38.804 INFInfo:selected: "2016-12-27"
+2016-12-27 15:26:49.364 INFInfo:"user admin is logout"
+2016-12-27 15:27:00.862 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:27:00.988 INFInfo:selected: "2016-12-27"
+2016-12-27 15:27:03.493 DBG default:filling add_date field true
+2016-12-27 15:27:08.673 DBG default:cancel
+2016-12-27 15:27:26.058 DBG default:filling add_date field true
+2016-12-27 15:27:29.329 DBG default:cancel
+2016-12-27 15:27:32.003 INFInfo:"user admin is logout"
+2016-12-27 15:31:01.121 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:31:01.310 INFInfo:selected: "2016-12-27"
+2016-12-27 15:31:11.398 INFInfo:selected: "2016-12-28"
+2016-12-27 15:31:12.064 INFInfo:selected: "2016-12-27"
+2016-12-27 15:31:22.500 INFInfo:"user admin is logout"
+2016-12-27 15:47:01.931 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:47:02.055 INFInfo:selected: "2016-12-27"
+2016-12-27 15:47:03.388 DBG default:filling add_date field true
+2016-12-27 15:47:07.726 DBG default:cancel
+2016-12-27 15:47:29.151 DBG default:filling add_date field true
+2016-12-27 15:47:35.950 DBG default:cancel
+2016-12-27 15:47:38.143 INFInfo:"user admin is logout"
+2016-12-27 15:49:11.825 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:49:11.957 INFInfo:selected: "2016-12-27"
+2016-12-27 15:49:12.920 DBG default:filling add_date field true
+2016-12-27 15:49:16.333 DBG default:cancel
+2016-12-27 15:49:18.259 INFInfo:"user admin is logout"
+2016-12-27 15:55:30.428 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:55:30.593 INFInfo:selected: "2016-12-27"
+2016-12-27 15:55:31.891 DBG default:filling add_date field true
+2016-12-27 15:55:59.692 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:55:59.832 INFInfo:selected: "2016-12-27"
+2016-12-27 15:56:01.005 DBG default:filling add_date field true
+2016-12-27 15:57:27.261 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 15:57:27.405 INFInfo:selected: "2016-12-27"
+2016-12-27 15:57:29.151 DBG default:filling add_date field true
+2016-12-27 16:00:03.798 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:00:03.929 INFInfo:selected: "2016-12-27"
+2016-12-27 16:00:05.360 DBG default:filling add_date field true
+2016-12-27 16:00:11.746 DBG default:cancel
+2016-12-27 16:00:13.780 INFInfo:"user admin is logout"
+2016-12-27 16:03:29.279 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:03:29.434 INFInfo:selected: "2016-12-27"
+2016-12-27 16:03:30.721 DBG default:filling add_date field true
+2016-12-27 16:03:33.427 DBG default:err
+2016-12-27 16:03:34.019 DBG default:err
+2016-12-27 16:03:39.571 DBG default:err
+2016-12-27 16:03:39.779 DBG default:err
+2016-12-27 16:03:41.571 DBG default:err
+2016-12-27 16:03:44.091 DBG default:err
+2016-12-27 16:03:44.883 DBG default:cancel
+2016-12-27 16:03:46.897 INFInfo:"user admin is logout"
+2016-12-27 16:04:31.839 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:04:31.978 INFInfo:selected: "2016-12-27"
+2016-12-27 16:04:33.238 DBG default:filling add_date field true
+2016-12-27 16:04:38.011 DBG default:err
+2016-12-27 16:04:38.899 DBG default:cancel
+2016-12-27 16:04:41.114 INFInfo:"user admin is logout"
+2016-12-27 16:05:40.727 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:05:40.884 INFInfo:selected: "2016-12-27"
+2016-12-27 16:05:42.121 DBG default:filling add_date field true
+2016-12-27 16:05:56.874 DBG default:cancel
+2016-12-27 16:05:59.993 INFInfo:"user admin is logout"
+2016-12-27 16:07:13.494 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:07:13.649 INFInfo:selected: "2016-12-27"
+2016-12-27 16:07:14.888 DBG default:filling add_date field true
+2016-12-27 16:07:22.915 WRN Warning:не могу удалить lineEdit
+2016-12-27 16:07:36.730 DBG default:cancel
+2016-12-27 16:07:40.535 INFInfo:"user admin is logout"

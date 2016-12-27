@@ -8,6 +8,10 @@
 #include <QSqlRelationalDelegate>
 #include <QSqlRelationalTableModel>
 #include <QCloseEvent>
+#include <QLineEdit>
+#include <QDebug>
+
+#include "loggingcategories.h"
 
 namespace Ui {
 class newOrder;
@@ -36,8 +40,13 @@ private slots:
 
     void on_closeButton_clicked();
 
+    void on_plusPushButton_clicked();
+
+    void on_minusPushButton_clicked();
+
 private:
     Ui::newOrder *ui;
+    int lineEditCounter;
 
 
 

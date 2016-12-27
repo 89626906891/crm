@@ -61,6 +61,7 @@ void discounts::on_addDiscountPushButton_clicked()
     qDebug() << "inserting row into Discounts" <<  discountsModel->insertRow(row);
     new_discount_window->discountMapper->setCurrentModelIndex(discountsModel->index(row,0));
     new_discount_window->show();
+
 }
 void discounts::discountCancled()
 {
