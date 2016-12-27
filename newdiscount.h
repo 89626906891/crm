@@ -7,6 +7,8 @@
 #include <QDebug>
 #include <QCloseEvent>
 
+#include "movetocenter.h"
+
 namespace Ui {
 class newdiscount;
 }

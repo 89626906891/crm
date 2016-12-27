@@ -257,3 +257,175 @@
 2016-12-27 16:07:22.915 WRN Warning:не могу удалить lineEdit
 2016-12-27 16:07:36.730 DBG default:cancel
 2016-12-27 16:07:40.535 INFInfo:"user admin is logout"
+2016-12-27 16:09:44.990 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:09:45.140 INFInfo:selected: "2016-12-27"
+2016-12-27 16:09:46.624 DBG default:filling add_date field true
+2016-12-27 16:16:04.391 DBG default:cancel
+2016-12-27 16:16:07.087 INFInfo:"user admin is logout"
+2016-12-27 16:18:59.555 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:18:59.695 INFInfo:selected: "2016-12-27"
+2016-12-27 16:19:01.180 DBG default:filling add_date field true
+2016-12-27 16:19:05.222 DBG default:cancel
+2016-12-27 16:19:07.573 INFInfo:"user admin is logout"
+2016-12-27 16:20:01.738 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:20:01.868 INFInfo:selected: "2016-12-27"
+2016-12-27 16:20:03.036 DBG default:filling add_date field true
+2016-12-27 16:20:04.718 DBG default:cancel
+2016-12-27 16:20:06.351 INFInfo:"user admin is logout"
+2016-12-27 16:21:46.449 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:21:46.603 INFInfo:selected: "2016-12-27"
+2016-12-27 16:21:47.931 DBG default:filling add_date field true
+2016-12-27 16:23:13.745 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:23:13.962 INFInfo:selected: "2016-12-27"
+2016-12-27 16:23:15.504 DBG default:filling add_date field true
+2016-12-27 16:24:31.384 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:24:31.550 INFInfo:selected: "2016-12-27"
+2016-12-27 16:24:32.865 DBG default:filling add_date field true
+2016-12-27 16:26:38.223 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:26:38.377 INFInfo:selected: "2016-12-27"
+2016-12-27 16:26:39.505 DBG default:filling add_date field true
+2016-12-27 16:28:35.142 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:28:35.276 INFInfo:selected: "2016-12-27"
+2016-12-27 16:28:36.968 DBG default:filling add_date field true
+2016-12-27 16:29:27.854 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:29:28.000 INFInfo:selected: "2016-12-27"
+2016-12-27 16:29:29.392 DBG default:filling add_date field true
+2016-12-27 16:30:46.900 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:30:47.032 INFInfo:selected: "2016-12-27"
+2016-12-27 16:30:48.381 DBG default:filling add_date field true
+2016-12-27 16:31:21.267 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:31:21.412 INFInfo:selected: "2016-12-27"
+2016-12-27 16:31:22.989 DBG default:filling add_date field true
+2016-12-27 16:32:55.457 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:32:55.594 INFInfo:selected: "2016-12-27"
+2016-12-27 16:32:56.994 DBG default:filling add_date field true
+2016-12-27 16:34:21.904 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:34:22.042 INFInfo:selected: "2016-12-27"
+2016-12-27 16:34:23.528 DBG default:filling add_date field true
+2016-12-27 16:34:27.547 DBG default:cancel
+2016-12-27 16:34:30.203 INFInfo:"user admin is logout"
+2016-12-27 16:40:06.482 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:40:06.636 INFInfo:selected: "2016-12-27"
+2016-12-27 16:40:07.962 DBG default:filling add_date field true
+2016-12-27 16:40:31.333 DBG default:cancel
+2016-12-27 16:40:33.796 INFInfo:"user admin is logout"
+2016-12-27 16:41:14.681 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:41:14.817 INFInfo:selected: "2016-12-27"
+2016-12-27 16:41:16.018 DBG default:filling add_date field true
+2016-12-27 16:41:35.572 DBG default:cancel
+2016-12-27 16:41:39.476 INFInfo:"user admin is logout"
+2016-12-27 16:55:25.391 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:55:25.540 INFInfo:selected: "2016-12-27"
+2016-12-27 16:55:27.054 DBG default:filling add_date field true
+2016-12-27 16:55:28.594 DBG default:cancel
+2016-12-27 16:55:30.168 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_tableView_doubleClicked(QModelIndex)
+2016-12-27 16:55:33.932 INFInfo:"user admin is logout"
+2016-12-27 16:56:59.789 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:56:59.928 INFInfo:selected: "2016-12-27"
+2016-12-27 16:57:01.762 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_tableView_doubleClicked(QModelIndex)
+2016-12-27 16:57:03.137 DBG default:inserting row into workers true
+2016-12-27 16:57:04.369 DBG default:worker canceled
+2016-12-27 16:57:08.716 INFInfo:"user admin is logout"
+2016-12-27 16:58:25.092 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 16:58:25.247 INFInfo:selected: "2016-12-27"
+2016-12-27 16:58:30.624 DBG default:inserting row into Discounts true
+2016-12-27 16:58:31.824 DBG default:discount canceled
+2016-12-27 16:58:37.887 INFInfo:inserting row true
+2016-12-27 16:58:40.976 DBG default:cancel
+2016-12-27 16:58:43.599 INFInfo:"user admin is logout"
+2016-12-27 17:17:58.150 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 17:17:58.308 INFInfo:selected: "2016-12-27"
+2016-12-27 17:18:09.082 INFInfo:"user admin is logout"
+2016-12-27 17:19:13.830 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 17:19:13.991 INFInfo:selected: "2016-12-27"
+2016-12-27 17:19:19.689 INFInfo:"user admin is logout"
+2016-12-27 17:33:24.768 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 17:33:24.915 INFInfo:selected: "2016-12-27"
+2016-12-27 17:33:30.031 DBG default:filling add_date field true
+2016-12-27 17:33:38.195 DBG default:cancel
+2016-12-27 17:33:41.851 DBG default:filling add_date field true
+2016-12-27 17:33:45.339 DBG default:cancel
+2016-12-27 17:33:59.179 DBG default:filling add_date field true
+2016-12-27 17:34:01.451 DBG default:cancel
+2016-12-27 17:34:02.052 DBG default:filling add_date field true
+2016-12-27 17:34:03.779 DBG default:cancel
+2016-12-27 17:34:07.620 DBG default:filling add_date field true
+2016-12-27 17:34:11.291 DBG default:cancel
+2016-12-27 17:34:13.594 DBG default:deleting cancled
+2016-12-27 17:34:14.331 DBG default:filling add_date field true
+2016-12-27 17:34:15.563 DBG default:cancel
+2016-12-27 17:34:17.547 DBG default:filling add_date field true
+2016-12-27 17:34:53.626 DBG default:cancel
+2016-12-27 17:34:55.557 INFInfo:"user admin is logout"
+2016-12-27 17:36:53.406 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 17:36:53.560 INFInfo:selected: "2016-12-27"
+2016-12-27 17:36:57.447 DBG default:filling add_date field true
+2016-12-27 17:37:18.385 DBG default:cancel
+2016-12-27 17:37:20.624 INFInfo:"user admin is logout"
+2016-12-27 17:46:35.839 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 17:46:35.999 INFInfo:selected: "2016-12-27"
+2016-12-27 17:47:16.068 INFInfo:"user admin is logout"
+2016-12-27 17:54:58.679 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 17:54:58.831 INFInfo:selected: "2016-12-27"
+2016-12-27 17:55:20.802 INFInfo:"user admin is logout"
+2016-12-27 18:19:56.121 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 18:19:56.241 INFInfo:selected: "2016-12-27"
+2016-12-27 18:19:59.108 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_tableView_doubleClicked(QModelIndex)
+2016-12-27 18:20:01.557 DBG default:worker canceled
+2016-12-27 18:20:12.275 INFInfo:"user admin is logout"
+2016-12-27 18:23:43.158 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 18:23:43.309 INFInfo:selected: "2016-12-27"
+2016-12-27 18:24:03.401 INFInfo:"user admin is logout"
+2016-12-27 18:34:32.757 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 18:34:32.969 INFInfo:selected: "2016-12-27"
+2016-12-27 18:34:44.390 INFInfo:creating new CRMuser true
+2016-12-27 18:34:44.465 INFInfo:adding new CRMuser true
+2016-12-27 18:34:44.466 INFInfo:apdating CRMuserModel true
+2016-12-27 18:34:48.567 INFInfo:"user admin is logout"
+2016-12-27 18:39:43.561 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 18:39:43.697 INFInfo:selected: "2016-12-27"
+2016-12-27 18:39:47.560 DBG default:inserting row into CRMusers true
+2016-12-27 18:39:49.564 INFInfo:cancel button of new CRMuser clicked
+2016-12-27 18:39:52.567 INFInfo:"user admin is logout"
+2016-12-27 18:46:57.180 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 18:46:57.320 INFInfo:selected: "2016-12-27"
+2016-12-27 18:47:08.244 INFInfo:creating new CRMuser true
+2016-12-27 18:47:08.318 INFInfo:adding new CRMuser true
+2016-12-27 18:47:08.319 INFInfo:apdating CRMuserModel true
+2016-12-27 18:47:11.281 DBG default:inserting row into CRMusers true
+2016-12-27 18:47:17.393 INFInfo:creating new CRMuser true
+2016-12-27 18:47:17.439 INFInfo:adding new CRMuser true
+2016-12-27 18:47:17.440 INFInfo:apdating CRMuserModel true
+2016-12-27 18:48:01.732 INFInfo:"user admin is logout"
+2016-12-27 18:48:33.132 DBG default:New user is logged. Welcome: "test"
+2016-12-27 18:48:33.257 INFInfo:selected: "2016-12-27"
+2016-12-27 18:49:31.004 INFInfo:creating new CRMuser true
+2016-12-27 18:49:31.049 INFInfo:adding new CRMuser true
+2016-12-27 18:49:31.050 INFInfo:apdating CRMuserModel true
+2016-12-27 18:49:38.164 INFInfo:creating new CRMuser true
+2016-12-27 18:49:38.210 INFInfo:adding new CRMuser true
+2016-12-27 18:49:38.210 INFInfo:apdating CRMuserModel true
+2016-12-27 18:49:44.668 DBG default:inserting row into CRMusers true
+2016-12-27 18:49:50.660 INFInfo:"user test is logout"
+2016-12-27 18:51:12.873 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 18:51:13.182 INFInfo:selected: "2016-12-27"
+2016-12-27 18:51:16.497 DBG default:inserting row into CRMusers true
+2016-12-27 18:51:17.741 INFInfo:newCRMuser canceled
+2016-12-27 18:51:26.567 INFInfo:"user admin is logout"
+2016-12-27 19:08:49.978 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 19:08:50.106 INFInfo:selected: "2016-12-27"
+2016-12-27 19:09:04.172 INFInfo:"user admin is logout"
+2016-12-27 19:12:23.736 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 19:12:23.862 INFInfo:selected: "2016-12-27"
+2016-12-27 19:12:27.014 INFInfo:selected: "2016-12-28"
+2016-12-27 19:12:27.750 INFInfo:selected: "2016-12-28"
+2016-12-27 19:12:28.415 INFInfo:selected: "2016-12-27"
+2016-12-27 19:12:36.248 INFInfo:creating new CRMuser true
+2016-12-27 19:12:36.285 INFInfo:adding new CRMuser true
+2016-12-27 19:12:36.285 INFInfo:apdating CRMuserModel true
+2016-12-27 19:12:36.286 INFInfo:newCRMuser canceled
+2016-12-27 19:12:42.059 INFInfo:"user admin is logout"
+2016-12-27 19:16:50.311 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 19:16:50.434 INFInfo:selected: "2016-12-27"
+2016-12-27 19:16:56.618 INFInfo:newCRMuser canceled
+2016-12-27 19:16:59.313 INFInfo:"user admin is logout"

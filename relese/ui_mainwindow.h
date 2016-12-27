@@ -38,6 +38,7 @@ public:
     QAction *actionAddDiscount;
     QAction *actionLogout;
     QAction *actionHistoryLog;
+    QAction *actionCRMusers;
     QWidget *centralwidget;
     QTableView *tableView;
     QPushButton *addOrderButton;
@@ -84,6 +85,8 @@ public:
         actionLogout->setObjectName(QStringLiteral("actionLogout"));
         actionHistoryLog = new QAction(MainWindow);
         actionHistoryLog->setObjectName(QStringLiteral("actionHistoryLog"));
+        actionCRMusers = new QAction(MainWindow);
+        actionCRMusers->setObjectName(QStringLiteral("actionCRMusers"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         tableView = new QTableView(centralwidget);
@@ -176,6 +179,7 @@ public:
         menuWorkers->addAction(actionAdd_worker);
         menuDiscount->addAction(actionAddDiscount);
         menuSystem->addAction(actionHistoryLog);
+        menuSystem->addAction(actionCRMusers);
 
         retranslateUi(MainWindow);
 
@@ -192,6 +196,7 @@ public:
         actionAddDiscount->setText(QApplication::translate("MainWindow", "addDiscount", 0));
         actionLogout->setText(QApplication::translate("MainWindow", "logout", 0));
         actionHistoryLog->setText(QApplication::translate("MainWindow", "historyLog", 0));
+        actionCRMusers->setText(QApplication::translate("MainWindow", "CRMusers", 0));
         addOrderButton->setText(QApplication::translate("MainWindow", "add order", 0));
         delButton->setText(QApplication::translate("MainWindow", "del order", 0));
         editOrderPushButton->setText(QApplication::translate("MainWindow", "edit order", 0));

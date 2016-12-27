@@ -31,7 +31,8 @@
 #include "history.h"
 #include "buttondelegate.h"
 #include "loggingcategories.h"
-
+#include "movetocenter.h"
+#include "crmusers.h"
 
 
 namespace Ui {
@@ -78,8 +79,8 @@ private slots:
     void on_actionAddDiscount_triggered();
     void on_actionInfo_triggered();
 
-    void moveToCenter(QWidget& widget); //перегрузка функций
-    void moveToCenter(QWidget* widget);//отцентровка открывающихся окон
+//    void moveToCenter(QWidget& widget); //перегрузка функций
+//    void moveToCenter(QWidget* widget);//отцентровка открывающихся окон
 
     void setUserLogout();
     void whoOnline();
@@ -100,6 +101,8 @@ private slots:
 
     void on_actionHistoryLog_triggered();
 
+    void on_actionCRMusers_triggered();
+
 private:
     Ui::MainWindow *ui;
 
@@ -109,6 +112,7 @@ private:
     discounts *discounts_window;
     about *about_window;
     history *history_window;
+    CRMusers *crmusers_window;
 
     QString clickedDay;
     int typeIndex;

@@ -47,6 +47,7 @@ void workers::on_addWorkerPushButton_clicked()
     qDebug() << "inserting row into workers" <<  workersModel->insertRow(row);
     newWorker_window->workerMapper->setCurrentModelIndex(workersModel->index(row,0));
     newWorker_window->show();
+    moveToCenter(newWorker_window);
 
 }
 
@@ -54,6 +55,7 @@ void workers::on_tableView_doubleClicked(const QModelIndex &index)
 {
     newWorker_window->workerMapper->setCurrentModelIndex(index);
     newWorker_window->show();
+    moveToCenter(newWorker_window);
 
 }
 
@@ -61,7 +63,6 @@ void workers::workerAccepted()
 {
 
     qDebug() << "adding new worker" << workersModel->submitAll();
-
     qDebug() << "apdating workers model" << workersModel->select(); //все равно не обновляет
 
 }
@@ -76,4 +77,5 @@ void workers::on_workersTableView_doubleClicked(const QModelIndex &index)
 {
     newWorker_window->workerMapper->setCurrentModelIndex(index);
     newWorker_window->show();
+    moveToCenter(newWorker_window);
 }

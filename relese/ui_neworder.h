@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -22,7 +23,6 @@
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QTimeEdit>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -49,16 +49,16 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLineEdit *phone2lineEdit;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
     QPushButton *plusPushButton;
     QPushButton *minusPushButton;
+    QWidget *formLayoutWidget;
+    QFormLayout *formLayout;
 
     void setupUi(QWidget *newOrder)
     {
         if (newOrder->objectName().isEmpty())
             newOrder->setObjectName(QStringLiteral("newOrder"));
-        newOrder->resize(908, 448);
+        newOrder->resize(959, 693);
         applyButton = new QPushButton(newOrder);
         applyButton->setObjectName(QStringLiteral("applyButton"));
         applyButton->setGeometry(QRect(680, 400, 99, 27));
@@ -117,18 +117,18 @@ public:
         phone2lineEdit = new QLineEdit(newOrder);
         phone2lineEdit->setObjectName(QStringLiteral("phone2lineEdit"));
         phone2lineEdit->setGeometry(QRect(620, 190, 251, 27));
-        verticalLayoutWidget = new QWidget(newOrder);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(50, 10, 361, 421));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         plusPushButton = new QPushButton(newOrder);
         plusPushButton->setObjectName(QStringLiteral("plusPushButton"));
         plusPushButton->setGeometry(QRect(10, 40, 31, 31));
         minusPushButton = new QPushButton(newOrder);
         minusPushButton->setObjectName(QStringLiteral("minusPushButton"));
         minusPushButton->setGeometry(QRect(10, 80, 31, 31));
+        formLayoutWidget = new QWidget(newOrder);
+        formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
+        formLayoutWidget->setGeometry(QRect(50, 20, 441, 661));
+        formLayout = new QFormLayout(formLayoutWidget);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(newOrder);
 

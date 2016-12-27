@@ -6,8 +6,9 @@
 #include <QSqlDatabase>
 #include <QDebug>
 
-#include "newdiscount.h"
 
+#include "newdiscount.h"
+#include "movetocenter.h"
 namespace Ui {
 class discounts;
 }

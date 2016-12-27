@@ -10,6 +10,8 @@
 #include <QCloseEvent>
 #include <QLineEdit>
 #include <QDebug>
+#include <QSpinBox>
+#include <QTextEdit>
 
 #include "loggingcategories.h"
 
@@ -46,7 +48,7 @@ private slots:
 
 private:
     Ui::newOrder *ui;
-    int lineEditCounter;
+    int globalCounter;
 
 
 

@@ -9,6 +9,7 @@
 
 
 #include "newworker.h"
+#include "movetocenter.h"
 
 namespace Ui {
 class workers;
@@ -22,7 +23,7 @@ public:
     explicit workers(QWidget *parent = 0);
     ~workers();
 
-    newworker *newWorker_window;
+
 
 private slots:
     void on_addWorkerPushButton_clicked();
@@ -37,7 +38,7 @@ private slots:
 private:
     Ui::workers *ui;
     QSqlRelationalTableModel *workersModel;
-
+    newworker *newWorker_window;
 };
 
 #endif // WORKERS_H

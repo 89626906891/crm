@@ -293,6 +293,7 @@
      <string>system</string>
     </property>
     <addaction name="actionHistoryLog"/>
+    <addaction name="actionCRMusers"/>
    </widget>
    <addaction name="menuMenu"/>
    <addaction name="menuDiscount"/>
@@ -333,6 +334,11 @@
   <action name="actionHistoryLog">
    <property name="text">
     <string>historyLog</string>
+   </property>
+  </action>
+  <action name="actionCRMusers">
+   <property name="text">
+    <string>CRMusers</string>
    </property>
   </action>
  </widget>

@@ -48,6 +48,7 @@ void discounts::on_discountsTableView_doubleClicked(const QModelIndex &index)
      //отправляем что показывать в маппере
     new_discount_window->discountMapper->setCurrentModelIndex(index);
     new_discount_window->show();
+    moveToCenter(new_discount_window);
 }
 
 void discounts::newDiscount()
@@ -61,6 +62,7 @@ void discounts::on_addDiscountPushButton_clicked()
     qDebug() << "inserting row into Discounts" <<  discountsModel->insertRow(row);
     new_discount_window->discountMapper->setCurrentModelIndex(discountsModel->index(row,0));
     new_discount_window->show();
+    moveToCenter(new_discount_window);
 
 }
 void discounts::discountCancled()

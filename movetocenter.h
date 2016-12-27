@@ -2,16 +2,13 @@
 #define MOVETOCENTER_H
 
 #include <QObject>
+#include <QWidget>
+#include <QRect>
+#include <QPoint>
+#include <QDesktopWidget>
 
-class moveToCenter : public QObject
-{
-    Q_OBJECT
-public:
-    explicit moveToCenter(QObject *parent = 0);
 
-signals:
-
-public slots:
-};
+   void  moveToCenter(QWidget& widget); //перегрузка функций
+   void  moveToCenter(QWidget* widget);//отцентровка открывающихся окон
 
 #endif // MOVETOCENTER_H

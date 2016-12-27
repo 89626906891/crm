@@ -278,21 +278,6 @@ void MainWindow::on_actionInfo_triggered()
 
 
 
-//отцентровка окна
-void MainWindow::moveToCenter(QWidget& widget)
-{
-    QDesktopWidget desktop;
-    QRect rect = desktop.availableGeometry(desktop.primaryScreen());
-    QPoint center = rect.center(); //координаты центра экрана
-    center.setX(center.x() - (widget.width()/2));
-    center.setY(center.y() - (widget.height()/2));
-    widget.move(center);
-}
-//отцентровка с использованием перегрузки функции
-void MainWindow::moveToCenter(QWidget* widget)
-{
-    moveToCenter(*widget);
-}
 
 
 void MainWindow::setUserOnline(QString user)
@@ -486,4 +471,11 @@ void MainWindow::on_actionHistoryLog_triggered()
     history_window = new history;
     history_window->show();
     moveToCenter(history_window);
+}
+
+void MainWindow::on_actionCRMusers_triggered()
+{
+    crmusers_window = new CRMusers;
+    crmusers_window->show();
+    moveToCenter(crmusers_window);
 }

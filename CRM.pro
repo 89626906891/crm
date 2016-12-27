@@ -29,7 +29,10 @@ SOURCES += main.cpp\
     salarydelegate.cpp \
     buttondelegate.cpp \
     loggingcategories.cpp \
-    history.cpp
+    history.cpp \
+    movetocenter.cpp \
+    crmusers.cpp \
+    newcrmuser.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -46,7 +49,10 @@ HEADERS  += authdialog.h \
     salarydelegate.h \
     buttondelegate.h \
     loggingcategories.h \
-    history.h
+    history.h \
+    movetocenter.h \
+    crmusers.h \
+    newcrmuser.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \
@@ -56,7 +62,9 @@ FORMS    += authdialog.ui \
     discounts.ui \
     newdiscount.ui \
     about.ui \
-    history.ui
+    history.ui \
+    crmusers.ui \
+    newcrmuser.ui
 
 RESOURCES += \
     resources.qrc

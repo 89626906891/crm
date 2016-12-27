@@ -12,7 +12,7 @@ newOrder::newOrder(QWidget *parent) :   //добавляем заначение 
     ui->setupUi(this);
     this->setWindowTitle("Добавление нового заказа");
 
-    lineEditCounter = 0;
+    globalCounter = 0;
 
 
 
@@ -88,9 +88,19 @@ void newOrder::closeEvent(QCloseEvent *event)
 void newOrder::on_plusPushButton_clicked()
 {
     QLineEdit *lineedit = new QLineEdit(this);
-    lineedit->setObjectName("productLineEdit" + QString::number(lineEditCounter));
-    lineEditCounter++;                                        // Инкрементируем счётчик
-    ui->verticalLayout->addWidget(lineedit);                  // Помещаем  vertical layout
+    lineedit->setObjectName("productLineEdit" + QString::number(globalCounter));
+                                                              // Инкрементируем счётчик
+    ui->formLayout->addWidget(lineedit);                  // Помещаем  vertical layout
+
+    QSpinBox *spin = new QSpinBox(this);
+    spin->setObjectName("countLineEdit"+ QString::number(globalCounter));
+    ui->formLayout->addWidget(spin);
+
+    QTextEdit *textedit = new QTextEdit(this);
+    textedit->setObjectName("textEdit"+ QString::number(globalCounter));
+    ui->formLayout->addWidget(textedit);
+
+    globalCounter++;
 
 }
 
@@ -98,20 +108,29 @@ void newOrder::on_minusPushButton_clicked()
 {
     int counter = 0;
     // Выполняем перебор всех элементов слоя, где располагаются динамические кнопки
-    for(int i = 0; i < ui->verticalLayout->count(); i++)
+    for(int i = 0; i < ui->formLayout->count(); i++)
     {
      counter++;
     }
+
     //теперь отнимаем от каунтера 1 а то кака обычно...
     if(counter>=1)
     {
-        QLineEdit *line = qobject_cast<QLineEdit*>(ui->verticalLayout->itemAt(counter-1)->widget());
+
+        QLineEdit *line = qobject_cast<QLineEdit*>(ui->formLayout->itemAt(counter-3)->widget());
+        QSpinBox *spin = qobject_cast<QSpinBox*>(ui->formLayout->itemAt(counter-2)->widget());
+        QTextEdit *edit = qobject_cast<QTextEdit*>(ui->formLayout->itemAt(counter-1)->widget());
         line->hide();
+        spin->hide();
+        edit->hide();
+
         delete line;
+        delete spin;
+        delete edit;
     }
     else
     {
-        qWarning(logWarning()) << "не могу удалить lineEdit";
+        qWarning(logWarning()) << "не могу удалить поля";
     }
 
 
