@@ -288,9 +288,16 @@
     </property>
     <addaction name="actionAddDiscount"/>
    </widget>
+   <widget class="QMenu" name="menuSystem">
+    <property name="title">
+     <string>system</string>
+    </property>
+    <addaction name="actionHistoryLog"/>
+   </widget>
    <addaction name="menuMenu"/>
    <addaction name="menuDiscount"/>
    <addaction name="menuWorkers"/>
+   <addaction name="menuSystem"/>
    <addaction name="menuAbout"/>
   </widget>
   <action name="actionAdd_order">
@@ -321,6 +328,11 @@
   <action name="actionLogout">
    <property name="text">
     <string>logout</string>
+   </property>
+  </action>
+  <action name="actionHistoryLog">
+   <property name="text">
+    <string>historyLog</string>
    </property>
   </action>
  </widget>

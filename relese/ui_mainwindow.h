@@ -37,6 +37,7 @@ public:
     QAction *actionAdd_worker;
     QAction *actionAddDiscount;
     QAction *actionLogout;
+    QAction *actionHistoryLog;
     QWidget *centralwidget;
     QTableView *tableView;
     QPushButton *addOrderButton;
@@ -62,6 +63,7 @@ public:
     QMenu *menuAbout;
     QMenu *menuWorkers;
     QMenu *menuDiscount;
+    QMenu *menuSystem;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -80,6 +82,8 @@ public:
         actionAddDiscount->setObjectName(QStringLiteral("actionAddDiscount"));
         actionLogout = new QAction(MainWindow);
         actionLogout->setObjectName(QStringLiteral("actionLogout"));
+        actionHistoryLog = new QAction(MainWindow);
+        actionHistoryLog->setObjectName(QStringLiteral("actionHistoryLog"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         tableView = new QTableView(centralwidget);
@@ -156,11 +160,14 @@ public:
         menuWorkers->setObjectName(QStringLiteral("menuWorkers"));
         menuDiscount = new QMenu(menuBar);
         menuDiscount->setObjectName(QStringLiteral("menuDiscount"));
+        menuSystem = new QMenu(menuBar);
+        menuSystem->setObjectName(QStringLiteral("menuSystem"));
         MainWindow->setMenuBar(menuBar);
 
         menuBar->addAction(menuMenu->menuAction());
         menuBar->addAction(menuDiscount->menuAction());
         menuBar->addAction(menuWorkers->menuAction());
+        menuBar->addAction(menuSystem->menuAction());
         menuBar->addAction(menuAbout->menuAction());
         menuMenu->addAction(actionAdd_order);
         menuMenu->addAction(actionLogout);
@@ -168,6 +175,7 @@ public:
         menuAbout->addAction(actionInfo);
         menuWorkers->addAction(actionAdd_worker);
         menuDiscount->addAction(actionAddDiscount);
+        menuSystem->addAction(actionHistoryLog);
 
         retranslateUi(MainWindow);
 
@@ -183,6 +191,7 @@ public:
         actionAdd_worker->setText(QApplication::translate("MainWindow", "add worker", 0));
         actionAddDiscount->setText(QApplication::translate("MainWindow", "addDiscount", 0));
         actionLogout->setText(QApplication::translate("MainWindow", "logout", 0));
+        actionHistoryLog->setText(QApplication::translate("MainWindow", "historyLog", 0));
         addOrderButton->setText(QApplication::translate("MainWindow", "add order", 0));
         delButton->setText(QApplication::translate("MainWindow", "del order", 0));
         editOrderPushButton->setText(QApplication::translate("MainWindow", "edit order", 0));
@@ -201,6 +210,7 @@ public:
         menuAbout->setTitle(QApplication::translate("MainWindow", "about", 0));
         menuWorkers->setTitle(QApplication::translate("MainWindow", "workers", 0));
         menuDiscount->setTitle(QApplication::translate("MainWindow", "discount", 0));
+        menuSystem->setTitle(QApplication::translate("MainWindow", "system", 0));
     } // retranslateUi
 
 };

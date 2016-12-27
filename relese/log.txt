@@ -1,0 +1,71 @@
+2016-12-27 11:30:57.363 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 11:30:57.514 INFInfo:selected: "2016-12-27"
+2016-12-27 11:30:59.491 INFInfo:selected: "2016-12-28"
+2016-12-27 11:31:00.163 INFInfo:selected: "2016-12-27"
+2016-12-27 11:31:00.554 INFInfo:selected: "2016-12-26"
+2016-12-27 11:31:01.091 INFInfo:selected: "2016-12-27"
+2016-12-27 11:31:03.150 DBG default:"user admin is logout"
+2016-12-27 11:37:31.294 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 11:37:31.653 INFInfo:selected: "2016-12-27"
+2016-12-27 11:37:34.691 INFInfo:selected: "2016-12-28"
+2016-12-27 11:37:35.429 INFInfo:selected: "2016-12-27"
+2016-12-27 11:37:37.396 INFInfo:selected: "2016-12-26"
+2016-12-27 11:37:47.517 INFInfo:OK clicked
+2016-12-27 11:37:48.461 INFInfo:selected: "2016-12-27"
+2016-12-27 11:37:58.398 DBG default:filling add_date field true
+2016-12-27 11:37:59.537 DBG default:cancel
+2016-12-27 11:38:03.313 INFInfo:inserting row true
+2016-12-27 11:38:04.777 DBG default:cancel
+2016-12-27 11:38:14.295 DBG default:deleting row: true
+2016-12-27 11:38:24.321 INFInfo:OK clicked
+2016-12-27 11:38:26.995 INFInfo:"user admin is logout"
+2016-12-27 11:44:03.441 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 11:44:03.595 INFInfo:selected: "2016-12-27"
+2016-12-27 11:44:07.494 INFInfo:selected: "2016-12-28"
+2016-12-27 11:44:08.039 INFInfo:selected: "2016-12-27"
+2016-12-27 11:45:16.110 INFInfo:"user admin is logout"
+2016-12-27 11:54:47.040 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 11:54:47.186 INFInfo:selected: "2016-12-27"
+2016-12-27 11:54:53.931 INFInfo:"user admin is logout"
+2016-12-27 12:03:19.105 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 12:03:19.265 INFInfo:selected: "2016-12-27"
+2016-12-27 12:03:27.047 INFInfo:"user admin is logout"
+2016-12-27 12:05:28.879 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 12:05:29.035 INFInfo:selected: "2016-12-27"
+2016-12-27 12:05:40.518 INFInfo:OK clicked
+2016-12-27 12:05:41.997 INFInfo:selected: "2016-12-27"
+2016-12-27 12:05:42.453 INFInfo:selected: "2016-12-28"
+2016-12-27 12:05:42.932 INFInfo:selected: "2016-12-27"
+2016-12-27 12:05:43.317 INFInfo:selected: "2016-12-26"
+2016-12-27 12:05:43.862 INFInfo:selected: "2016-12-27"
+2016-12-27 12:05:44.573 INFInfo:selected: "2016-12-25"
+2016-12-27 12:05:44.973 INFInfo:selected: "2016-12-24"
+2016-12-27 12:05:45.806 INFInfo:selected: "2016-12-27"
+2016-12-27 12:06:18.740 INFInfo:selected: "2016-12-28"
+2016-12-27 12:06:19.092 INFInfo:selected: "2016-12-26"
+2016-12-27 12:06:19.509 INFInfo:selected: "2016-12-27"
+2016-12-27 12:07:21.777 INFInfo:OK clicked
+2016-12-27 12:07:27.993 INFInfo:OK clicked
+2016-12-27 12:07:31.901 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 12:07:34.388 INFInfo:selected: "2016-12-27"
+2016-12-27 12:07:35.817 DBG default:lastOrdersPushButton_clicked 
+2016-12-27 12:07:36.780 INFInfo:selected: "2016-12-27"
+2016-12-27 12:07:40.489 DBG default:lastCancelOrdersPushButton_clicked 
+2016-12-27 12:07:44.084 INFInfo:selected: "2016-12-27"
+2016-12-27 12:08:39.027 INFInfo:selected: "2016-12-28"
+2016-12-27 12:08:42.042 INFInfo:selected: "2016-12-29"
+2016-12-27 12:09:01.938 INFInfo:selected: "2016-12-26"
+2016-12-27 12:09:02.483 INFInfo:selected: "2016-12-27"
+2016-12-27 12:09:20.564 DBG default:"555"
+2016-12-27 12:09:24.504 DBG default:"55"
+2016-12-27 12:09:27.160 DBG default:inserting row into Discounts true
+2016-12-27 12:09:30.320 DBG default:discount canceled
+2016-12-27 12:09:33.603 INFInfo:selected: "2016-12-27"
+2016-12-27 12:09:34.034 INFInfo:selected: "2016-12-26"
+2016-12-27 12:09:34.443 INFInfo:selected: "2016-12-27"
+2016-12-27 12:09:35.090 INFInfo:selected: "2016-12-28"
+2016-12-27 12:09:35.643 INFInfo:selected: "2016-12-27"
+2016-12-27 12:09:43.568 INFInfo:"user admin is logout"
+2016-12-27 12:11:05.419 DBG default:New user is logged. Welcome: "admin"
+2016-12-27 12:11:05.573 INFInfo:selected: "2016-12-27"
+2016-12-27 12:11:11.644 INFInfo:"user admin is logout"

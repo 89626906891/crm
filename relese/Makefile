@@ -62,7 +62,9 @@ SOURCES       = ../main.cpp \
 		../comboboxstatusdelegate.cpp \
 		../phonenumberdelegate.cpp \
 		../salarydelegate.cpp \
-		../buttondelegate.cpp qrc_resources.cpp \
+		../buttondelegate.cpp \
+		../loggingcategories.cpp \
+		../history.cpp qrc_resources.cpp \
 		moc_authdialog.cpp \
 		moc_mainwindow.cpp \
 		moc_neworder.cpp \
@@ -75,7 +77,8 @@ SOURCES       = ../main.cpp \
 		moc_about.cpp \
 		moc_phonenumberdelegate.cpp \
 		moc_salarydelegate.cpp \
-		moc_buttondelegate.cpp
+		moc_buttondelegate.cpp \
+		moc_history.cpp
 OBJECTS       = main.o \
 		authdialog.o \
 		mainwindow.o \
@@ -91,6 +94,8 @@ OBJECTS       = main.o \
 		phonenumberdelegate.o \
 		salarydelegate.o \
 		buttondelegate.o \
+		loggingcategories.o \
+		history.o \
 		qrc_resources.o \
 		moc_authdialog.o \
 		moc_mainwindow.o \
@@ -104,7 +109,8 @@ OBJECTS       = main.o \
 		moc_about.o \
 		moc_phonenumberdelegate.o \
 		moc_salarydelegate.o \
-		moc_buttondelegate.o
+		moc_buttondelegate.o \
+		moc_history.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -184,7 +190,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../comboboxstatusdelegate.h \
 		../phonenumberdelegate.h \
 		../salarydelegate.h \
-		../buttondelegate.h ../main.cpp \
+		../buttondelegate.h \
+		../loggingcategories.h \
+		../history.h ../main.cpp \
 		../authdialog.cpp \
 		../mainwindow.cpp \
 		../neworder.cpp \
@@ -198,7 +206,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../comboboxstatusdelegate.cpp \
 		../phonenumberdelegate.cpp \
 		../salarydelegate.cpp \
-		../buttondelegate.cpp
+		../buttondelegate.cpp \
+		../loggingcategories.cpp \
+		../history.cpp
 QMAKE_TARGET  = CRM
 DESTDIR       = 
 TARGET        = CRM
@@ -207,7 +217,7 @@ TARGET        = CRM
 first: all
 ####### Build rules
 
-$(TARGET): ui_authdialog.h ui_mainwindow.h ui_neworder.h ui_workers.h ui_newworker.h ui_discounts.h ui_newdiscount.h ui_about.h $(OBJECTS)  
+$(TARGET): ui_authdialog.h ui_mainwindow.h ui_neworder.h ui_workers.h ui_newworker.h ui_discounts.h ui_newdiscount.h ui_about.h ui_history.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../CRM.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -370,9 +380,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../authdialog.h ../mainwindow.h ../neworder.h ../crmmodel.h ../workers.h ../newworker.h ../discounts.h ../newdiscount.h ../checkboxdelegate.h ../about.h ../comboboxstatusdelegate.h ../phonenumberdelegate.h ../salarydelegate.h ../buttondelegate.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../main.cpp ../authdialog.cpp ../mainwindow.cpp ../neworder.cpp ../crmmodel.cpp ../workers.cpp ../newworker.cpp ../discounts.cpp ../newdiscount.cpp ../checkboxdelegate.cpp ../about.cpp ../comboboxstatusdelegate.cpp ../phonenumberdelegate.cpp ../salarydelegate.cpp ../buttondelegate.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../authdialog.ui ../mainwindow.ui ../neworder.ui ../workers.ui ../newworker.ui ../discounts.ui ../newdiscount.ui ../about.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../authdialog.h ../mainwindow.h ../neworder.h ../crmmodel.h ../workers.h ../newworker.h ../discounts.h ../newdiscount.h ../checkboxdelegate.h ../about.h ../comboboxstatusdelegate.h ../phonenumberdelegate.h ../salarydelegate.h ../buttondelegate.h ../loggingcategories.h ../history.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../main.cpp ../authdialog.cpp ../mainwindow.cpp ../neworder.cpp ../crmmodel.cpp ../workers.cpp ../newworker.cpp ../discounts.cpp ../newdiscount.cpp ../checkboxdelegate.cpp ../about.cpp ../comboboxstatusdelegate.cpp ../phonenumberdelegate.cpp ../salarydelegate.cpp ../buttondelegate.cpp ../loggingcategories.cpp ../history.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../authdialog.ui ../mainwindow.ui ../neworder.ui ../workers.ui ../newworker.ui ../discounts.ui ../newdiscount.ui ../about.ui ../history.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -401,9 +411,9 @@ compiler_rcc_clean:
 qrc_resources.cpp: ../resources.qrc
 	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name resources ../resources.qrc -o qrc_resources.cpp
 
-compiler_moc_header_make_all: moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp moc_buttondelegate.cpp
+compiler_moc_header_make_all: moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp moc_buttondelegate.cpp moc_history.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp moc_buttondelegate.cpp
+	-$(DEL_FILE) moc_authdialog.cpp moc_mainwindow.cpp moc_neworder.cpp moc_crmmodel.cpp moc_workers.cpp moc_newworker.cpp moc_discounts.cpp moc_newdiscount.cpp moc_checkboxdelegate.cpp moc_about.cpp moc_phonenumberdelegate.cpp moc_salarydelegate.cpp moc_buttondelegate.cpp moc_history.cpp
 moc_authdialog.cpp: ../mainwindow.h \
 		../crmmodel.h \
 		../neworder.h \
@@ -416,7 +426,9 @@ moc_authdialog.cpp: ../mainwindow.h \
 		../phonenumberdelegate.h \
 		../salarydelegate.h \
 		../about.h \
+		../history.h \
 		../buttondelegate.h \
+		../loggingcategories.h \
 		../authdialog.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../authdialog.h -o moc_authdialog.cpp
 
@@ -431,7 +443,9 @@ moc_mainwindow.cpp: ../crmmodel.h \
 		../phonenumberdelegate.h \
 		../salarydelegate.h \
 		../about.h \
+		../history.h \
 		../buttondelegate.h \
+		../loggingcategories.h \
 		../mainwindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../mainwindow.h -o moc_mainwindow.cpp
 
@@ -470,11 +484,14 @@ moc_salarydelegate.cpp: ../salarydelegate.h
 moc_buttondelegate.cpp: ../buttondelegate.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../buttondelegate.h -o moc_buttondelegate.cpp
 
+moc_history.cpp: ../history.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/alexey/CRM -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../history.h -o moc_history.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_authdialog.h ui_mainwindow.h ui_neworder.h ui_workers.h ui_newworker.h ui_discounts.h ui_newdiscount.h ui_about.h
+compiler_uic_make_all: ui_authdialog.h ui_mainwindow.h ui_neworder.h ui_workers.h ui_newworker.h ui_discounts.h ui_newdiscount.h ui_about.h ui_history.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_authdialog.h ui_mainwindow.h ui_neworder.h ui_workers.h ui_newworker.h ui_discounts.h ui_newdiscount.h ui_about.h
+	-$(DEL_FILE) ui_authdialog.h ui_mainwindow.h ui_neworder.h ui_workers.h ui_newworker.h ui_discounts.h ui_newdiscount.h ui_about.h ui_history.h
 ui_authdialog.h: ../authdialog.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../authdialog.ui -o ui_authdialog.h
 
@@ -499,6 +516,9 @@ ui_newdiscount.h: ../newdiscount.ui
 ui_about.h: ../about.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../about.ui -o ui_about.h
 
+ui_history.h: ../history.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../history.ui -o ui_history.h
+
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:
@@ -522,7 +542,9 @@ main.o: ../main.cpp ../authdialog.h \
 		../phonenumberdelegate.h \
 		../salarydelegate.h \
 		../about.h \
-		../buttondelegate.h
+		../history.h \
+		../buttondelegate.h \
+		../loggingcategories.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 authdialog.o: ../authdialog.cpp ../authdialog.h \
@@ -538,7 +560,9 @@ authdialog.o: ../authdialog.cpp ../authdialog.h \
 		../phonenumberdelegate.h \
 		../salarydelegate.h \
 		../about.h \
+		../history.h \
 		../buttondelegate.h \
+		../loggingcategories.h \
 		ui_authdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o authdialog.o ../authdialog.cpp
 
@@ -554,7 +578,9 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		../phonenumberdelegate.h \
 		../salarydelegate.h \
 		../about.h \
+		../history.h \
 		../buttondelegate.h \
+		../loggingcategories.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
@@ -602,6 +628,13 @@ salarydelegate.o: ../salarydelegate.cpp ../salarydelegate.h
 buttondelegate.o: ../buttondelegate.cpp ../buttondelegate.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o buttondelegate.o ../buttondelegate.cpp
 
+loggingcategories.o: ../loggingcategories.cpp ../loggingcategories.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o loggingcategories.o ../loggingcategories.cpp
+
+history.o: ../history.cpp ../history.h \
+		ui_history.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o history.o ../history.cpp
+
 qrc_resources.o: qrc_resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
@@ -643,6 +676,9 @@ moc_salarydelegate.o: moc_salarydelegate.cpp
 
 moc_buttondelegate.o: moc_buttondelegate.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_buttondelegate.o moc_buttondelegate.cpp
+
+moc_history.o: moc_history.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_history.o moc_history.cpp
 
 ####### Install
 

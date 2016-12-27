@@ -7,6 +7,7 @@
 #include <QApplication>
 #include <QDialog>
 #include <QMouseEvent>
+#include <QDebug>
 
 class buttonDelegate : public QItemDelegate
 {

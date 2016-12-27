@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     comboboxstatusdelegate.cpp \
     phonenumberdelegate.cpp \
     salarydelegate.cpp \
-    buttondelegate.cpp
+    buttondelegate.cpp \
+    loggingcategories.cpp \
+    history.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -42,7 +44,9 @@ HEADERS  += authdialog.h \
     comboboxstatusdelegate.h \
     phonenumberdelegate.h \
     salarydelegate.h \
-    buttondelegate.h
+    buttondelegate.h \
+    loggingcategories.h \
+    history.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \
@@ -51,7 +55,8 @@ FORMS    += authdialog.ui \
     newworker.ui \
     discounts.ui \
     newdiscount.ui \
-    about.ui
+    about.ui \
+    history.ui
 
 RESOURCES += \
     resources.qrc

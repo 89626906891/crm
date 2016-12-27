@@ -58,6 +58,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->calendarWidget = new QCalendarWidget();
 
+
+
+    // Устанавливаем Контекстное Меню
+    ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
+
+
+
     //выводим кол-во добавленных заказов за день(обновляем раз в секунду)
     showOrdersForToday();
     QTimer *timerShowOrders = new QTimer(this);
@@ -85,6 +92,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(new_o,SIGNAL(signalCancelOrder()),this,SLOT(orderCancled()));
     connect(new_o,SIGNAL(sigClose()),this,SLOT(orderCancled()));
     connect(ui->ComboWorkersBox,SIGNAL(currentIndexChanged(const QString&)),this,SLOT(slot_comboWorkersBox_currentIndexChanged(QString)));
+    // Подключаем СЛОТ вызова контекстного меню
+    connect(ui->tableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotRightClickMenuRequested(QPoint)));
 
 
 
@@ -165,7 +174,8 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
     clickedDay = date.toString("yyyy-MM-dd");
     model->setFilter(QString("exec_date = '%1'").arg(date.toString("yyyy-MM-dd")));
     model->sort(7,Qt::AscendingOrder);
-    qDebug() <<"selected:" << date.toString("yyyy-MM-dd");
+  //  qDebug() <<"selected:" << date.toString("yyyy-MM-dd");
+    qInfo(logInfo()) <<"selected:" << date.toString("yyyy-MM-dd");
     //выводим кол-во заказов на выбранный день в календаре
     currentDayTotalOrdersQuery = new QSqlQuery;
     currentDayTotalOrdersQuery->prepare("SELECT * FROM orders WHERE exec_date = :d");
@@ -196,14 +206,14 @@ void MainWindow::on_editOrderPushButton_clicked()
     int selectedOrder = ui->tableView->currentIndex().row();
     if (selectedOrder >=0)
     {
-        qDebug() << "order to edit = " << selectedOrder;
+        qInfo(logInfo()) << "order to edit = " << selectedOrder;
         new_o->mapper->setCurrentModelIndex(model->index(selectedOrder,0));
         new_o->show();
         moveToCenter(new_o);
     }
     else
     {
-        qDebug() << "no row selected";
+        qInfo(logInfo()) << "no row selected";
         QMessageBox::warning(0,"warning","вы не выбрали ни одного заказа!!!",QMessageBox::Cancel);
     }
 
@@ -211,14 +221,14 @@ void MainWindow::on_editOrderPushButton_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    qDebug() << "OK clicked";
+    qInfo(logInfo()) << "OK clicked";
     model->submitAll();
 }
 
 void MainWindow::on_actionAdd_order_triggered()
 {
     const int row = model->rowCount();
-    qDebug() << "inserting row" <<  model->insertRow(row);
+    qInfo(logInfo()) << "inserting row" <<  model->insertRow(row);
     new_o->mapper->setCurrentModelIndex(model->index(row,0));
     new_o->show();
     moveToCenter(new_o);
@@ -237,7 +247,7 @@ void MainWindow::slot_comboWorkersBox_currentIndexChanged(const QString &arg1)
     {
         clickedDay = QDate::currentDate().toString("yyyy-MM-dd");
     }
-    qDebug() << clickedDay;
+    qInfo(logInfo()) << clickedDay;
     model->setFilter(QString( "name = '%1' and exec_date = '%2'")
                      .arg(arg1)
                      .arg(clickedDay));
@@ -292,7 +302,7 @@ void MainWindow::setUserOnline(QString user)
 
 void MainWindow::setUserLogout()
 {
-    qDebug() << "user "+this->userOnline+" is logout";
+    qInfo(logInfo()) << "user "+this->userOnline+" is logout";
 
     QSqlQuery logoutTimeQuery;
     logoutTimeQuery.prepare(QString("UPDATE users SET lastlogout='%1' WHERE login='%2'")
@@ -302,13 +312,13 @@ void MainWindow::setUserLogout()
 
     if(!logoutTimeQuery.exec())
     {
-        qDebug() << "can't update logoutTime";
+        qWarning(logWarning()) << "can't update logoutTime";
     }
     QSqlQuery logoutQuery;
     logoutQuery.prepare(QString("UPDATE users SET online='0' WHERE login='%1'").arg(this->userOnline));
     if(!logoutQuery.exec())
     {
-        qDebug() << "can't update LOGOUT";
+        qWarning(logWarning()) << "can't update LOGOUT";
     }
 }
 
@@ -337,10 +347,10 @@ void MainWindow::showOrdersForToday()
 {
 
     QSqlQuery todayOrdersQuery;
-    todayOrdersQuery.prepare(QString("SELECT * FROM orders WHERE add_date LIKE '%1%'").arg(QDate::currentDate().toString("yyyy-MM-dd ")));
+    todayOrdersQuery.prepare(QString("SELECT * FROM orders WHERE add_date LIKE '%1%'").arg(QDate::currentDate().toString("yyyy-MM-dd")));
     if(!todayOrdersQuery.exec())
     {
-         qDebug() <<"error SELECTing todayOrdersQuery" << QDate::currentDate().toString("yyyy-MM-dd");
+         qWarning(logWarning()) <<"error SELECTing todayOrdersQuery" << QDate::currentDate().toString("yyyy-MM-dd");
     }
     int ordersCounter = 0;
     while(todayOrdersQuery.next())
@@ -414,4 +424,66 @@ void MainWindow::on_lastCancelOrdersPushButton_clicked()
     //model->setFilter(QString( "status_name = 'cancel'"));
     model->setFilter( QString(tr("status_name = 'cancel'")));
     model->select();
+}
+
+void MainWindow::slotRightClickMenuRequested(QPoint pos)
+{
+    // Создаем объект контекстного меню
+    QMenu * menu = new QMenu(this);
+    // Создаём действия для контекстного меню
+    QAction * editOrder = new QAction(trUtf8("Редактировать"), this);
+    QAction * deleteOrder = new QAction(trUtf8("Удалить"), this);
+    // Подключаем СЛОТы обработчики для действий контекстного меню
+    connect(editOrder, SIGNAL(triggered()), this, SLOT(on_editOrderPushButton_clicked()));     // Обработчик вызова диалога редактирования
+    connect(deleteOrder, SIGNAL(triggered()), this, SLOT(on_delButton_clicked())); // Обработчик удаления записи
+    // Устанавливаем действия в меню
+    menu->addAction(editOrder);
+    menu->addAction(deleteOrder);
+    // Вызываем контекстное меню
+    menu->popup(ui->tableView->viewport()->mapToGlobal(pos));
+}
+
+
+//void MainWindow::slotRightClickDelete()
+//{
+//    /* Выясняем, какая из строк была выбрана
+//     * */
+//    int row = ui->deviceTableView->selectionModel()->currentIndex().row();
+//    /* Проверяем, что строка была действительно выбрана
+//     * */
+//    if(row >= 0){
+//        /* Задаём вопрос, стоит ли действительно удалять запись.
+//         * При положительном ответе удаляем запись
+//         * */
+//        if (QMessageBox::warning(this,
+//                                 trUtf8("Удаление записи"),
+//                                 trUtf8("Вы уверены, что хотите удалить эту запись?"),
+//                                 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+//        {
+//            /* При отрицательном ответе делаем откат действий
+//             * и закрываем диалог без удаления записи
+//             * */
+//            QSqlDatabase::database().rollback();
+//            return;
+//        } else {
+//            /* В противном случае производим удаление записи.
+//             * При успешном удалении обновляем таблицу.
+//             * */
+//            if(!modelDevice->removeRow(row)){
+//                QMessageBox::warning(this,trUtf8("Уведомление"),
+//                                     trUtf8("Не удалось удалить запись\n"
+//                                            "Возможно она используется другими таблицами\n"
+//                                            "Проверьте все зависимости и повторите попытку"));
+//            }
+//            modelDevice->select();
+//            ui->deviceTableView->setCurrentIndex(modelDevice->index(-1, -1));
+//        }
+//    }
+//}
+
+void MainWindow::on_actionHistoryLog_triggered()
+{
+    history_window = new history;
+    history_window->show();
+    moveToCenter(history_window);
 }

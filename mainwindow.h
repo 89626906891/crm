@@ -14,7 +14,8 @@
 #include <QPoint>
 #include <QTimer>
 #include <QSortFilterProxyModel>
-
+#include <QMenu>
+#include <QAction>
 
 
 #include "crmmodel.h"
@@ -27,7 +28,9 @@
 #include "phonenumberdelegate.h"
 #include "salarydelegate.h"
 #include "about.h"
+#include "history.h"
 #include "buttondelegate.h"
+#include "loggingcategories.h"
 
 
 
@@ -92,6 +95,11 @@ private slots:
 
     void on_lastCancelOrdersPushButton_clicked();
 
+    void slotRightClickMenuRequested(QPoint pos); //меню по правой кнопки крысы
+
+
+    void on_actionHistoryLog_triggered();
+
 private:
     Ui::MainWindow *ui;
 
@@ -100,6 +108,7 @@ private:
     workers *workers_window;
     discounts *discounts_window;
     about *about_window;
+    history *history_window;
 
     QString clickedDay;
     int typeIndex;
