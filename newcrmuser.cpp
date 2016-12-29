@@ -44,6 +44,7 @@ void newCrmUser::setModel(QSqlRelationalTableModel *CRMusersModel)
     crmUserMapper->addMapping(ui->namelineEdit,8);
     crmUserMapper->addMapping(ui->loginlineEdit,1);
     crmUserMapper->addMapping(ui->passwordlineEdit,2);
+    crmUserMapper->addMapping(ui->paymentPasswordlineEdit,9);
     crmUserMapper->addMapping(ui->accesscheckBox,6);
     crmUserMapper->addMapping(ui->activecheckBox,10);
 

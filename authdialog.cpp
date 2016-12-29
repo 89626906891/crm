@@ -54,10 +54,12 @@ void AuthDialog::on_enterButton_clicked()
     }
     else
     {
+        //проверяем логин и рароль а так же чтобы юзер был актиыным(незаблоченным)
         query = new QSqlQuery;
-        query->prepare("SELECT * FROM users WHERE password = :pass AND login=:user");
+        query->prepare("SELECT * FROM users WHERE password = :pass AND login=:user AND isactive=:is");
         query->bindValue(":pass", ui->passwordLineEdit->text());
         query->bindValue(":user", ui->loginLineEdit->text());
+        query->bindValue(":is", 1);
 
         if(!query->exec())
         {
@@ -90,7 +92,7 @@ void AuthDialog::on_enterButton_clicked()
                enterMess = new QMessageBox();
                enterMess->critical(0, qApp->tr("Ошибка Доступа "),
                                   qApp->tr("неверный логин или пароль .\n"
-                                           "\n\n"
+                                           "или ваш аккаунт был заблокирован!\n"
 
                                            "Нажмите Cancel для выхода."), enterMess->Cancel);
 
