@@ -16,7 +16,9 @@
 #include <QSortFilterProxyModel>
 #include <QMenu>
 #include <QAction>
-
+#include <QBoxLayout>
+#include <QWidget>
+#include <QTextCharFormat>
 
 #include "crmmodel.h"
 #include "neworder.h"
@@ -33,7 +35,7 @@
 #include "loggingcategories.h"
 #include "movetocenter.h"
 #include "crmusers.h"
-
+#include "mycalendarwidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -120,7 +122,7 @@ private:
     QSqlQuery *currentDayTotalOrdersQuery;
 
     QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации
-
+    QWidget* createButtonWidget() const;
 
 protected:
     void closeEvent(QCloseEvent *event);

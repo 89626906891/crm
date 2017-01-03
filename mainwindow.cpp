@@ -35,10 +35,21 @@ MainWindow::MainWindow(QWidget *parent) :
     model = new CRMModel(this,baze);
     ui->tableView->setModel(model);
   //  ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    model->setHeaderData(1, Qt::Horizontal, "адрес");
+    model->setHeaderData(2, Qt::Horizontal, "заказ");
+    model->setHeaderData(3, Qt::Horizontal, "телефон");
+    model->setHeaderData(4, Qt::Horizontal, "телефон 2");
+    model->setHeaderData(7, Qt::Horizontal, "со скольки");
+    model->setHeaderData(8, Qt::Horizontal, "до скольки");
+    model->setHeaderData(9, Qt::Horizontal, "выручка");
+    model->setHeaderData(10, Qt::Horizontal, "работник");
+
     ui->tableView->resizeColumnsToContents();
     ui->tableView->setAlternatingRowColors(true);
     ui->tableView->horizontalHeader()->setStretchLastSection(true);
     ui->tableView->hideColumn(0);
+    ui->tableView->hideColumn(5);
     ui->tableView->hideColumn(14);
     ui->tableView->hideColumn(15);
     ui->tableView->hideColumn(17);
@@ -47,18 +58,35 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("payment_name"),new QSqlRelationalDelegate(ui->tableView)); //способ оплаты
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone"), new PhoneNumberDelegate(ui->tableView)); //делаем маску для телефона
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone2"), new PhoneNumberDelegate(ui->tableView));
-    ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), new buttonDelegate(ui->tableView)); //кнопка в таблице
+
+
+  for( int i = 0; i < model->rowCount(); ++i )
+  {
+    ui->tableView->setIndexWidget(ui->tableView->model()->index(i, model->fieldIndex("attach")),createButtonWidget());
+  }
+    //ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), new buttonDelegate(ui->tableView)); //кнопка в таблице
+
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("salary"), new salaryDelegate(ui->tableView)); //чтобы отображалась валюта
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("checked"),new CheckBoxDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
+
+
+
+
 
     new_o = new newOrder();
     new_o->setParent(this,Qt::Window);
     new_o->setModel(model);
 
 
-    ui->calendarWidget = new QCalendarWidget();
 
+    //посвечиваем текущий день
+    QTextCharFormat fmt;
+    fmt.setBackground(Qt::yellow);
+    //QDate date = QDate::currentDate();
+    ui->calendarWidget->setDateTextFormat(QDate::currentDate(), fmt);
 
+    //определяем календарик
+    ui->calendarWidget = new QCalendarWidget(this);
 
     // Устанавливаем Контекстное Меню
     ui->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -258,7 +286,9 @@ void MainWindow::slot_comboWorkersBox_currentIndexChanged(const QString &arg1)
 
 void MainWindow::on_todayPushButton_clicked()
 {
-    ui->calendarWidget->showToday();
+    QDate cdate = QDate::currentDate();
+    cdate.setDate(cdate.year(),cdate.month(),cdate.day());
+    ui->calendarWidget->setSelectedDate(cdate);
     //не работает!!!!!!!!!
 }
 
@@ -478,4 +508,18 @@ void MainWindow::on_actionCRMusers_triggered()
     crmusers_window = new CRMusers;
     crmusers_window->show();
     moveToCenter(crmusers_window);
+}
+
+QWidget* MainWindow::createButtonWidget() const
+{
+    QWidget* wgt = new QWidget;
+    QBoxLayout* l = new QHBoxLayout;
+    QPushButton* btn = new QPushButton( "Click me!" );
+ //   connect( btn, SIGNAL( clicked( bool ) ), SLOT( onBtnClicked() ) );
+    l->setMargin( 0 );
+    l->addWidget( btn );
+    l->addStretch();
+    wgt->setLayout( l );
+
+    return wgt;
 }

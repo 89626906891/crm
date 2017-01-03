@@ -8,14 +8,14 @@ buttonDelegate::buttonDelegate(QObject *parent):QItemDelegate(parent)
 void buttonDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QStyleOptionButton button;
-    QRect r = option.rect;//getting the rect of the cell
+    QRect r = option.rect;
     int x,y,w,h;
-    x = r.left() + r.width() - 30;//the X coordinate
-    y = r.top();//the Y coordinate
-    w = 30;//ширина кнопки
+    x = r.left() + r.width() - 90;//расположение в ячейки
+    y = r.top();
+    w = 90;//ширина кнопки
     h = 30;//высота кнопки
     button.rect = QRect(x,y,w,h);
-    button.text = "=^.^=";
+    button.text = "загрузить";
     button.state = QStyle::State_Enabled;
 
     QApplication::style()->drawControl( QStyle::CE_PushButton, &button, painter);
@@ -31,9 +31,9 @@ bool buttonDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const
 
         QRect r = option.rect;//getting the rect of the cell
         int x,y,w,h;
-        x = r.left() + r.width() - 30;//the X coordinate
+        x = r.left() + r.width() - 90;//the X coordinate
         y = r.top();//the Y coordinate
-        w = 30;//ширина кнопки
+        w = 60;//ширина кнопки
         h = 30;//высота кнопки
 
         //если попали в кнопку
