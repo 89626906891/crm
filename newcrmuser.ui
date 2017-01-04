@@ -88,8 +88,8 @@
   <widget class="QCheckBox" name="accesscheckBox">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>260</y>
+     <x>190</x>
+     <y>150</y>
      <width>97</width>
      <height>22</height>
     </rect>
@@ -127,8 +127,8 @@
   <widget class="QCheckBox" name="activecheckBox">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>290</y>
+     <x>190</x>
+     <y>180</y>
      <width>97</width>
      <height>22</height>
     </rect>
@@ -162,6 +162,38 @@
    <property name="text">
     <string>payment password:</string>
    </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>210</y>
+     <width>491</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;dfgdfg&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>391</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Для отключения пользователя от системы и его блокировки &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;снимите галочку isActive.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

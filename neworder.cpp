@@ -22,6 +22,10 @@ newOrder::newOrder(QWidget *parent) :   //добавляем заначение 
     ui->phoneLineEdit->setInputMask("+7 (999) 999-99-99");
     ui->phone2lineEdit->setInputMask("+7 (999) 999-99-99");
 
+    //делаем попап календарик
+    ui->execDateEdit->setCalendarPopup(true);
+    ui->execDateEdit->setDate(QDate::currentDate());
+
 
 
 

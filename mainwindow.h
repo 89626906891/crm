@@ -36,6 +36,7 @@
 #include "movetocenter.h"
 #include "crmusers.h"
 #include "mycalendarwidget.h"
+#include "crmuserdelegate.h"
 
 namespace Ui {
 class MainWindow;
@@ -122,7 +123,6 @@ private:
     QSqlQuery *currentDayTotalOrdersQuery;
 
     QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации
-    QWidget* createButtonWidget() const;
 
 protected:
     void closeEvent(QCloseEvent *event);

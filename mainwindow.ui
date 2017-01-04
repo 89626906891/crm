@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1249</width>
+    <width>1709</width>
     <height>1036</height>
    </rect>
   </property>
@@ -18,45 +18,19 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>220</y>
-      <width>1151</width>
-      <height>751</height>
+      <y>260</y>
+      <width>1631</width>
+      <height>711</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="addOrderButton">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>10</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>add order</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="delButton">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>40</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>del order</string>
     </property>
    </widget>
    <widget class="QCalendarWidget" name="calendarWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>491</width>
-      <height>200</height>
+      <y>20</y>
+      <width>291</width>
+      <height>181</height>
      </rect>
     </property>
     <property name="gridVisible">
@@ -69,24 +43,11 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="editOrderPushButton">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>70</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>edit order</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>1180</x>
-      <y>480</y>
+      <x>1650</x>
+      <y>490</y>
       <width>51</width>
       <height>31</height>
      </rect>
@@ -95,161 +56,424 @@
      <string>ok</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="ComboWorkersBox">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>170</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="todayPushButton">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>100</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>today</string>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
+      <x>490</x>
       <y>10</y>
-      <width>251</width>
-      <height>71</height>
+      <width>381</width>
+      <height>221</height>
      </rect>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+    <property name="title">
+     <string>sip телефон</string>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="ordersForTodaylabel">
+    <widget class="QPushButton" name="b1">
      <property name="geometry">
       <rect>
-       <x>196</x>
-       <y>10</y>
+       <x>0</x>
+       <y>20</y>
        <width>51</width>
-       <height>20</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>1</string>
      </property>
     </widget>
-    <widget class="QLabel" name="currentDayordersLabel">
+    <widget class="QPushButton" name="b2">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>40</y>
+       <x>60</x>
+       <y>20</y>
        <width>51</width>
-       <height>16</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>2</string>
      </property>
     </widget>
-    <widget class="QLabel" name="currentDayordersLabel_3">
+    <widget class="QPushButton" name="b3">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b5">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>70</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b6">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>70</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>70</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b8">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>120</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b9">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>120</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>9</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b7">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>120</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>7</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="bzvezda">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>170</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>*</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b0">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>170</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="breshotka">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>#</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="PhoneLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>20</y>
+       <width>191</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CallPushButton">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>50</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>позвонить</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="HangUpPushButton">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>повесить</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>10</y>
+      <width>181</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>основное меню</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <widget class="QPushButton" name="addOrderButton">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
-       <width>91</width>
-       <height>17</height>
+       <y>20</y>
+       <width>151</width>
+       <height>27</height>
       </rect>
      </property>
      <property name="text">
-      <string>найденно на </string>
+      <string>add order</string>
      </property>
     </widget>
-    <widget class="QLabel" name="findDatelabel">
+    <widget class="QPushButton" name="editOrderPushButton">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>40</y>
-       <width>81</width>
-       <height>17</height>
+       <x>10</x>
+       <y>80</y>
+       <width>151</width>
+       <height>27</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>edit order</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>151</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>del order</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="logoutPushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>151</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>logout</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="lastOrdersPushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>151</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lastOrders</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="lastCancelOrdersPushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>151</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lastCancelOrders</string>
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="currentDayordersLabel_2">
+   <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>1340</x>
       <y>20</y>
-      <width>171</width>
-      <height>17</height>
+      <width>291</width>
+      <height>111</height>
      </rect>
     </property>
-    <property name="text">
-     <string>добавленно за сегодня</string>
+    <property name="title">
+     <string>статистика</string>
     </property>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>251</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="ordersForTodaylabel">
+      <property name="geometry">
+       <rect>
+        <x>196</x>
+        <y>10</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currentDayordersLabel">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>40</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currentDayordersLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>91</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>найденно на </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="findDatelabel">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>40</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currentDayordersLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>171</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>добавленно за сегодня</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>166</y>
-      <width>151</width>
-      <height>31</height>
+      <x>10</x>
+      <y>210</y>
+      <width>191</width>
+      <height>51</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Выбрать работника:</string>
+    <property name="title">
+     <string>отфильтровать по работнику</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="logoutPushButton">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>130</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>logout</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="lastOrdersPushButton">
-    <property name="geometry">
-     <rect>
-      <x>850</x>
-      <y>170</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>lastOrders</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="lastCancelOrdersPushButton">
-    <property name="geometry">
-     <rect>
-      <x>1010</x>
-      <y>170</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>lastCancelOrders</string>
-    </property>
+    <widget class="QComboBox" name="ComboWorkersBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>151</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -258,7 +482,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1249</width>
+     <width>1709</width>
      <height>27</height>
     </rect>
    </property>

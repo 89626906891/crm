@@ -10,12 +10,12 @@ void buttonDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option
     QStyleOptionButton button;
     QRect r = option.rect;
     int x,y,w,h;
-    x = r.left() + r.width() - 90;//расположение в ячейки
+    x = r.left() + r.width() - 30;//расположение в ячейки
     y = r.top();
-    w = 90;//ширина кнопки
+    w = 30;//ширина кнопки
     h = 30;//высота кнопки
     button.rect = QRect(x,y,w,h);
-    button.text = "загрузить";
+    button.text = ":)";
     button.state = QStyle::State_Enabled;
 
     QApplication::style()->drawControl( QStyle::CE_PushButton, &button, painter);
@@ -29,22 +29,27 @@ bool buttonDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const
         int clickX = e->x();
         int clickY = e->y();
 
-        QRect r = option.rect;//getting the rect of the cell
+        QRect r = option.rect;
         int x,y,w,h;
-        x = r.left() + r.width() - 90;//the X coordinate
+        x = r.left() + r.width() - 30;
         y = r.top();//the Y coordinate
-        w = 60;//ширина кнопки
+        w = 30;//ширина кнопки
         h = 30;//высота кнопки
 
         //если попали в кнопку
         if( clickX > x && clickX < x + w )
             if( clickY > y && clickY < y + h )
             {
-                qDebug() << index.column();
-                qDebug() << index.row();
+
                 QDialog * d = new QDialog();
+                QLabel *l = new QLabel(d);
                 d->setGeometry(0,0,100,100);
                 d->show();
+
+                int t = index.row();
+                l->setNum(t);
+                qDebug() << index.column();
+                qDebug() << index.row();
             }
     }
 }

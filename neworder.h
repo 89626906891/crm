@@ -12,6 +12,8 @@
 #include <QDebug>
 #include <QSpinBox>
 #include <QTextEdit>
+#include <QDate>
+
 
 #include "loggingcategories.h"
 

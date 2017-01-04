@@ -9,6 +9,10 @@
 #include <QMouseEvent>
 #include <QDebug>
 
+
+
+#include <QLabel>
+
 class buttonDelegate : public QItemDelegate
 {
     Q_OBJECT

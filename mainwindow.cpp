@@ -40,10 +40,15 @@ MainWindow::MainWindow(QWidget *parent) :
     model->setHeaderData(2, Qt::Horizontal, "заказ");
     model->setHeaderData(3, Qt::Horizontal, "телефон");
     model->setHeaderData(4, Qt::Horizontal, "телефон 2");
+    model->setHeaderData(6, Qt::Horizontal, "выполнить");
     model->setHeaderData(7, Qt::Horizontal, "со скольки");
     model->setHeaderData(8, Qt::Horizontal, "до скольки");
     model->setHeaderData(9, Qt::Horizontal, "выручка");
     model->setHeaderData(10, Qt::Horizontal, "работник");
+    model->setHeaderData(13, Qt::Horizontal, "статус");
+    model->setHeaderData(16, Qt::Horizontal, "тип оплаты");
+    model->setHeaderData(18, Qt::Horizontal, "файл");
+    model->setHeaderData(21, Qt::Horizontal, "кто принял");
 
     ui->tableView->resizeColumnsToContents();
     ui->tableView->setAlternatingRowColors(true);
@@ -53,21 +58,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView->hideColumn(14);
     ui->tableView->hideColumn(15);
     ui->tableView->hideColumn(17);
+
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("name"),new QSqlRelationalDelegate(ui->tableView)); //для combobox работники
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("status_name"),new QSqlRelationalDelegate(ui->tableView)); //для комбобокса со статусом заказа
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("payment_name"),new QSqlRelationalDelegate(ui->tableView)); //способ оплаты
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone"), new PhoneNumberDelegate(ui->tableView)); //делаем маску для телефона
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone2"), new PhoneNumberDelegate(ui->tableView));
 
-
-  for( int i = 0; i < model->rowCount(); ++i )
-  {
-    ui->tableView->setIndexWidget(ui->tableView->model()->index(i, model->fieldIndex("attach")),createButtonWidget());
-  }
-    //ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), new buttonDelegate(ui->tableView)); //кнопка в таблице
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), new buttonDelegate(ui->tableView)); //кнопка в таблице
 
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("salary"), new salaryDelegate(ui->tableView)); //чтобы отображалась валюта
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("checked"),new CheckBoxDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("crmuser_id"),new CrmUserDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
 
 
 
@@ -510,16 +512,3 @@ void MainWindow::on_actionCRMusers_triggered()
     moveToCenter(crmusers_window);
 }
 
-QWidget* MainWindow::createButtonWidget() const
-{
-    QWidget* wgt = new QWidget;
-    QBoxLayout* l = new QHBoxLayout;
-    QPushButton* btn = new QPushButton( "Click me!" );
- //   connect( btn, SIGNAL( clicked( bool ) ), SLOT( onBtnClicked() ) );
-    l->setMargin( 0 );
-    l->addWidget( btn );
-    l->addStretch();
-    wgt->setLayout( l );
-
-    return wgt;
-}

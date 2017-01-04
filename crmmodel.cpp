@@ -10,6 +10,7 @@ CRMModel::CRMModel(QObject *parent, QSqlDatabase db)
     setRelation(fieldIndex("worker_id"),QSqlRelation("workers","worker_id","name"));
     setRelation(fieldIndex("order_status"),QSqlRelation("status","idstatus","status_name"));
     setRelation(fieldIndex("payment_id"),QSqlRelation("payment_type","payment_type_id","payment_name"));
+    setRelation(fieldIndex("crmuser_id"),QSqlRelation("users","idusers","name"));
 
     select();
 }
@@ -29,6 +30,10 @@ QVariant CRMModel::data(const QModelIndex &index, int role) const
             return QColor(Qt::green);
         }
     }
+//    else if (index.column() == fieldIndex("crmuser_id") && role == Qt::EditRole)
+//    {
+//         return QSqlRelationalTableModel::data(index,Qt::DisplayRole);
+//    }
     else if(role==Qt::EditRole)
     {
         return QSqlRelationalTableModel::data(index,role);
@@ -47,9 +52,9 @@ QVariant CRMModel::data(const QModelIndex &index, int role) const
 //    {
 //        return Qt::NoItemFlags;
 //    }
-//    if(index.column() == fieldIndex("name"))
+//    if(index.column() == fieldIndex("crmuser_id"))
 //    {
-//        return QSqlQueryModel::flags(index)| Qt::ItemIsEditable;
+//        return QSqlQueryModel::flags(index)| Qt::NoItemFlags;
 //    }
 
 //  return QSqlQueryModel::flags(index);
