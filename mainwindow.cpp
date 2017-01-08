@@ -69,9 +69,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("salary"), new salaryDelegate(ui->tableView)); //чтобы отображалась валюта
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("checked"),new CheckBoxDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
-    ui->tableView->setItemDelegateForColumn(model->fieldIndex("crmuser_id"),new CrmUserDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
-
-
+ //   ui->tableView->setItemDelegateForColumn(model->fieldIndex("crmuser_id"),new CrmUserDelegate(ui->tableView));
 
 
 
@@ -118,12 +116,20 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
+
+
+
     connect(new_o,SIGNAL(ready()),this,SLOT(orderAccepted()));
     connect(new_o,SIGNAL(signalCancelOrder()),this,SLOT(orderCancled()));
     connect(new_o,SIGNAL(sigClose()),this,SLOT(orderCancled()));
     connect(ui->ComboWorkersBox,SIGNAL(currentIndexChanged(const QString&)),this,SLOT(slot_comboWorkersBox_currentIndexChanged(QString)));
     // Подключаем СЛОТ вызова контекстного меню
     connect(ui->tableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotRightClickMenuRequested(QPoint)));
+
+    //кнопки телефона
+ //   connect(ui->b1,SIGNAL(clicked(bool)),this,SLOT(on_b1_clicked()));
+  //  connect(ui->b2,SIGNAL(clicked(bool)),this,SLOT(on_b2_clicked()));
+  //  connect(ui->b0,SIGNAL(clicked(bool)),this,SLOT(on_b0_clicked()));
 
 
 
@@ -512,3 +518,120 @@ void MainWindow::on_actionCRMusers_triggered()
     moveToCenter(crmusers_window);
 }
 
+void MainWindow::on_b1_clicked()
+{
+    char b1 = '1';
+    QString phone = ui->PhoneLine->text().append(b1);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b2_clicked()
+{
+    char b2 = '2';
+    QString phone = ui->PhoneLine->text().append(b2);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b3_clicked()
+{
+    char b3 = '3';
+    QString phone = ui->PhoneLine->text().append(b3);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b4_clicked()
+{
+    char b4 = '4';
+    QString phone = ui->PhoneLine->text().append(b4);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b5_clicked()
+{
+    char b5 = '5';
+    QString phone = ui->PhoneLine->text().append(b5);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b6_clicked()
+{
+    char b6 = '6';
+    QString phone = ui->PhoneLine->text().append(b6);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b7_clicked()
+{
+    char b7 = '7';
+    QString phone = ui->PhoneLine->text().append(b7);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b8_clicked()
+{
+    char b8 = '8';
+    QString phone = ui->PhoneLine->text().append(b8);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b9_clicked()
+{
+    char b9 = '9';
+    QString phone = ui->PhoneLine->text().append(b9);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_b0_clicked()
+{
+    char b0 = '0';
+    QString phone = ui->PhoneLine->text().append(b0);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_bzvezda_clicked()
+{
+    char bzvezda = '*';
+    QString phone = ui->PhoneLine->text().append(bzvezda);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+void MainWindow::on_breshotka_clicked()
+{
+    char breshotka = '#';
+    QString phone = ui->PhoneLine->text().append(breshotka);
+    qDebug() << phone;
+    ui->PhoneLine->setText("");
+    ui->PhoneLine->setText(phone);
+}
+
+
+
+void MainWindow::on_delPhoneCharPushButton_clicked()
+{
+    QString phoneNumber = ui->PhoneLine->text();
+    QString newPhoneNumber= phoneNumber.remove(phoneNumber.length()-1,phoneNumber.length());
+    ui->PhoneLine->setText(newPhoneNumber);
+
+}

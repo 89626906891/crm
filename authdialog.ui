@@ -91,9 +91,9 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>enterButton</tabstop>
-  <tabstop>passwordLineEdit</tabstop>
   <tabstop>loginLineEdit</tabstop>
+  <tabstop>passwordLineEdit</tabstop>
+  <tabstop>enterButton</tabstop>
  </tabstops>
  <resources/>
  <connections/>

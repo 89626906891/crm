@@ -68,19 +68,6 @@
     <property name="title">
      <string>sip телефон</string>
     </property>
-    <widget class="QPushButton" name="b1">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>20</y>
-       <width>51</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>1</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="b2">
      <property name="geometry">
       <rect>
@@ -224,16 +211,6 @@
       <string>#</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="PhoneLineEdit">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>20</y>
-       <width>191</width>
-       <height>27</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QPushButton" name="CallPushButton">
      <property name="geometry">
       <rect>
@@ -258,6 +235,42 @@
      </property>
      <property name="text">
       <string>повесить</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="b1">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="PhoneLine">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>20</y>
+       <width>161</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delPhoneCharPushButton">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>20</y>
+       <width>31</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;-</string>
      </property>
     </widget>
    </widget>

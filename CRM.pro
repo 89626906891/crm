@@ -33,7 +33,6 @@ SOURCES += main.cpp\
     movetocenter.cpp \
     crmusers.cpp \
     newcrmuser.cpp \
-    mycalendarwidget.cpp \
     crmuserdelegate.cpp
 
 HEADERS  += authdialog.h \
@@ -55,7 +54,6 @@ HEADERS  += authdialog.h \
     movetocenter.h \
     crmusers.h \
     newcrmuser.h \
-    mycalendarwidget.h \
     crmuserdelegate.h
 
 FORMS    += authdialog.ui \

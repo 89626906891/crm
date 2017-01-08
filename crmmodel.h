@@ -17,7 +17,7 @@ private:
 //    int m_value;
 
 public:
-// Qt::ItemFlags flags(const QModelIndex &index) const;
+ //Qt::ItemFlags flags(const QModelIndex &index) const;
 //    QVariant data(const QModelIndex &index, int role) const;
 //    bool setData(const QModelIndex &index, const QVariant &value, int role);
 

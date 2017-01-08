@@ -52,12 +52,25 @@ void newOrder::setModel(QSqlRelationalTableModel *model)
     mapper->addMapping(ui->timeEdit2,8);
     mapper->addMapping(ui->spinBox,9);
     mapper->addMapping(ui->workerComboBox,10);
+    mapper->addMapping(ui->StatusComboBox,13);
+    mapper->addMapping(ui->PaymentComboBox,16);
+
+    mapper->addMapping(ui->whoAddLineEdit,21);
+   // mapper->addMapping(ui->LastChangedLabel,);
 
 
     QSqlTableModel *relModel = model->relationModel(10);
     ui->workerComboBox->setModel(relModel);
     ui->workerComboBox->setModelColumn(relModel->fieldIndex("name"));
 
+
+    QSqlTableModel *statusRelModel = model->relationModel(13);
+    ui->StatusComboBox->setModel(statusRelModel);
+    ui->StatusComboBox->setModelColumn(statusRelModel->fieldIndex("status_name"));
+
+    QSqlTableModel *paymentRelModel = model->relationModel(16);
+    ui->PaymentComboBox->setModel(paymentRelModel);
+    ui->PaymentComboBox->setModelColumn(paymentRelModel->fieldIndex("payment_name"));
 
 }
 

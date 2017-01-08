@@ -17,6 +17,10 @@ public slots:
     // QAbstractItemDelegate interface
 public:
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+
+    // QItemDelegate interface
+protected:
+    void drawFocus(QPainter *painter, const QStyleOptionViewItem &option, const QRect &rect) const;
 };
 
 #endif // CRMUSERDELEGATE_H

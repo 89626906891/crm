@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>959</width>
-    <height>693</height>
+    <height>744</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="applyButton">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>400</y>
+     <x>700</x>
+     <y>700</y>
      <width>99</width>
      <height>27</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>400</y>
+     <x>800</x>
+     <y>700</y>
      <width>99</width>
      <height>27</height>
     </rect>
@@ -55,7 +55,7 @@
      <x>620</x>
      <y>47</y>
      <width>251</width>
-     <height>111</height>
+     <height>71</height>
     </rect>
    </property>
   </widget>
@@ -63,7 +63,7 @@
    <property name="geometry">
     <rect>
      <x>620</x>
-     <y>160</y>
+     <y>130</y>
      <width>251</width>
      <height>27</height>
     </rect>
@@ -92,27 +92,27 @@
     </rect>
    </property>
    <property name="text">
-    <string>adress</string>
+    <string>адресс</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>160</y>
+     <y>130</y>
      <width>67</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>phone</string>
+    <string>телефон</string>
    </property>
   </widget>
   <widget class="QDateEdit" name="execDateEdit">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>230</y>
+     <x>630</x>
+     <y>200</y>
      <width>110</width>
      <height>27</height>
     </rect>
@@ -121,21 +121,21 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>230</y>
-     <width>67</width>
-     <height>17</height>
+     <x>506</x>
+     <y>200</y>
+     <width>111</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>exec date</string>
+    <string>дата выполнения</string>
    </property>
   </widget>
   <widget class="QComboBox" name="workerComboBox">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>400</y>
+     <x>790</x>
+     <y>470</y>
      <width>131</width>
      <height>27</height>
     </rect>
@@ -144,8 +144,8 @@
   <widget class="QTimeEdit" name="timeEdit">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>280</y>
+     <x>550</x>
+     <y>250</y>
      <width>118</width>
      <height>27</height>
     </rect>
@@ -154,34 +154,34 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>500</x>
-     <y>280</y>
-     <width>67</width>
+     <x>510</x>
+     <y>250</y>
+     <width>31</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>from</string>
+    <string>с</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>280</y>
-     <width>67</width>
+     <x>700</x>
+     <y>250</y>
+     <width>21</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>till</string>
+    <string>до</string>
    </property>
   </widget>
   <widget class="QTimeEdit" name="timeEdit2">
    <property name="geometry">
     <rect>
-     <x>710</x>
-     <y>280</y>
+     <x>730</x>
+     <y>250</y>
      <width>118</width>
      <height>27</height>
     </rect>
@@ -190,8 +190,8 @@
   <widget class="QSpinBox" name="spinBox">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>360</y>
+     <x>620</x>
+     <y>330</y>
      <width>121</width>
      <height>27</height>
     </rect>
@@ -203,34 +203,34 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>360</y>
-     <width>31</width>
+     <x>520</x>
+     <y>330</y>
+     <width>51</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>$$$</string>
+    <string>сумма</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>200</y>
+     <y>170</y>
      <width>67</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>phone2</string>
+    <string>телефон 2</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="phone2lineEdit">
    <property name="geometry">
     <rect>
      <x>620</x>
-     <y>190</y>
+     <y>160</y>
      <width>251</width>
      <height>27</height>
     </rect>
@@ -272,6 +272,208 @@
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout"/>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>450</y>
+     <width>71</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>работник:</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>510</y>
+     <width>381</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="title">
+    <string>Детали заказа:</string>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Принял:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Последние изменения:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LastChangedLabel">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>70</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="whoAddLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>113</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_2">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>290</y>
+     <width>121</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>300</y>
+     <width>71</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>дисконт №</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>380</y>
+     <width>81</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>тип оплаты</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="PaymentComboBox">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>370</y>
+     <width>121</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>370</y>
+     <width>113</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>380</y>
+     <width>54</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>пароль</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>410</y>
+     <width>91</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>доавить файл</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>410</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>загрузить</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="StatusComboBox">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>470</y>
+     <width>121</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>450</y>
+     <width>81</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>статус заказа</string>
+   </property>
   </widget>
  </widget>
  <resources/>
