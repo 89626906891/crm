@@ -32,7 +32,7 @@ bool buttonDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const
         QRect r = option.rect;
         int x,y,w,h;
         x = r.left() + r.width() - 30;
-        y = r.top();//the Y coordinate
+        y = r.top();
         w = 30;//ширина кнопки
         h = 30;//высота кнопки
 
@@ -40,16 +40,11 @@ bool buttonDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const
         if( clickX > x && clickX < x + w )
             if( clickY > y && clickY < y + h )
             {
+               // int row = index.row();
+                emit createNewUpload();
 
-                QDialog * d = new QDialog();
-                QLabel *l = new QLabel(d);
-                d->setGeometry(0,0,100,100);
-                d->show();
-
-                int t = index.row();
-                l->setNum(t);
-                qDebug() << index.column();
-                qDebug() << index.row();
             }
     }
 }
+
+

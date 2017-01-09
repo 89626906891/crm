@@ -36,6 +36,7 @@
 #include "movetocenter.h"
 #include "crmusers.h"
 //#include "crmuserdelegate.h"
+#include "uploadfileform.h"
 
 namespace Ui {
 class MainWindow;
@@ -51,7 +52,6 @@ public:
 
     CRMModel *model;
     void setUserOnline(QString user); //получаем из окна авторизации кто залогинелся
-
 
 private slots:
 
@@ -105,6 +105,10 @@ private slots:
 
     void on_actionCRMusers_triggered();
 
+    void uploadFile();
+    void startUpload(int ID,QString NAME);
+
+
     void on_b1_clicked();
     void on_b2_clicked();
     void on_b3_clicked();
@@ -139,6 +143,7 @@ private:
     QSqlQuery *currentDayTotalOrdersQuery;
 
     QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации
+    uploadFileForm *uploadFile_window;
 
 
 

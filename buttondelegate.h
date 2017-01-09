@@ -9,9 +9,11 @@
 #include <QMouseEvent>
 #include <QDebug>
 
-
-
 #include <QLabel>
+
+
+#include "uploadfileform.h"
+#include "movetocenter.h"
 
 class buttonDelegate : public QItemDelegate
 {
@@ -19,10 +21,12 @@ class buttonDelegate : public QItemDelegate
 public:
     buttonDelegate(QObject *parent = 0);
 
-    // QAbstractItemDelegate interface
-public:
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
     bool editorEvent(QEvent *event, QAbstractItemModel *model, const QStyleOptionViewItem &option, const QModelIndex &index);
+signals:
+    void createNewUpload();
+private:
+
 };
 
 #endif // BUTTONDELEGATE_H

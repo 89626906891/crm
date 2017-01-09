@@ -32,6 +32,14 @@ AuthDialog::AuthDialog(QWidget *parent) :
        ui->connectLabel->setText("Cоединение с базой установленно!");
        ui->connectLabel->show();
     }
+
+
+
+
+
+
+
+
 }
 
 AuthDialog::~AuthDialog()
@@ -124,3 +132,5 @@ void AuthDialog::isAuth(QString user)
     }
 
 }
+
+

@@ -64,8 +64,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("payment_name"),new QSqlRelationalDelegate(ui->tableView)); //способ оплаты
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone"), new PhoneNumberDelegate(ui->tableView)); //делаем маску для телефона
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("phone2"), new PhoneNumberDelegate(ui->tableView));
-
-    ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), new buttonDelegate(ui->tableView)); //кнопка в таблице
+ //   ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), new buttonDelegate(ui->tableView)); //кнопка в таблице
+    buttonDelegate *butDelegate = new buttonDelegate(ui->tableView);
 
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("salary"), new salaryDelegate(ui->tableView)); //чтобы отображалась валюта
     ui->tableView->setItemDelegateForColumn(model->fieldIndex("checked"),new CheckBoxDelegate(ui->tableView));  // устанавливаем делегат для checkbox checkboxdelegate.cpp
@@ -115,7 +115,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->ComboWorkersBox->setModelColumn(comboModel->fieldIndex("name"));
 
 
-
+   // uploadFile_window = new uploadFileForm();
 
 
 
@@ -126,11 +126,10 @@ MainWindow::MainWindow(QWidget *parent) :
     // Подключаем СЛОТ вызова контекстного меню
     connect(ui->tableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotRightClickMenuRequested(QPoint)));
 
-    //кнопки телефона
- //   connect(ui->b1,SIGNAL(clicked(bool)),this,SLOT(on_b1_clicked()));
-  //  connect(ui->b2,SIGNAL(clicked(bool)),this,SLOT(on_b2_clicked()));
-  //  connect(ui->b0,SIGNAL(clicked(bool)),this,SLOT(on_b0_clicked()));
-
+    //connect(buttonDelegate.createNewUpload,SIGNAL(createNewUpload(int row)),this,SLOT(uploadFile(int row)));
+    connect(butDelegate, SIGNAL(createNewUpload()), this, SLOT(uploadFile()));
+    ui->tableView->setItemDelegateForColumn(model->fieldIndex("attach"), butDelegate);
+   // connect(uploadFile_window,SIGNAL(readyToUpload(int,QString)),this,SLOT(uploadReady(int id,QString fileName)));
 
 
 
@@ -517,6 +516,38 @@ void MainWindow::on_actionCRMusers_triggered()
     crmusers_window->show();
     moveToCenter(crmusers_window);
 }
+
+
+void MainWindow::uploadFile()
+{
+    int row = ui->tableView->currentIndex().row();
+    if (row >=0)
+    {
+        uploadFile_window = new uploadFileForm();
+        moveToCenter(uploadFile_window);
+        uploadFile_window->setWindowTitle("Загрузка файла на сервер");
+        uploadFile_window->orderinfo(row);
+        uploadFile_window->show();
+
+        connect(uploadFile_window,SIGNAL(readyToUpload(int,QString)),this,SLOT(startUpload(int,QString)));
+
+    }
+    else
+    {
+        qDebug() << "no selected order";
+    }
+}
+
+void MainWindow::startUpload(int ID, QString NAME)
+{
+    qDebug() << ID;
+    qDebug() << NAME;
+    QSqlRecord recordAddFilePath = model->record();
+    recordAddFilePath.setValue(model->fieldIndex("file_path"),NAME);
+    qDebug() << "filling Attach fielepath" << model->setRecord(ID, recordAddFilePath);
+}
+
+
 
 void MainWindow::on_b1_clicked()
 {

@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     movetocenter.cpp \
     crmusers.cpp \
     newcrmuser.cpp \
-    crmuserdelegate.cpp
+    crmuserdelegate.cpp \
+    uploadfileform.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -54,7 +55,8 @@ HEADERS  += authdialog.h \
     movetocenter.h \
     crmusers.h \
     newcrmuser.h \
-    crmuserdelegate.h
+    crmuserdelegate.h \
+    uploadfileform.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \
@@ -66,7 +68,8 @@ FORMS    += authdialog.ui \
     about.ui \
     history.ui \
     crmusers.ui \
-    newcrmuser.ui
+    newcrmuser.ui \
+    uploadfileform.ui
 
 RESOURCES += \
     resources.qrc
