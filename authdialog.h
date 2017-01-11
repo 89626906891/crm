@@ -10,7 +10,7 @@
 
 #include "mainwindow.h"
 
-
+//class MainWindow;
 
 namespace Ui {
 class AuthDialog;

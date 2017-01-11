@@ -51,13 +51,13 @@ void workers::on_addWorkerPushButton_clicked()
 
 }
 
-void workers::on_tableView_doubleClicked(const QModelIndex &index)
-{
-    newWorker_window->workerMapper->setCurrentModelIndex(index);
-    newWorker_window->show();
-    moveToCenter(newWorker_window);
+//void workers::on_tableView_doubleClicked(const QModelIndex &index)
+//{
+//    newWorker_window->workerMapper->setCurrentModelIndex(index);
+//    newWorker_window->show();
+//    moveToCenter(newWorker_window);
 
-}
+//}
 
 void workers::workerAccepted()
 {

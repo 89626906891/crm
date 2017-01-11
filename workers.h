@@ -28,7 +28,7 @@ public:
 private slots:
     void on_addWorkerPushButton_clicked();
 
-    void on_tableView_doubleClicked(const QModelIndex &index);
+  //  void on_tableView_doubleClicked(const QModelIndex &index);
     void workerAccepted();
     void workerCancled();
 

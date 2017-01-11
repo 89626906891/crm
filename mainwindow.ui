@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>260</y>
-      <width>1631</width>
+      <width>1691</width>
       <height>711</height>
      </rect>
     </property>
@@ -46,9 +46,9 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>1650</x>
-      <y>490</y>
-      <width>51</width>
+      <x>1390</x>
+      <y>200</y>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
@@ -302,7 +302,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>add order</string>
+      <string>Добавить заказ</string>
      </property>
     </widget>
     <widget class="QPushButton" name="editOrderPushButton">
@@ -315,7 +315,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>edit order</string>
+      <string>Редактировать заказ</string>
      </property>
     </widget>
     <widget class="QPushButton" name="delButton">
@@ -328,7 +328,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>del order</string>
+      <string>Удалить заказ</string>
      </property>
     </widget>
     <widget class="QPushButton" name="logoutPushButton">
@@ -354,7 +354,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>lastOrders</string>
+      <string>Последние добавленные</string>
      </property>
     </widget>
     <widget class="QPushButton" name="lastCancelOrdersPushButton">
@@ -367,7 +367,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>lastCancelOrders</string>
+      <string>Последние отмены</string>
      </property>
     </widget>
    </widget>
@@ -501,7 +501,7 @@
    </property>
    <widget class="QMenu" name="menuMenu">
     <property name="title">
-     <string>menu</string>
+     <string>Меню</string>
     </property>
     <addaction name="actionAdd_order"/>
     <addaction name="actionLogout"/>
@@ -509,30 +509,37 @@
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
-     <string>about</string>
+     <string>О программе</string>
     </property>
     <addaction name="actionInfo"/>
    </widget>
    <widget class="QMenu" name="menuWorkers">
     <property name="title">
-     <string>workers</string>
+     <string>Работники</string>
     </property>
     <addaction name="actionAdd_worker"/>
    </widget>
    <widget class="QMenu" name="menuDiscount">
     <property name="title">
-     <string>discount</string>
+     <string>Скидки</string>
     </property>
     <addaction name="actionAddDiscount"/>
    </widget>
    <widget class="QMenu" name="menuSystem">
     <property name="title">
-     <string>system</string>
+     <string>Система</string>
     </property>
     <addaction name="actionHistoryLog"/>
     <addaction name="actionCRMusers"/>
    </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Контакты</string>
+    </property>
+    <addaction name="actionContacts"/>
+   </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menu"/>
    <addaction name="menuDiscount"/>
    <addaction name="menuWorkers"/>
    <addaction name="menuSystem"/>
@@ -540,27 +547,27 @@
   </widget>
   <action name="actionAdd_order">
    <property name="text">
-    <string>add order</string>
+    <string>Добавить заказ</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>exit</string>
+    <string>Выход</string>
    </property>
   </action>
   <action name="actionInfo">
    <property name="text">
-    <string>info</string>
+    <string>Авторы</string>
    </property>
   </action>
   <action name="actionAdd_worker">
    <property name="text">
-    <string>add worker</string>
+    <string>Добавить работника</string>
    </property>
   </action>
   <action name="actionAddDiscount">
    <property name="text">
-    <string>addDiscount</string>
+    <string>Добавить скидку</string>
    </property>
   </action>
   <action name="actionLogout">
@@ -570,12 +577,17 @@
   </action>
   <action name="actionHistoryLog">
    <property name="text">
-    <string>historyLog</string>
+    <string>История</string>
    </property>
   </action>
   <action name="actionCRMusers">
    <property name="text">
-    <string>CRMusers</string>
+    <string>CRM пользователи</string>
+   </property>
+  </action>
+  <action name="actionContacts">
+   <property name="text">
+    <string>Контакты</string>
    </property>
   </action>
  </widget>

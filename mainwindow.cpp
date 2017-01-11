@@ -408,9 +408,12 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 
+
 void MainWindow::on_logoutPushButton_clicked()
 {
-
+   this->close();
+    newauth = new AuthDialog;
+    newauth->show();
 }
 
 void MainWindow::on_actionLogout_triggered()
@@ -545,6 +548,10 @@ void MainWindow::startUpload(int ID, QString NAME)
     QSqlRecord recordAddFilePath = model->record();
     recordAddFilePath.setValue(model->fieldIndex("file_path"),NAME);
     qDebug() << "filling Attach fielepath" << model->setRecord(ID, recordAddFilePath);
+
+
+
+
 }
 
 
@@ -664,5 +671,11 @@ void MainWindow::on_delPhoneCharPushButton_clicked()
     QString phoneNumber = ui->PhoneLine->text();
     QString newPhoneNumber= phoneNumber.remove(phoneNumber.length()-1,phoneNumber.length());
     ui->PhoneLine->setText(newPhoneNumber);
+}
 
+void MainWindow::on_actionContacts_triggered()
+{
+    contacts_window = new ContactsForm;
+    moveToCenter(contacts_window);
+    contacts_window->show();
 }

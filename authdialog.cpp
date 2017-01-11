@@ -35,11 +35,6 @@ AuthDialog::AuthDialog(QWidget *parent) :
 
 
 
-
-
-
-
-
 }
 
 AuthDialog::~AuthDialog()

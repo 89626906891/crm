@@ -37,6 +37,12 @@
 #include "crmusers.h"
 //#include "crmuserdelegate.h"
 #include "uploadfileform.h"
+#include "authdialog.h"
+#include "contactsform.h"
+
+
+class AuthDialog;
+
 
 namespace Ui {
 class MainWindow;
@@ -126,6 +132,8 @@ private slots:
 
     void on_delPhoneCharPushButton_clicked();
 
+    void on_actionContacts_triggered();
+
 private:
     Ui::MainWindow *ui;
 
@@ -144,7 +152,8 @@ private:
 
     QString userOnline; //сюда переписываем кто сейчас онлайн из окна авторизации
     uploadFileForm *uploadFile_window;
-
+    AuthDialog *newauth;
+    ContactsForm *contacts_window;
 
 
 protected:

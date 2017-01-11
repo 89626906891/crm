@@ -9,6 +9,8 @@
 #include "newcrmuser.h"
 #include "loggingcategories.h"
 
+
+
 namespace Ui {
 class CRMusers;
 }
@@ -34,6 +36,7 @@ private slots:
 private:
     Ui::CRMusers *ui;
     QSqlRelationalTableModel *CRMusersModel;
+
 
 
 };
