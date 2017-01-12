@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     }
 
 
-    //запускаем логгирование в файл
+    //запускаем логгирование CRM в файл
     m_logFile.reset(new QFile("log.txt"));
     //открываем файл логгирования
     m_logFile.data()->open(QFile::Append | QFile::Text);
@@ -64,7 +64,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     // По типу определяем, к какому уровню относится сообщение
     switch(type)
     {
-        case QtInfoMsg:     out << "INF";break;
+        case QtInfoMsg:     out << "INF" ;break;
         case QtDebugMsg:    out << "DBG "; break;
         case QtWarningMsg:  out << "WRN "; break;
         case QtCriticalMsg: out << "CRT "; break;

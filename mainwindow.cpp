@@ -31,12 +31,12 @@ MainWindow::MainWindow(QWidget *parent) :
         {
             ep.libCreate();
             sipReady(ep);
-            ret = PJ_SUCCESS;
+//            ret = PJ_SUCCESS;
         }
         catch (Error & err)
         {
-            std::cout << "Exception: " << err.info() << std::endl;
-            ret = 1;
+//            std::cout << "Exception: " << err.info() << std::endl;
+//            ret = 1;
         }
 
 
@@ -168,11 +168,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-
-
-
-
-
 
     delete ui;
 }
@@ -745,14 +740,13 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
 
         // Start library
         ep.libStart();
-        std::cout << "*** PJSUA2 STARTED ***" << std::endl;
+    //    std::cout << "*** PJSUA2 STARTED ***" << std::endl;
 
         // Add account
         AccountConfig acc_cfg;
         acc_cfg.idUri = "sip:user7@smirnov.mangosip.ru";
         acc_cfg.regConfig.registrarUri = "sip:smirnov.mangosip.ru";
         acc_cfg.sipConfig.authCreds.push_back( AuthCredInfo("digest", "*","user7", 0, "m7quhX5r") );
-        //acc_cfg.sipConfig.authCreds.push_back( AuthCredInfo("digest", "*","user6", 0, "4pLBw53C") );
 
         std::auto_ptr<MyAccount> acc(new MyAccount);
         acc->create(acc_cfg);
@@ -769,8 +763,8 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
     //        call->makeCall("sip:79219505492@smirnov.mangosip.ru", prm);
 
         // Just wait for ENTER key
-        std::cout << "Press ENTER to quit..." << std::endl;
-        std::cin.get();
+    //    std::cout << "Press ENTER to quit..." << std::endl;
+    //    std::cin.get();
 
 
 
@@ -788,25 +782,25 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
 
 
 
-        AudioMediaRecorder recorder;
-        AudioMedia& cap_med = Endpoint::instance().audDevManager().getCaptureDevMedia();
-        try
-        {
-            recorder.createRecorder("/home/alexey/file1.wav");
-            cap_med.startTransmit(recorder);
-        }
-        catch(Error& err) {
-        }
+//        AudioMediaRecorder recorder;
+//        AudioMedia& cap_med = Endpoint::instance().audDevManager().getCaptureDevMedia();
+//        try
+//        {
+//            recorder.createRecorder("/home/alexey/file1.wav");
+//            cap_med.startTransmit(recorder);
+//        }
+//        catch(Error& err) {
+//        }
 
-        AudioMediaPlayer player;
-        AudioMedia& play_med = Endpoint::instance().audDevManager().getPlaybackDevMedia();
-        try
-        {
-            player.createPlayer("/home/alexey/file1.wav");
-            player.startTransmit(play_med);
-        }
-        catch(Error& err) {
-        }
+//        AudioMediaPlayer player;
+//        AudioMedia& play_med = Endpoint::instance().audDevManager().getPlaybackDevMedia();
+//        try
+//        {
+//            player.createPlayer("/home/alexey/file1.wav");
+//            player.startTransmit(play_med);
+//        }
+//        catch(Error& err) {
+//        }
 
 
     //        if (aud_med)
@@ -817,29 +811,29 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
     //            aud_med->startTransmit(play_med);
     //        }
 
-        pj_thread_sleep(20000);
+//        pj_thread_sleep(20000);
 
-        // Hangup all calls
-         ep.hangupAllCalls();
+//        // Hangup all calls
+//         ep.hangupAllCalls();
 
 
-        try
-        {
-            player.stopTransmit(play_med);
-        }
-        catch(Error& err) {
-        }
-        try
-        {
-           cap_med.stopTransmit(recorder);
-        }
-        catch(Error& err) {
-        }
+//        try
+//        {
+//            player.stopTransmit(play_med);
+//        }
+//        catch(Error& err) {
+//        }
+//        try
+//        {
+//           cap_med.stopTransmit(recorder);
+//        }
+//        catch(Error& err) {
+//        }
 
-        pj_thread_sleep(10000);
+//        pj_thread_sleep(10000);
 
         // Destroy library
-        std::cout << "*** PJSUA2 SHUTTING DOWN ***" << std::endl;
+//        std::cout << "*** PJSUA2 SHUTTING DOWN ***" << std::endl;
 
 
 
