@@ -41,6 +41,27 @@
 #include "contactsform.h"
 
 
+
+
+//sip
+#include <pjsua2.hpp>
+#include <iostream>
+#include <memory>
+#include <pj/file_access.h>
+#define THIS_FILE "main.cpp"
+#include "myaccount.h"
+#include "mycall.h"
+
+using namespace pj;
+
+//sip
+
+
+
+
+
+
+
 class AuthDialog;
 
 
@@ -134,6 +155,11 @@ private slots:
 
     void on_actionContacts_triggered();
 
+
+
+    void sipReady(Endpoint &ep) throw(Error);
+   // void sipDestroy();
+
 private:
     Ui::MainWindow *ui;
 
@@ -158,6 +184,8 @@ private:
 
 protected:
     void closeEvent(QCloseEvent *event);
+
+//    void mouseMoveEvent(QMouseEvent *event);
 };
 
 #endif // MAINWINDOW_H

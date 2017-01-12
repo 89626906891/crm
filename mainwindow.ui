@@ -341,7 +341,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>logout</string>
+      <string>сменить пользователя</string>
      </property>
     </widget>
     <widget class="QPushButton" name="lastOrdersPushButton">
@@ -538,9 +538,23 @@
     </property>
     <addaction name="actionContacts"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Звонки</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Графики</string>
+    </property>
+    <addaction name="action_2"/>
+   </widget>
    <addaction name="menuMenu"/>
    <addaction name="menu"/>
    <addaction name="menuDiscount"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
    <addaction name="menuWorkers"/>
    <addaction name="menuSystem"/>
    <addaction name="menuAbout"/>
@@ -572,7 +586,7 @@
   </action>
   <action name="actionLogout">
    <property name="text">
-    <string>logout</string>
+    <string>Сменить пользователя</string>
    </property>
   </action>
   <action name="actionHistoryLog">
@@ -588,6 +602,16 @@
   <action name="actionContacts">
    <property name="text">
     <string>Контакты</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>История Звонков</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>График Заказов</string>
    </property>
   </action>
  </widget>

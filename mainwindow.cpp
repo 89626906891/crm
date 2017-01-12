@@ -19,6 +19,35 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->setWindowTitle("CRM");
 
+
+    //sip
+
+
+        int ret = 0;
+        Endpoint ep;
+
+
+        try
+        {
+            ep.libCreate();
+            sipReady(ep);
+            ret = PJ_SUCCESS;
+        }
+        catch (Error & err)
+        {
+            std::cout << "Exception: " << err.info() << std::endl;
+            ret = 1;
+        }
+
+
+    //sip
+
+
+
+
+
+
+
     //получаем из базы кто сейчас онлайн
     //и создаем таймер который каждую секунду проверяет кто онлайн
     whoOnline();
@@ -27,7 +56,9 @@ MainWindow::MainWindow(QWidget *parent) :
     timer->start(1000);
 
 
-
+   //отслеживание бездействия пользователя
+    //QWidget::setMouseTracking(true);
+//    this->setMouseTracking(true);
 
     QSqlDatabase baze = QSqlDatabase::database();//baze.database();
     Q_ASSERT(baze.isOpen());
@@ -137,6 +168,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+
+
+
+
+
+
     delete ui;
 }
 
@@ -407,18 +444,31 @@ void MainWindow::closeEvent(QCloseEvent *event)
     }
 }
 
+//void MainWindow::mouseMoveEvent(QMouseEvent *event)
+//{
+//    if (event->type() == QEvent::MouseMove)
+//    {
+//        //QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+//        QTimer *mousetimer = new QTimer(this);
+//        connect(mousetimer, SIGNAL(timeout()), this, SLOT(on_logoutPushButton_clicked()));
+//        mousetimer->start(5000);
+//    }
+//}
 
 
 void MainWindow::on_logoutPushButton_clicked()
 {
-   this->close();
+
+    this->close();
     newauth = new AuthDialog;
     newauth->show();
 }
 
 void MainWindow::on_actionLogout_triggered()
 {
-
+    this->close();
+    newauth = new AuthDialog;
+    newauth->show();
 }
 
 
@@ -428,8 +478,6 @@ void MainWindow::on_lastOrdersPushButton_clicked()
 
     //model->setFilter(QString("add_date = '%1'").arg(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss")));
     model->sort(5, Qt::DescendingOrder);
-
-
 
 
 //    QSortFilterProxyModel *proxymodel = new QSortFilterProxyModel(this);
@@ -679,3 +727,148 @@ void MainWindow::on_actionContacts_triggered()
     moveToCenter(contacts_window);
     contacts_window->show();
 }
+
+void MainWindow::sipReady(Endpoint &ep) throw(Error)
+{
+
+        // Init library
+        EpConfig ep_cfg;
+        ep_cfg.logConfig.level = 6;
+        ep.libInit( ep_cfg );
+
+
+
+        // Transport
+        TransportConfig tcfg;
+        tcfg.port = 5060;      //5080 mango
+        ep.transportCreate(PJSIP_TRANSPORT_UDP, tcfg);
+
+        // Start library
+        ep.libStart();
+        std::cout << "*** PJSUA2 STARTED ***" << std::endl;
+
+        // Add account
+        AccountConfig acc_cfg;
+        acc_cfg.idUri = "sip:user7@smirnov.mangosip.ru";
+        acc_cfg.regConfig.registrarUri = "sip:smirnov.mangosip.ru";
+        acc_cfg.sipConfig.authCreds.push_back( AuthCredInfo("digest", "*","user7", 0, "m7quhX5r") );
+        //acc_cfg.sipConfig.authCreds.push_back( AuthCredInfo("digest", "*","user6", 0, "4pLBw53C") );
+
+        std::auto_ptr<MyAccount> acc(new MyAccount);
+        acc->create(acc_cfg);
+
+        pj_thread_sleep(2000);
+
+
+    //        // Make outgoing call
+    //        Call *call = new MyCall(*acc);
+    //        acc->calls.push_back(call);
+    //        CallOpParam prm(true);
+    //        prm.opt.audioCount = 1;
+    //        prm.opt.videoCount = 0;
+    //        call->makeCall("sip:79219505492@smirnov.mangosip.ru", prm);
+
+        // Just wait for ENTER key
+        std::cout << "Press ENTER to quit..." << std::endl;
+        std::cin.get();
+
+
+
+    //        CallInfo ci = call->getInfo();
+    //        AudioMedia *aud_med = NULL;
+
+    //        for (unsigned i=0; i<ci.media.size(); ++i)
+    //        {
+    //            if (ci.media[i].type == PJMEDIA_TYPE_AUDIO)
+    //            {
+    //                aud_med = (AudioMedia *)call->getMedia(i);
+    //                break;
+    //            }
+    //        }
+
+
+
+        AudioMediaRecorder recorder;
+        AudioMedia& cap_med = Endpoint::instance().audDevManager().getCaptureDevMedia();
+        try
+        {
+            recorder.createRecorder("/home/alexey/file1.wav");
+            cap_med.startTransmit(recorder);
+        }
+        catch(Error& err) {
+        }
+
+        AudioMediaPlayer player;
+        AudioMedia& play_med = Endpoint::instance().audDevManager().getPlaybackDevMedia();
+        try
+        {
+            player.createPlayer("/home/alexey/file1.wav");
+            player.startTransmit(play_med);
+        }
+        catch(Error& err) {
+        }
+
+
+    //        if (aud_med)
+    //        {
+    //            // This will connect the sound device/mic to the call audio media
+    //            cap_med.startTransmit(*aud_med);
+    //            // And this will connect the call audio media to the sound device/speaker
+    //            aud_med->startTransmit(play_med);
+    //        }
+
+        pj_thread_sleep(20000);
+
+        // Hangup all calls
+         ep.hangupAllCalls();
+
+
+        try
+        {
+            player.stopTransmit(play_med);
+        }
+        catch(Error& err) {
+        }
+        try
+        {
+           cap_med.stopTransmit(recorder);
+        }
+        catch(Error& err) {
+        }
+
+        pj_thread_sleep(10000);
+
+        // Destroy library
+        std::cout << "*** PJSUA2 SHUTTING DOWN ***" << std::endl;
+
+
+
+}
+
+//void MainWindow::sipDestroy()
+//{
+//    //SIP destroy
+//    int ret = 0;
+
+//    try
+//    {
+//        ep.libDestroy();
+//    }
+//        catch(Error &err)
+//    {
+//        std::cout << "Exception: " << err.info() << std::endl;
+//        ret = 1;
+//    }
+
+//    if (ret == PJ_SUCCESS)
+//    {
+//        std::cout << "Success" << std::endl;
+//    }
+//    else
+//    {
+//        std::cout << "Error Found" << std::endl;
+//    }
+
+//    return ret;
+//    //SIP
+//}

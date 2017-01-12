@@ -71,6 +71,7 @@ void newdiscount::tableByidDiscount(QString selectedDiscount)
 
 
      ui->relationDiscontOrderTableView->setModel(relDiscoutOrderModel);
+     ui->relationDiscontOrderTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 void newdiscount::closeEvent(QCloseEvent *event)

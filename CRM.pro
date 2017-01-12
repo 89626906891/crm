@@ -12,6 +12,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = CRM
 TEMPLATE = app
 
+LIBS += `pkg-config --cflags --libs libpjproject`
+PKGCONFIG += libpjproject
 
 SOURCES += main.cpp\
         authdialog.cpp \
@@ -36,7 +38,9 @@ SOURCES += main.cpp\
     crmuserdelegate.cpp \
     uploadfileform.cpp \
     contactsform.cpp \
-    newcontact.cpp
+    newcontact.cpp \
+    myaccount.cpp \
+    mycall.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -60,7 +64,9 @@ HEADERS  += authdialog.h \
     crmuserdelegate.h \
     uploadfileform.h \
     contactsform.h \
-    newcontact.h
+    newcontact.h \
+    myaccount.h \
+    mycall.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \

@@ -22,6 +22,9 @@ CRMusers::CRMusers(QWidget *parent) :
     ui->tableView->horizontalHeader()->setStretchLastSection(true);
     ui->tableView->hideColumn(0);
     ui->tableView->hideColumn(2);
+    ui->tableView->hideColumn(9);
+    ui->tableView->hideColumn(12);
+
 
 
     newcrmuser_window = new newCrmUser;

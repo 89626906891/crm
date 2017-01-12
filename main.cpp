@@ -19,6 +19,11 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 
 int main(int argc, char *argv[])
 {
+    QCoreApplication::setOrganizationName("Smirnov corp");
+    QCoreApplication::setOrganizationDomain("89626906891");
+    QCoreApplication::setApplicationName("CRM");
+
+
     QApplication a(argc, argv);
 
     //запрещяем запуск второго приложения на одном компе во избежании коллизий
@@ -69,3 +74,9 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     out << context.category << ":" << msg << endl;
     out.flush();// Очищаем буферизированные данные
 }
+
+
+
+
+
+

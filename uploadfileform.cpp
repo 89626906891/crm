@@ -25,7 +25,7 @@ void uploadFileForm::orderinfo(int id)
 void uploadFileForm::on_pushButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-                                                    "/home",
+                                                    "/home/",
                                                     tr("only archive file (*.zip *.tar *.tar.gz)"));
 
     ui->filePathLineEdit->setText(fileName);

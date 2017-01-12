@@ -11,6 +11,8 @@ newCrmUser::newCrmUser(QWidget *parent) :
     crmUserMapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
 
 
+
+
 }
 
 newCrmUser::~newCrmUser()
@@ -47,5 +49,8 @@ void newCrmUser::setModel(QSqlRelationalTableModel *CRMusersModel)
     crmUserMapper->addMapping(ui->paymentPasswordlineEdit,9);
     crmUserMapper->addMapping(ui->accesscheckBox,6);
     crmUserMapper->addMapping(ui->activecheckBox,10);
+    crmUserMapper->addMapping(ui->sipAccLineEdit,11);
+    crmUserMapper->addMapping(ui->sipPassLineEdit,12);
+
 
 }
