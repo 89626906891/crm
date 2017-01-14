@@ -39,6 +39,7 @@
 #include "uploadfileform.h"
 #include "authdialog.h"
 #include "contactsform.h"
+#include "historysip.h"
 
 
 
@@ -51,6 +52,8 @@
 #define THIS_FILE "main.cpp"
 #include "myaccount.h"
 #include "mycall.h"
+#include "mybuddy.h"
+
 
 using namespace pj;
 
@@ -160,6 +163,13 @@ private slots:
     void sipReady(Endpoint &ep) throw(Error);
    // void sipDestroy();
 
+    void on_actionSIPlog_triggered();
+
+    void on_pushButton_2_clicked();
+
+
+    void on_CallPushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -180,6 +190,7 @@ private:
     uploadFileForm *uploadFile_window;
     AuthDialog *newauth;
     ContactsForm *contacts_window;
+    historySIP *historySipWindow;
 
 
 protected:

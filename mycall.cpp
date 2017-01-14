@@ -16,7 +16,6 @@ void MyCall::onCallState(OnCallStateParam &prm)
 
     if (ci.state == PJSIP_INV_STATE_DISCONNECTED)
     {
-
         myAcc->removeCall(this);
         /* Delete the call */
         delete this;

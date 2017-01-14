@@ -6,8 +6,8 @@ MyAccount::MyAccount()
 
 MyAccount::~MyAccount()
 {
-    std::cout << "*** Account is being deleted: No of calls="
-              << calls.size() << std::endl;
+//    std::cout << "*** Account is being deleted: No of calls="
+//              << calls.size() << std::endl;
 }
 
 void MyAccount::removeCall(Call *call)
@@ -25,17 +25,21 @@ void MyAccount::removeCall(Call *call)
 void MyAccount::onRegState(OnRegStateParam &prm)
 {
     AccountInfo ai = getInfo();
-    std::cout << (ai.regIsActive? "*** Register: code=" : "*** Unregister: code=")
-              << prm.code << std::endl;
+    std::cout << (ai.regIsActive? "*** Register: code=" : "*** Unregister: code=") << prm.code << std::endl;
 }
 
 void MyAccount::onIncomingCall(OnIncomingCallParam &iprm)
 {
+//    CallWindow *call_win = new CallWindow();
+//    call_win->show();
+//    ifanswer(iprm);
+
+
     Call *call = new MyCall(*this, iprm.callId);
     CallInfo ci = call->getInfo();
     CallOpParam prm;
 
-    std::cout << "*** Incoming Call: " <<  ci.remoteUri << " [" << ci.stateText << "]" << std::endl;
+    //std::cout << "*** Incoming Call: " <<  ci.remoteUri << " [" << ci.stateText << "]" << std::endl;
 
     calls.push_back(call);
     prm.statusCode = (pjsip_status_code)200;

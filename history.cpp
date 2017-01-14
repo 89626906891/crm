@@ -7,7 +7,7 @@ history::history(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    this->setWindowTitle("history");
+    this->setWindowTitle("Логгирование событий CRM");
 
 
     QFile file("log.txt"); //файл лога создается в main.cpp

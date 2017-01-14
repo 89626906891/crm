@@ -20,34 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowTitle("CRM");
 
 
-    //sip
-
-
-        int ret = 0;
-        Endpoint ep;
-
-
-        try
-        {
-            ep.libCreate();
-            sipReady(ep);
-//            ret = PJ_SUCCESS;
-        }
-        catch (Error & err)
-        {
-//            std::cout << "Exception: " << err.info() << std::endl;
-//            ret = 1;
-        }
-
-
-    //sip
-
-
-
-
-
-
-
     //получаем из базы кто сейчас онлайн
     //и создаем таймер который каждую секунду проверяет кто онлайн
     whoOnline();
@@ -591,10 +563,6 @@ void MainWindow::startUpload(int ID, QString NAME)
     QSqlRecord recordAddFilePath = model->record();
     recordAddFilePath.setValue(model->fieldIndex("file_path"),NAME);
     qDebug() << "filling Attach fielepath" << model->setRecord(ID, recordAddFilePath);
-
-
-
-
 }
 
 
@@ -729,7 +697,8 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
         // Init library
         EpConfig ep_cfg;
         ep_cfg.logConfig.level = 6;
-        ep.libInit( ep_cfg );
+        ep_cfg.logConfig.filename = "/home/alexey/crm/sip.log";
+        ep.libInit(ep_cfg);
 
 
 
@@ -740,7 +709,7 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
 
         // Start library
         ep.libStart();
-    //    std::cout << "*** PJSUA2 STARTED ***" << std::endl;
+        // std::cout << "*** PJSUA2 STARTED ***" << std::endl;
 
         // Add account
         AccountConfig acc_cfg;
@@ -752,6 +721,33 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
         acc->create(acc_cfg);
 
         pj_thread_sleep(2000);
+
+        //buddy
+        BuddyConfig cfg;
+        cfg.uri = "sip:user6@smirnov.mangosip.ru";
+        MyBuddy buddy;
+        try {
+            buddy.create(*acc, cfg);
+            buddy.subscribePresence(true);
+        }
+        catch(Error& err)
+        {
+        }
+        //presents activity
+        try {
+            PresenceStatus ps;
+            ps.status = PJSUA_BUDDY_STATUS_ONLINE;
+            // Optional, set the activity and some note
+            ps.activity = PJRPID_ACTIVITY_BUSY;
+            ps.note = "On the phone";
+            acc->setOnlineStatus(ps);
+        }
+        catch(Error& err)
+        {
+        }
+
+
+
 
 
     //        // Make outgoing call
@@ -834,16 +830,12 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
 
         // Destroy library
 //        std::cout << "*** PJSUA2 SHUTTING DOWN ***" << std::endl;
-
-
-
 }
 
 //void MainWindow::sipDestroy()
 //{
 //    //SIP destroy
 //    int ret = 0;
-
 //    try
 //    {
 //        ep.libDestroy();
@@ -862,7 +854,100 @@ void MainWindow::sipReady(Endpoint &ep) throw(Error)
 //    {
 //        std::cout << "Error Found" << std::endl;
 //    }
-
 //    return ret;
 //    //SIP
 //}
+
+void MainWindow::on_actionSIPlog_triggered()
+{
+    historySipWindow = new historySIP;
+    historySipWindow->show();
+    moveToCenter(historySipWindow);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    int ret = 0;
+    Endpoint ep;
+
+    try
+    {
+        ep.libCreate();
+       // sipReady(ep);
+        ret = PJ_SUCCESS;
+    }
+    catch (Error & err)
+    {
+//            std::cout << "Exception: " << err.info() << std::endl;
+//            ret = 1;
+    }
+
+    // Init library
+    EpConfig ep_cfg;
+    ep_cfg.logConfig.level = 6;
+    ep_cfg.logConfig.filename = "/home/alexey/crm/sip.log";
+    ep.libInit(ep_cfg);
+
+
+    // Transport
+    TransportConfig tcfg;
+    tcfg.port = 5060; //5080 mango
+    ep.transportCreate(PJSIP_TRANSPORT_UDP, tcfg);
+
+    // Start library
+    ep.libStart();
+    // std::cout << "*** PJSUA2 STARTED ***" << std::endl;
+
+    // Add account
+    AccountConfig acc_cfg;
+    acc_cfg.idUri = "sip:user7@smirnov.mangosip.ru";
+    acc_cfg.regConfig.registrarUri = "sip:smirnov.mangosip.ru";
+    acc_cfg.sipConfig.authCreds.push_back(AuthCredInfo("digest", "*","user7", 0, "m7quhX5r"));
+
+//  std::auto_ptr<MyAccount> acc(new MyAccount);
+//  acc->create(acc_cfg);
+
+    MyAccount *acc = new MyAccount;
+    try
+    {
+        acc->create(acc_cfg);
+    }
+    catch(Error& err)
+    {
+        std::cout << "Account creation error: " << err.info() << std::endl;
+    }
+
+//    //buddy
+//    BuddyConfig cfg;
+//    cfg.uri = "sip:user6@smirnov.mangosip.ru";
+//    MyBuddy buddy;
+//    try {
+//        buddy.create(*acc, cfg);
+//        buddy.subscribePresence(true);
+//    }
+//    catch(Error& err)
+//    {
+//    }
+//    //presents activity
+//    try {
+//        PresenceStatus ps;
+//        ps.status = PJSUA_BUDDY_STATUS_ONLINE;
+//        // Optional, set the activity and some note
+//        ps.activity = PJRPID_ACTIVITY_BUSY;
+//        ps.note = "On the phone";
+//        acc->setOnlineStatus(ps);
+//    }
+//    catch(Error& err)
+//    {
+//    }
+
+    //pj_thread_sleep(2000);
+
+    // Just wait for ENTER key
+    std::cout << "Press ENTER to quit..." << std::endl;
+    std::cin.get();
+}
+void MainWindow::on_CallPushButton_clicked()
+{
+
+}

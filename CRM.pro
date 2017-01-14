@@ -40,7 +40,10 @@ SOURCES += main.cpp\
     contactsform.cpp \
     newcontact.cpp \
     myaccount.cpp \
-    mycall.cpp
+    mycall.cpp \
+    historysip.cpp \
+    mybuddy.cpp \
+    callwindow.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -66,7 +69,10 @@ HEADERS  += authdialog.h \
     contactsform.h \
     newcontact.h \
     myaccount.h \
-    mycall.h
+    mycall.h \
+    historysip.h \
+    mybuddy.h \
+    callwindow.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \
@@ -81,7 +87,9 @@ FORMS    += authdialog.ui \
     newcrmuser.ui \
     uploadfileform.ui \
     contactsform.ui \
-    newcontact.ui
+    newcontact.ui \
+    historysip.ui \
+    callwindow.ui
 
 RESOURCES += \
     resources.qrc

@@ -16,6 +16,7 @@ class MyAccount;
 
 class MyCall : public Call
 {
+
 private:
     MyAccount *myAcc;
 

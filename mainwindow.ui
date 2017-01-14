@@ -221,7 +221,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>позвонить</string>
+      <string>поднять трубу</string>
      </property>
     </widget>
     <widget class="QPushButton" name="HangUpPushButton">
@@ -271,6 +271,19 @@
      </property>
      <property name="text">
       <string>&lt;-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>100</y>
+       <width>85</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>startSIP</string>
      </property>
     </widget>
    </widget>
@@ -531,6 +544,7 @@
     </property>
     <addaction name="actionHistoryLog"/>
     <addaction name="actionCRMusers"/>
+    <addaction name="actionSIPlog"/>
    </widget>
    <widget class="QMenu" name="menu">
     <property name="title">
@@ -591,7 +605,7 @@
   </action>
   <action name="actionHistoryLog">
    <property name="text">
-    <string>История</string>
+    <string>CRM лог событий</string>
    </property>
   </action>
   <action name="actionCRMusers">
@@ -612,6 +626,11 @@
   <action name="action_2">
    <property name="text">
     <string>График Заказов</string>
+   </property>
+  </action>
+  <action name="actionSIPlog">
+   <property name="text">
+    <string>SIP лог</string>
    </property>
   </action>
  </widget>

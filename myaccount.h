@@ -5,7 +5,10 @@
 #include <memory>
 #include <pj/file_access.h>
 
+
 #include "mycall.h"
+
+#include "callwindow.h"
 
 #define THIS_FILE "main.cpp"
 
@@ -13,6 +16,7 @@ using namespace pj;
 
 class MyAccount : public Account
 {
+
 public:
     std::vector<Call *> calls;
 
@@ -26,6 +30,8 @@ public:
     virtual void onRegState(OnRegStateParam &prm);
 
     virtual void onIncomingCall(OnIncomingCallParam &iprm);
+
+
 };
 
 #endif // MYACCOUNT_H
