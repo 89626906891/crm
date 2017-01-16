@@ -1,8 +1,11 @@
 #include "myaccount.h"
 
 
-MyAccount::MyAccount()
-{}
+MyAccount::MyAccount(QObject *parent) :    QObject{parent}
+{
+
+}
+
 
 MyAccount::~MyAccount()
 {

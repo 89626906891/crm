@@ -1,8 +1,7 @@
 #include "mycall.h"
 
 
-MyCall::MyCall(Account &acc, int call_id)
-    : Call(acc, call_id)
+MyCall::MyCall(Account &acc, int call_id):QObject(),Call(acc, call_id)
 {
     myAcc = (MyAccount *)&acc;
 }

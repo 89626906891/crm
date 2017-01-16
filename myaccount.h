@@ -4,7 +4,9 @@
 #include <iostream>
 #include <memory>
 #include <pj/file_access.h>
-
+#include <QtCore>
+#include <QtGui>
+#include <QObject>
 
 #include "mycall.h"
 
@@ -14,14 +16,17 @@
 
 using namespace pj;
 
-class MyAccount : public Account
+class MyAccount :public QObject,public Account
 {
+    Q_OBJECT
 
 public:
     std::vector<Call *> calls;
+    explicit MyAccount(QObject *parent = 0);
 
-public:
-    MyAccount();
+
+//public:
+//    MyAccount();
 
     ~MyAccount();
 

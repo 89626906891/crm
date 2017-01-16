@@ -4,7 +4,8 @@
 #include <iostream>
 #include <memory>
 #include <pj/file_access.h>
-
+#include <QtGui>
+#include <QtCore>
 
 #include "myaccount.h"
 
@@ -14,8 +15,9 @@ using namespace pj;
 
 class MyAccount;
 
-class MyCall : public Call
+class MyCall :public QObject ,public Call
 {
+    Q_OBJECT
 
 private:
     MyAccount *myAcc;
