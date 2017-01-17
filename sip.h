@@ -2,7 +2,7 @@
 #define SIP_H
 
 #include <QObject>
-
+#include <QDebug>
 
 #include <pjsua2.hpp>
 #include <iostream>
@@ -19,13 +19,13 @@ class sip : public QObject
 public:
     explicit sip(QObject *parent = 0);
     void resiveSipParameters(QString login,QString pass);
-
-signals:
+    void startSip();
 
 public slots:
 private:
     QString SipLogin;
     QString SipPass;
+
 };
 
 #endif // SIP_H

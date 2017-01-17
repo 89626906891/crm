@@ -2,6 +2,20 @@
 
 sip::sip(QObject *parent) : QObject(parent)
 {
+
+}
+
+void sip::resiveSipParameters(QString login, QString pass)
+{
+    SipLogin = login;
+    SipPass = pass;
+    qDebug() << SipLogin;
+    qDebug() << SipPass;
+
+}
+
+void sip::startSip()
+{
     int ret = 0;
     Endpoint ep;
 
@@ -16,6 +30,7 @@ sip::sip(QObject *parent) : QObject(parent)
 //            std::cout << "Exception: " << err.info() << std::endl;
 //            ret = 1;
     }
+
 
     // Init library
     EpConfig ep_cfg;
@@ -33,6 +48,7 @@ sip::sip(QObject *parent) : QObject(parent)
     ep.libStart();
     // std::cout << "*** PJSUA2 STARTED ***" << std::endl;
 
+
     // Add account
     AccountConfig acc_cfg;
     acc_cfg.idUri = "sip:user7@smirnov.mangosip.ru";
@@ -41,8 +57,9 @@ sip::sip(QObject *parent) : QObject(parent)
 
 //  std::auto_ptr<MyAccount> acc(new MyAccount);
 //  acc->create(acc_cfg);
-
-    QThread *acc_thread = new QThread(this);
+    qDebug() << SipLogin;
+    qDebug() << SipPass;
+//    QThread *acc_thread = new QThread(this);
     MyAccount *acc = new MyAccount;
     try
     {
@@ -52,19 +69,12 @@ sip::sip(QObject *parent) : QObject(parent)
     {
         std::cout << "Account creation error: " << err.info() << std::endl;
     }
-    acc->moveToThread(acc_thread);
-    acc_thread->start();
+//    acc->moveToThread(acc_thread);
+//    acc_thread->start();
 
     //pj_thread_sleep(5000);
-
 
     // Just wait for ENTER key
     std::cout << "Press ENTER to quit..." << std::endl;
     std::cin.get();
-}
-
-void sip::resiveSipParameters(QString login, QString pass)
-{
-    SipLogin = login;
-    SipPass = pass;
 }

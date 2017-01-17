@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 
     //запускаем логгирование CRM в файл
-    m_logFile.reset(new QFile("log.txt"));
+    m_logFile.reset(new QFile("/home/alexey/crm/log.txt"));
     //открываем файл логгирования
     m_logFile.data()->open(QFile::Append | QFile::Text);
     //установка обработчика
