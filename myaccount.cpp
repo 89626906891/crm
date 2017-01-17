@@ -46,5 +46,22 @@ void MyAccount::onIncomingCall(OnIncomingCallParam &iprm)
 
     calls.push_back(call);
     prm.statusCode = (pjsip_status_code)200;
-    call->answer(prm);
+
+
+    QMessageBox *answerCallBox = new QMessageBox();
+    answerCallBox->setText("Входящий вызов. Ответить?");
+    answerCallBox->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    answerCallBox->setDefaultButton(QMessageBox::No);
+    int result = answerCallBox->exec();
+    switch (result)
+    {
+      case QMessageBox::Yes:
+          call->answer(prm);
+          break;
+      case QMessageBox::No:
+          break;
+      default:
+          break;
+    }
+
 }

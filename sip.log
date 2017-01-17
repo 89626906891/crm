@@ -1,79 +1,79 @@
-14:19:41.143 sip_endpoint.c  .Module "mod-pjsua-log" registered
-14:19:41.143 sip_endpoint.c  .Module "mod-tsx-layer" registered
-14:19:41.143 sip_endpoint.c  .Module "mod-stateful-util" registered
-14:19:41.143 sip_endpoint.c  .Module "mod-ua" registered
-14:19:41.143 sip_endpoint.c  .Module "mod-100rel" registered
-14:19:41.143 sip_endpoint.c  .Module "mod-pjsua" registered
-14:19:41.143 sip_endpoint.c  .Module "mod-invite" registered
-14:19:41.172     alsa_dev.c  ..Added sound device default
-14:19:41.176     alsa_dev.c  ..Added sound device pulse
-14:19:41.180     alsa_dev.c  ..Added sound device sysdefault:CARD=SB
-14:19:41.180     alsa_dev.c  ..Added sound device front:CARD=SB,DEV=0
-14:19:41.181     alsa_dev.c  ..Added sound device surround21:CARD=SB,DEV=0
-14:19:41.181     alsa_dev.c  ..Added sound device surround40:CARD=SB,DEV=0
-14:19:41.182     alsa_dev.c  ..Added sound device surround41:CARD=SB,DEV=0
-14:19:41.182     alsa_dev.c  ..Added sound device surround50:CARD=SB,DEV=0
-14:19:41.182     alsa_dev.c  ..Added sound device surround51:CARD=SB,DEV=0
-14:19:41.183     alsa_dev.c  ..Added sound device surround71:CARD=SB,DEV=0
-14:19:41.183     alsa_dev.c  ..Added sound device hdmi:CARD=SB,DEV=0
-14:19:41.184     alsa_dev.c  ..Added sound device dmix:CARD=SB,DEV=0
-14:19:41.185     alsa_dev.c  ..Added sound device dmix:CARD=SB,DEV=3
-14:19:41.186     alsa_dev.c  ..Added sound device dsnoop:CARD=SB,DEV=0
-14:19:41.187     alsa_dev.c  ..Added sound device hw:CARD=SB,DEV=0
-14:19:41.187     alsa_dev.c  ..Added sound device hw:CARD=SB,DEV=3
-14:19:41.187     alsa_dev.c  ..Added sound device plughw:CARD=SB,DEV=0
-14:19:41.188     alsa_dev.c  ..Added sound device plughw:CARD=SB,DEV=3
-14:19:41.200     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=0
-14:19:41.212     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=1
-14:19:41.228     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=2
-14:19:41.408     alsa_dev.c  ..Added sound device dmix:CARD=NVidia,DEV=3
-14:19:41.576     alsa_dev.c  ..Added sound device dmix:CARD=NVidia,DEV=7
-14:19:41.760     alsa_dev.c  ..Added sound device dmix:CARD=NVidia,DEV=8
-14:19:41.776     alsa_dev.c  ..Added sound device hw:CARD=NVidia,DEV=3
-14:19:41.788     alsa_dev.c  ..Added sound device hw:CARD=NVidia,DEV=7
-14:19:41.800     alsa_dev.c  ..Added sound device hw:CARD=NVidia,DEV=8
-14:19:41.812     alsa_dev.c  ..Added sound device plughw:CARD=NVidia,DEV=3
-14:19:41.824     alsa_dev.c  ..Added sound device plughw:CARD=NVidia,DEV=7
-14:19:41.836     alsa_dev.c  ..Added sound device plughw:CARD=NVidia,DEV=8
-14:19:41.836     alsa_dev.c  ..ALSA driver found 30 devices
-14:19:41.836     alsa_dev.c  ..ALSA initialized
-14:19:41.836          pjlib  ..select() I/O Queue created (0x555b6a39ec98)
-14:19:41.836   conference.c  ..Creating conference bridge with 254 ports
-14:19:41.836   Master/sound  ..Using delay buffer with WSOLA.
-14:19:41.842 sip_endpoint.c  .Module "mod-evsub" registered
-14:19:41.842 sip_endpoint.c  .Module "mod-presence" registered
-14:19:41.842        evsub.c  .Event pkg "presence" registered by mod-presence
-14:19:41.842 sip_endpoint.c  .Module "mod-mwi" registered
-14:19:41.842        evsub.c  .Event pkg "message-summary" registered by mod-mwi
-14:19:41.842 sip_endpoint.c  .Module "mod-refer" registered
-14:19:41.842        evsub.c  .Event pkg "refer" registered by mod-refer
-14:19:41.842 sip_endpoint.c  .Module "mod-pjsua-pres" registered
-14:19:41.842 sip_endpoint.c  .Module "mod-pjsua-im" registered
-14:19:41.842 sip_endpoint.c  .Module "mod-pjsua-options" registered
-14:19:41.842   pjsua_core.c  .1 SIP worker threads created
-14:19:41.842   pjsua_core.c  .pjsua version 2.5.5 for Linux-4.8.0.32/x86_64/glibc-2.24 initialized
-14:19:41.842   pjsua_core.c  .PJSUA state changed: CREATED --> INIT
-14:19:41.842   pjsua_core.c  SIP UDP socket reachable at 192.168.0.181:5060
-14:19:41.843 udp0x555b6a384  SIP UDP transport started, published address is 192.168.0.181:5060
-14:19:41.843   pjsua_core.c  PJSUA state changed: INIT --> STARTING
-14:19:41.843 sip_endpoint.c  .Module "mod-unsolicited-mwi" registered
-14:19:41.843   pjsua_core.c  .PJSUA state changed: STARTING --> RUNNING
-14:19:41.843    pjsua_acc.c  Adding account: id=sip:user7@smirnov.mangosip.ru
-14:19:41.843    pjsua_acc.c  .Account sip:user7@smirnov.mangosip.ru added with id 0
-14:19:41.843    pjsua_acc.c  .Acc 0: setting registration..
-14:19:41.843       endpoint  ..Request msg REGISTER/cseq=33930 (tdta0x555b6a389cb0) created.
-14:19:41.843 tsx0x555b6a38b  ...Transaction created for Request msg REGISTER/cseq=33931 (tdta0x555b6a389cb0)
-14:19:41.843 tsx0x555b6a38b  ..Sending Request msg REGISTER/cseq=33931 (tdta0x555b6a389cb0) in state Null
-14:19:41.843  sip_resolve.c  ...DNS resolver not available, target 'smirnov.mangosip.ru:0' type=Unspecified will be resolved with getaddrinfo()
-14:19:41.848  sip_resolve.c  ...Target 'smirnov.mangosip.ru:0' type=Unspecified resolved to '81.88.86.11:5060' type=UDP (UDP transport)
-14:19:41.848   pjsua_core.c  ...TX 508 bytes Request msg REGISTER/cseq=33931 (tdta0x555b6a389cb0) to UDP 81.88.86.11:5060:
+13:07:41.260 sip_endpoint.c  .Module "mod-pjsua-log" registered
+13:07:41.260 sip_endpoint.c  .Module "mod-tsx-layer" registered
+13:07:41.260 sip_endpoint.c  .Module "mod-stateful-util" registered
+13:07:41.260 sip_endpoint.c  .Module "mod-ua" registered
+13:07:41.260 sip_endpoint.c  .Module "mod-100rel" registered
+13:07:41.260 sip_endpoint.c  .Module "mod-pjsua" registered
+13:07:41.260 sip_endpoint.c  .Module "mod-invite" registered
+13:07:41.319     alsa_dev.c  ..Added sound device default
+13:07:41.323     alsa_dev.c  ..Added sound device pulse
+13:07:41.408     alsa_dev.c  ..Added sound device sysdefault:CARD=SB
+13:07:41.408     alsa_dev.c  ..Added sound device front:CARD=SB,DEV=0
+13:07:41.409     alsa_dev.c  ..Added sound device surround21:CARD=SB,DEV=0
+13:07:41.410     alsa_dev.c  ..Added sound device surround40:CARD=SB,DEV=0
+13:07:41.411     alsa_dev.c  ..Added sound device surround41:CARD=SB,DEV=0
+13:07:41.411     alsa_dev.c  ..Added sound device surround50:CARD=SB,DEV=0
+13:07:41.412     alsa_dev.c  ..Added sound device surround51:CARD=SB,DEV=0
+13:07:41.413     alsa_dev.c  ..Added sound device surround71:CARD=SB,DEV=0
+13:07:41.413     alsa_dev.c  ..Added sound device hdmi:CARD=SB,DEV=0
+13:07:41.415     alsa_dev.c  ..Added sound device dmix:CARD=SB,DEV=0
+13:07:41.417     alsa_dev.c  ..Added sound device dmix:CARD=SB,DEV=3
+13:07:41.418     alsa_dev.c  ..Added sound device dsnoop:CARD=SB,DEV=0
+13:07:41.419     alsa_dev.c  ..Added sound device hw:CARD=SB,DEV=0
+13:07:41.420     alsa_dev.c  ..Added sound device hw:CARD=SB,DEV=3
+13:07:41.420     alsa_dev.c  ..Added sound device plughw:CARD=SB,DEV=0
+13:07:41.420     alsa_dev.c  ..Added sound device plughw:CARD=SB,DEV=3
+13:07:41.432     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=0
+13:07:41.444     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=1
+13:07:41.456     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=2
+13:07:41.652     alsa_dev.c  ..Added sound device dmix:CARD=NVidia,DEV=3
+13:07:41.820     alsa_dev.c  ..Added sound device dmix:CARD=NVidia,DEV=7
+13:07:41.932     alsa_dev.c  ..Added sound device dmix:CARD=NVidia,DEV=8
+13:07:41.947     alsa_dev.c  ..Added sound device hw:CARD=NVidia,DEV=3
+13:07:41.959     alsa_dev.c  ..Added sound device hw:CARD=NVidia,DEV=7
+13:07:41.971     alsa_dev.c  ..Added sound device hw:CARD=NVidia,DEV=8
+13:07:41.983     alsa_dev.c  ..Added sound device plughw:CARD=NVidia,DEV=3
+13:07:41.995     alsa_dev.c  ..Added sound device plughw:CARD=NVidia,DEV=7
+13:07:42.007     alsa_dev.c  ..Added sound device plughw:CARD=NVidia,DEV=8
+13:07:42.007     alsa_dev.c  ..ALSA driver found 30 devices
+13:07:42.007     alsa_dev.c  ..ALSA initialized
+13:07:42.008          pjlib  ..select() I/O Queue created (0x55f723ef5b98)
+13:07:42.008   conference.c  ..Creating conference bridge with 254 ports
+13:07:42.009   Master/sound  ..Using delay buffer with WSOLA.
+13:07:42.014 sip_endpoint.c  .Module "mod-evsub" registered
+13:07:42.014 sip_endpoint.c  .Module "mod-presence" registered
+13:07:42.014        evsub.c  .Event pkg "presence" registered by mod-presence
+13:07:42.014 sip_endpoint.c  .Module "mod-mwi" registered
+13:07:42.014        evsub.c  .Event pkg "message-summary" registered by mod-mwi
+13:07:42.014 sip_endpoint.c  .Module "mod-refer" registered
+13:07:42.014        evsub.c  .Event pkg "refer" registered by mod-refer
+13:07:42.014 sip_endpoint.c  .Module "mod-pjsua-pres" registered
+13:07:42.014 sip_endpoint.c  .Module "mod-pjsua-im" registered
+13:07:42.014 sip_endpoint.c  .Module "mod-pjsua-options" registered
+13:07:42.014   pjsua_core.c  .1 SIP worker threads created
+13:07:42.014   pjsua_core.c  .pjsua version 2.5.5 for Linux-4.8.0.34/x86_64/glibc-2.24 initialized
+13:07:42.014   pjsua_core.c  .PJSUA state changed: CREATED --> INIT
+13:07:42.014   pjsua_core.c  SIP UDP socket reachable at 192.168.0.181:5060
+13:07:42.015 udp0x55f723f06  SIP UDP transport started, published address is 192.168.0.181:5060
+13:07:42.015   pjsua_core.c  PJSUA state changed: INIT --> STARTING
+13:07:42.015 sip_endpoint.c  .Module "mod-unsolicited-mwi" registered
+13:07:42.015   pjsua_core.c  .PJSUA state changed: STARTING --> RUNNING
+13:07:42.015    pjsua_acc.c  Adding account: id=sip:user7@smirnov.mangosip.ru
+13:07:42.015    pjsua_acc.c  .Account sip:user7@smirnov.mangosip.ru added with id 0
+13:07:42.015    pjsua_acc.c  .Acc 0: setting registration..
+13:07:42.015       endpoint  ..Request msg REGISTER/cseq=52833 (tdta0x55f723ea9ad0) created.
+13:07:42.015 tsx0x55f723eab  ...Transaction created for Request msg REGISTER/cseq=52834 (tdta0x55f723ea9ad0)
+13:07:42.015 tsx0x55f723eab  ..Sending Request msg REGISTER/cseq=52834 (tdta0x55f723ea9ad0) in state Null
+13:07:42.015  sip_resolve.c  ...DNS resolver not available, target 'smirnov.mangosip.ru:0' type=Unspecified will be resolved with getaddrinfo()
+13:07:42.019  sip_resolve.c  ...Target 'smirnov.mangosip.ru:0' type=Unspecified resolved to '81.88.86.11:5060' type=UDP (UDP transport)
+13:07:42.019   pjsua_core.c  ...TX 508 bytes Request msg REGISTER/cseq=52834 (tdta0x55f723ea9ad0) to UDP 81.88.86.11:5060:
 REGISTER sip:smirnov.mangosip.ru SIP/2.0
-Via: SIP/2.0/UDP 192.168.0.181:5060;rport;branch=z9hG4bKPjMyw-qAAScUqJzfg4Qg2VoXOcPSwj3-hc
+Via: SIP/2.0/UDP 192.168.0.181:5060;rport;branch=z9hG4bKPjugx7GDVbJQ1hC6Th5ILBXpEtkhJPtPUq
 Max-Forwards: 70
-From: <sip:user7@smirnov.mangosip.ru>;tag=OK9HjzypcVDQY88qv34MCuN5vKdQwzJc
+From: <sip:user7@smirnov.mangosip.ru>;tag=0qtyDpk.2efnfCCLqKNx0WByBA-PKlly
 To: <sip:user7@smirnov.mangosip.ru>
-Call-ID: yDOew-y0Zx1Nkfsw7BGNDggtZjrUEppO
-CSeq: 33931 REGISTER
+Call-ID: 4aMNZfod5CcVVFXtOJ3sDwqn0w52reNQ
+CSeq: 52834 REGISTER
 Contact: <sip:user7@192.168.0.181:5060;ob>
 Expires: 300
 Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
@@ -81,119 +81,42 @@ Content-Length:  0
 
 
 --end msg--
-14:19:41.848 tsx0x555b6a38b  ...State changed from Null to Calling, event=TX_MSG
-14:19:41.848    pjsua_acc.c  ..Acc 0: Registration sent
-14:19:41.863 sip_endpoint.c !Processing incoming message: Response msg 401/REGISTER/cseq=33931 (rdata0x555b6a3862f8)
-14:19:41.863   pjsua_core.c  .RX 524 bytes Response msg 401/REGISTER/cseq=33931 (rdata0x555b6a3862f8) from UDP 81.88.86.11:5060:
+13:07:42.019 tsx0x55f723eab  ...State changed from Null to Calling, event=TX_MSG
+13:07:42.019    pjsua_acc.c  ..Acc 0: Registration sent
+13:07:42.035 sip_endpoint.c !Processing incoming message: Response msg 401/REGISTER/cseq=52834 (rdata0x55f723f07df8)
+13:07:42.035   pjsua_core.c  .RX 524 bytes Response msg 401/REGISTER/cseq=52834 (rdata0x55f723f07df8) from UDP 81.88.86.11:5060:
 SIP/2.0 401 Unauthorized
-Via: SIP/2.0/UDP 192.168.0.181:5060;received=212.116.109.22;rport=59733;branch=z9hG4bKPjMyw-qAAScUqJzfg4Qg2VoXOcPSwj3-hc
-From: <sip:user7@smirnov.mangosip.ru>;tag=OK9HjzypcVDQY88qv34MCuN5vKdQwzJc
-To: <sip:user7@smirnov.mangosip.ru>;tag=e7d2c81e2d36b140069cf4a65dc24be5.1ef5
-Call-ID: yDOew-y0Zx1Nkfsw7BGNDggtZjrUEppO
-CSeq: 33931 REGISTER
-WWW-Authenticate: Digest realm="smirnov.mangosip.ru", nonce="587a0961c47cbffabd73acb9569d2f450d9171cf", qop="auth"
+Via: SIP/2.0/UDP 192.168.0.181:5060;received=212.116.109.22;rport=62235;branch=z9hG4bKPjugx7GDVbJQ1hC6Th5ILBXpEtkhJPtPUq
+From: <sip:user7@smirnov.mangosip.ru>;tag=0qtyDpk.2efnfCCLqKNx0WByBA-PKlly
+To: <sip:user7@smirnov.mangosip.ru>;tag=e7d2c81e2d36b140069cf4a65dc24be5.39cc
+Call-ID: 4aMNZfod5CcVVFXtOJ3sDwqn0w52reNQ
+CSeq: 52834 REGISTER
+WWW-Authenticate: Digest realm="smirnov.mangosip.ru", nonce="587ded02f13501aa492890fd9202ab88f284defe", qop="auth"
 Server: Mango SIP
 Content-Length: 0
 
 
 --end msg--
-14:19:41.863 tsx0x555b6a38b  .Incoming Response msg 401/REGISTER/cseq=33931 (rdata0x555b6a3862f8) in state Calling
-14:19:41.863 tsx0x555b6a38b  ..State changed from Calling to Completed, event=RX_MSG
-14:19:41.863    pjsua_acc.c  ....IP address change detected for account 0 (192.168.0.181:5060 --> 212.116.109.22:59733). Updating registration (using method 4)
-14:19:41.863 tsx0x7f7284000  ....Transaction created for Request msg REGISTER/cseq=33932 (tdta0x555b6a389cb0)
-14:19:41.863 tsx0x7f7284000  ...Sending Request msg REGISTER/cseq=33932 (tdta0x555b6a389cb0) in state Null
-14:19:41.863       endpoint  ....Request msg REGISTER/cseq=33932 (tdta0x555b6a389cb0): skipping target resolution because address is already set
-14:19:41.863   pjsua_core.c  ....TX 773 bytes Request msg REGISTER/cseq=33932 (tdta0x555b6a389cb0) to UDP 81.88.86.11:5060:
+13:07:42.035 tsx0x55f723eab  .Incoming Response msg 401/REGISTER/cseq=52834 (rdata0x55f723f07df8) in state Calling
+13:07:42.035 tsx0x55f723eab  ..State changed from Calling to Completed, event=RX_MSG
+13:07:42.035    pjsua_acc.c  ....IP address change detected for account 0 (192.168.0.181:5060 --> 212.116.109.22:62235). Updating registration (using method 4)
+13:07:42.035 tsx0x7f475c001  ....Transaction created for Request msg REGISTER/cseq=52835 (tdta0x55f723ea9ad0)
+13:07:42.035 tsx0x7f475c001  ...Sending Request msg REGISTER/cseq=52835 (tdta0x55f723ea9ad0) in state Null
+13:07:42.035       endpoint  ....Request msg REGISTER/cseq=52835 (tdta0x55f723ea9ad0): skipping target resolution because address is already set
+13:07:42.035   pjsua_core.c  ....TX 757 bytes Request msg REGISTER/cseq=52835 (tdta0x55f723ea9ad0) to UDP 81.88.86.11:5060:
 REGISTER sip:smirnov.mangosip.ru SIP/2.0
-Via: SIP/2.0/UDP 212.116.109.22:59733;rport;branch=z9hG4bKPj8jFRNIFksIZfHurkmx1D14NzAo4SaGaQ
+Via: SIP/2.0/UDP 212.116.109.22:62235;rport;branch=z9hG4bKPjdjvlEHzRgyh5meK4EC2S3b-tsgvCEyuP
 Max-Forwards: 70
-From: <sip:user7@smirnov.mangosip.ru>;tag=OK9HjzypcVDQY88qv34MCuN5vKdQwzJc
+From: <sip:user7@smirnov.mangosip.ru>;tag=0qtyDpk.2efnfCCLqKNx0WByBA-PKlly
 To: <sip:user7@smirnov.mangosip.ru>
-Call-ID: yDOew-y0Zx1Nkfsw7BGNDggtZjrUEppO
-CSeq: 33932 REGISTER
-Contact: <sip:user7@212.116.109.22:59733;ob>
+Call-ID: 4aMNZfod5CcVVFXtOJ3sDwqn0w52reNQ
+CSeq: 52835 REGISTER
+Contact: <sip:user7@212.116.109.22:62235;ob>
 Expires: 300
 Allow: PRACK, INVITE, ACK, BYE, CANCEL, UPDATE, INFO, SUBSCRIBE, NOTIFY, REFER, MESSAGE, OPTIONS
-Authorization: Digest username="user7", realm="smirnov.mangosip.ru", nonce="587a0961c47cbffabd73acb9569d2f450d9171cf", uri="sip:smirnov.mangosip.ru", response="22342abcdda66c428a7e68ceb042f500", cnonce="pCLxL5kfzoEKBw-ftdQsAMf877oOocos", qop=auth, nc=00000001
+Authorization: Digest , realm="smirnov.mangosip.ru", nonce="587ded02f13501aa492890fd9202ab88f284defe", uri="sip:smirnov.mangosip.ru", response="e9b5f0b9f9bd127a9c367f24b74362f1", cnonce="cbVsuaLSfeiIiylgT8S7ABoqk43zSjFG", qop=auth, nc=00000001
 Content-Length:  0
 
 
 --end msg--
-14:19:41.863 tsx0x7f7284000  ....State changed from Null to Calling, event=TX_MSG
-14:19:41.881 sip_endpoint.c  Processing incoming message: Response msg 200/REGISTER/cseq=33932 (rdata0x7f7284003d48)
-14:19:41.881   pjsua_core.c  .RX 498 bytes Response msg 200/REGISTER/cseq=33932 (rdata0x7f7284003d48) from UDP 81.88.86.11:5060:
-SIP/2.0 200 OK
-Via: SIP/2.0/UDP 212.116.109.22:59733;received=212.116.109.22;rport=59733;branch=z9hG4bKPj8jFRNIFksIZfHurkmx1D14NzAo4SaGaQ
-From: <sip:user7@smirnov.mangosip.ru>;tag=OK9HjzypcVDQY88qv34MCuN5vKdQwzJc
-To: <sip:user7@smirnov.mangosip.ru>;tag=88d64763a1bc0fb2f83a268d1c345290-78b7
-Call-ID: yDOew-y0Zx1Nkfsw7BGNDggtZjrUEppO
-CSeq: 33932 REGISTER
-Contact: <sip:user7@212.116.109.22:59733;ob>;q=0;expires=300;received="sip:212.116.109.22:59733"
-Server: Mango SIP
-Content-Length: 0
-
-
---end msg--
-14:19:41.881 tsx0x7f7284000  .Incoming Response msg 200/REGISTER/cseq=33932 (rdata0x7f7284003d48) in state Calling
-14:19:41.881 tsx0x7f7284000  ..State changed from Calling to Completed, event=RX_MSG
-14:19:41.881    pjsua_acc.c  ....SIP outbound status for acc 0 is not active
-14:19:41.881    pjsua_acc.c  ....sip:user7@smirnov.mangosip.ru: registration success, status=200 (OK), will re-register in 300 seconds
-14:19:41.881    pjsua_acc.c  ....Keep-alive timer started for acc 0, destination:81.88.86.11:5060, interval:15s
-14:19:46.863 tsx0x555b6a38b  Timeout timer event
-14:19:46.863 tsx0x555b6a38b  .State changed from Completed to Terminated, event=TIMER
-14:19:46.863 tsx0x555b6a38b  Timeout timer event
-14:19:46.863 tsx0x555b6a38b  .State changed from Terminated to Destroyed, event=TIMER
-14:19:46.863 tsx0x555b6a38b  Transaction destroyed!
-14:19:46.881 tsx0x7f7284000  Timeout timer event
-14:19:46.881 tsx0x7f7284000  .State changed from Completed to Terminated, event=TIMER
-14:19:46.881 tsx0x7f7284000  Timeout timer event
-14:19:46.881 tsx0x7f7284000  .State changed from Terminated to Destroyed, event=TIMER
-14:19:46.881 tdta0x555b6a38  ..Destroying txdata Request msg REGISTER/cseq=33932 (tdta0x555b6a389cb0)
-14:19:46.881 tsx0x7f7284000  Transaction destroyed!
-14:19:52.429 sip_endpoint.c  Processing incoming message: Request msg INVITE/cseq=1 (rdata0x7f7284003d48)
-14:19:52.429   pjsua_core.c  .RX 912 bytes Request msg INVITE/cseq=1 (rdata0x7f7284003d48) from UDP 81.88.86.11:5060:
-INVITE sip:user7@212.116.109.22:59733;ob SIP/2.0
-Via: SIP/2.0/UDP 81.88.86.11:5060;branch=z9hG4bK7b32.c7c0c5d6.0
-Max-Forwards: 69
-Contact: <sip:666@81.88.86.11;did=083.98ab3ea5>
-To: <sip:user7@smirnov.mangosip.ru>
-From: "666"<sip:666@mangosip.ru>;tag=5122cf53
-Call-ID: oQydl04V_MtDpcUO9P_oLw..
-CSeq: 1 INVITE
-Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, UPDATE, REGISTER, INFO, REFER, MESSAGE
-Content-Type: application/sdp
-Supported: replaces
-User-Agent: Softswitch2
-x-comm-id: 61:511854074
-x-comm-context: 2587135473
-Content-Length: 360
-
-v=0
-o=- 18446744072296652176 18446744072296652176 IN IP4 81.88.86.171
-s=-
-c=IN IP4 81.88.86.171
-t=0 0
-m=audio 20958 RTP/AVP 3 110 97 8 101
-c=IN IP4 81.88.86.171
-a=rtpmap:3 GSM/8000
-a=rtpmap:110 speex/8000
-a=rtpmap:97 iLBC/8000
-a=fmtp:97 mode=20
-a=rtpmap:8 PCMA/8000
-a=rtpmap:101 telephone-event/8000
-a=fmtp:101 0-16
-a=ptime:20
-a=sdpmangled:yes
-
---end msg--
-14:19:52.429   pjsua_call.c  .Incoming Request msg INVITE/cseq=1 (rdata0x7f7284003d48)
-14:19:52.429 tsx0x7f7284008  ...Transaction created for Request msg INVITE/cseq=1 (rdata0x7f7284003d48)
-14:19:52.429 tsx0x7f7284008  ..Incoming Request msg INVITE/cseq=1 (rdata0x7f7284003d48) in state Null
-14:19:52.429 tsx0x7f7284008  ...State changed from Null to Trying, event=RX_MSG
-14:19:52.429 dlg0x7f7284000  ....Transaction tsx0x7f7284008c78 state changed to Trying
-14:19:52.429 dlg0x7f7284000  ..UAS dialog created
-14:19:52.429 dlg0x7f7284000  ..Module mod-invite added as dialog usage, data=0x7f728400a048
-14:19:52.429 dlg0x7f7284000  ...Session count inc to 3 by mod-invite
-14:19:52.429 inv0x7f7284000  ..UAS invite session created for dialog dlg0x7f7284000968
-14:19:52.429 dlg0x7f7284000  ...Session count inc to 3 by mod-pjsua
-14:19:52.429  pjsua_media.c  ..Call 0
+13:07:42.035 tsx0x7f475c001  ....State ch

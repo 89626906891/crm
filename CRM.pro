@@ -43,7 +43,8 @@ SOURCES += main.cpp\
     mycall.cpp \
     historysip.cpp \
     mybuddy.cpp \
-    callwindow.cpp
+    callwindow.cpp \
+    sip.cpp
 
 HEADERS  += authdialog.h \
     mainwindow.h \
@@ -72,7 +73,8 @@ HEADERS  += authdialog.h \
     mycall.h \
     historysip.h \
     mybuddy.h \
-    callwindow.h
+    callwindow.h \
+    sip.h
 
 FORMS    += authdialog.ui \
     mainwindow.ui \

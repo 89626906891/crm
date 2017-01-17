@@ -4,10 +4,9 @@
 #include <iostream>
 #include <memory>
 #include <pj/file_access.h>
-#include <QtCore>
-#include <QtGui>
 #include <QObject>
-
+#include <QMessageBox>
+#include <QDebug>
 #include "mycall.h"
 
 #include "callwindow.h"

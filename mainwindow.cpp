@@ -865,89 +865,125 @@ void MainWindow::on_actionSIPlog_triggered()
     moveToCenter(historySipWindow);
 }
 
-void MainWindow::on_pushButton_2_clicked()
-{
-    int ret = 0;
-    Endpoint ep;
+//void MainWindow::on_pushButton_2_clicked()
+//{
+//    int ret = 0;
+//    Endpoint ep;
 
-    try
-    {
-        ep.libCreate();
-       // sipReady(ep);
-        ret = PJ_SUCCESS;
-    }
-    catch (Error & err)
-    {
-//            std::cout << "Exception: " << err.info() << std::endl;
-//            ret = 1;
-    }
+//    try
+//    {
+//        ep.libCreate();
+//       // sipReady(ep);
+//        ret = PJ_SUCCESS;
+//    }
+//    catch (Error & err)
+//    {
+////            std::cout << "Exception: " << err.info() << std::endl;
+////            ret = 1;
+//    }
 
-    // Init library
-    EpConfig ep_cfg;
-    ep_cfg.logConfig.level = 6;
-    ep_cfg.logConfig.filename = "/home/alexey/crm/sip.log";
-    ep.libInit(ep_cfg);
+//    // Init library
+//    EpConfig ep_cfg;
+//    ep_cfg.logConfig.level = 6;
+//    ep_cfg.logConfig.filename = "/home/alexey/crm/sip.log";
+//    ep.libInit(ep_cfg);
 
 
-    // Transport
-    TransportConfig tcfg;
-    tcfg.port = 5060; //5080 mango
-    ep.transportCreate(PJSIP_TRANSPORT_UDP, tcfg);
+//    // Transport
+//    TransportConfig tcfg;
+//    tcfg.port = 5060; //5080 mango
+//    ep.transportCreate(PJSIP_TRANSPORT_UDP, tcfg);
 
-    // Start library
-    ep.libStart();
-    // std::cout << "*** PJSUA2 STARTED ***" << std::endl;
+//    // Start library
+//    ep.libStart();
+//    // std::cout << "*** PJSUA2 STARTED ***" << std::endl;
 
-    // Add account
-    AccountConfig acc_cfg;
-    acc_cfg.idUri = "sip:user7@smirnov.mangosip.ru";
-    acc_cfg.regConfig.registrarUri = "sip:smirnov.mangosip.ru";
-    acc_cfg.sipConfig.authCreds.push_back(AuthCredInfo("digest", "*","user7", 0, "m7quhX5r"));
+//    // Add account
+//    AccountConfig acc_cfg;
+//    acc_cfg.idUri = "sip:user7@smirnov.mangosip.ru";
+//    acc_cfg.regConfig.registrarUri = "sip:smirnov.mangosip.ru";
+//    acc_cfg.sipConfig.authCreds.push_back(AuthCredInfo("digest", "*","user7", 0, "m7quhX5r1"));
 
-//  std::auto_ptr<MyAccount> acc(new MyAccount);
-//  acc->create(acc_cfg);
+////  std::auto_ptr<MyAccount> acc(new MyAccount);
+////  acc->create(acc_cfg);
 
-    MyAccount *acc = new MyAccount;
-    try
-    {
-        acc->create(acc_cfg);
-    }
-    catch(Error& err)
-    {
-        std::cout << "Account creation error: " << err.info() << std::endl;
-    }
-
-//    //buddy
-//    BuddyConfig cfg;
-//    cfg.uri = "sip:user6@smirnov.mangosip.ru";
-//    MyBuddy buddy;
-//    try {
-//        buddy.create(*acc, cfg);
-//        buddy.subscribePresence(true);
+//    QThread *acc_thread = new QThread(this);
+//    MyAccount *acc = new MyAccount;
+//    try
+//    {
+//        acc->create(acc_cfg);
 //    }
 //    catch(Error& err)
 //    {
+//        std::cout << "Account creation error: " << err.info() << std::endl;
 //    }
-//    //presents activity
-//    try {
-//        PresenceStatus ps;
-//        ps.status = PJSUA_BUDDY_STATUS_ONLINE;
-//        // Optional, set the activity and some note
-//        ps.activity = PJRPID_ACTIVITY_BUSY;
-//        ps.note = "On the phone";
-//        acc->setOnlineStatus(ps);
-//    }
-//    catch(Error& err)
-//    {
-//    }
+//    acc->moveToThread(acc_thread);
+//    acc_thread->start();
 
-    //pj_thread_sleep(2000);
+//    //pj_thread_sleep(5000);
 
-    // Just wait for ENTER key
-    std::cout << "Press ENTER to quit..." << std::endl;
-    std::cin.get();
-}
+
+//    // Just wait for ENTER key
+//    std::cout << "Press ENTER to quit..." << std::endl;
+//    std::cin.get();
+//}
 void MainWindow::on_CallPushButton_clicked()
 {
 
+}
+
+QString MainWindow::getSipLogin() //достаем sip login с учетом того кто сейчас работает в системе
+{
+    QSqlQuery getSipLoginQuery;
+    QString sipLogin;
+    getSipLoginQuery.prepare(QString("SELECT sip_acc FROM users WHERE login='%1'")
+                .arg(this->userOnline)
+              );
+    if(!getSipLoginQuery.exec())
+    {
+        qWarning(logWarning()) << "can't SELECT sip login";
+    }
+    else
+    {
+      while (getSipLoginQuery.next())
+      {
+           sipLogin = getSipLoginQuery.value(0).toString();
+      }
+    }
+    return sipLogin;
+}
+
+QString MainWindow::getSipPassword() //достаем из базы пароль от sip того кто сейчас работает в системе
+{
+    QSqlQuery getSipPassQuery;
+    QString sipPass;
+    getSipPassQuery.prepare(QString("SELECT sip_pass FROM users WHERE login='%1'")
+                .arg(this->userOnline)
+              );
+    if(!getSipPassQuery.exec())
+    {
+        qWarning(logWarning()) << "can't SELECT sip pass";
+    }
+    else
+    {
+      while (getSipPassQuery.next())
+      {
+           sipPass = getSipPassQuery.value(0).toString();
+      }
+    }
+    return sipPass;
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QString login = getSipLogin();
+    QString pass = getSipPassword();
+//    qDebug() << login;
+//    qDebug() << pass;
+
+    sip *mysip = new sip;
+    mysip->resiveSipParameters(login,pass); //передаем логин и пароль в sip.cpp для запуска авторизации
+    QThread *sip_thread = new QThread(this);
+    mysip->moveToThread(sip_thread);
+    sip_thread->start();
 }

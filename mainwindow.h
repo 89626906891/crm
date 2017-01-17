@@ -19,6 +19,7 @@
 #include <QBoxLayout>
 #include <QWidget>
 #include <QTextCharFormat>
+#include <QThread>
 
 #include "crmmodel.h"
 #include "neworder.h"
@@ -40,6 +41,8 @@
 #include "authdialog.h"
 #include "contactsform.h"
 #include "historysip.h"
+
+#include "sip.h"
 
 
 
@@ -169,6 +172,11 @@ private slots:
 
 
     void on_CallPushButton_clicked();
+
+
+    QString getSipLogin();
+    QString getSipPassword();
+
 
 private:
     Ui::MainWindow *ui;
