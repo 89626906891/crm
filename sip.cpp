@@ -51,15 +51,15 @@ void sip::startSip()
 
     // Add account
     AccountConfig acc_cfg;
-    acc_cfg.idUri = "sip:user7@smirnov.mangosip.ru";
+    acc_cfg.idUri = ("sip:"+SipLogin+"@smirnov.mangosip.ru").toStdString();
     acc_cfg.regConfig.registrarUri = "sip:smirnov.mangosip.ru";
-    acc_cfg.sipConfig.authCreds.push_back(AuthCredInfo("digest", "*", SipLogin.toStdString(), 0, SipPass.toStdString()));
+    acc_cfg.sipConfig.authCreds.push_back(AuthCredInfo("digest", "*", SipLogin.toStdString(), 0, SipPass.toStdString())); //подставляем полученный логин и пароль
 
 //  std::auto_ptr<MyAccount> acc(new MyAccount);
 //  acc->create(acc_cfg);
     qDebug() << SipLogin;
     qDebug() << SipPass;
-//    QThread *acc_thread = new QThread(this);
+
     MyAccount *acc = new MyAccount;
     try
     {
@@ -69,10 +69,8 @@ void sip::startSip()
     {
         std::cout << "Account creation error: " << err.info() << std::endl;
     }
-//    acc->moveToThread(acc_thread);
-//    acc_thread->start();
 
-    //pj_thread_sleep(5000);
+
 
     // Just wait for ENTER key
     std::cout << "Press ENTER to quit..." << std::endl;

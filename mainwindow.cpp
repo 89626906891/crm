@@ -978,16 +978,17 @@ void MainWindow::on_pushButton_2_clicked()
 {
     QString login = getSipLogin();
     QString pass = getSipPassword();
-//    qDebug() << login;
-//    qDebug() << pass;
-    QThread *sip_thread = new QThread(this);
+
 
     sip *mysip = new sip;
+    QThread *sip_thread = new QThread(this);
+
     mysip->moveToThread(sip_thread);
     sip_thread->start();
 
     mysip->resiveSipParameters(login,pass); //передаем логин и пароль в sip.cpp для запуска авторизации
     mysip->startSip();
 
+  //  connect(&sip_thread,SIGNAL(started()),&mysip,SLOT()
 
 }
