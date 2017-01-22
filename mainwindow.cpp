@@ -986,11 +986,11 @@ void MainWindow::on_pushButton_2_clicked()
     mysip->moveToThread(sip_thread);
     sip_thread->start();
 
-    mysip->resiveSipParameters(login,pass); //передаем логин и пароль в sip.cpp для запуска авторизации
-    mysip->startSip();
+//    mysip->resiveSipParameters(login,pass); //передаем логин и пароль в sip.cpp для запуска авторизации
+//    mysip->startSip();
 
   //  connect(sip_thread,SIGNAL(started()),mysip,SLOT()
-    connect(sip_thread, &QThread::started, mysip, [&login, &pass, mysip]() {
+    QObject::connect(sip_thread, &QThread::started, mysip, [&login, &pass, mysip]() {
       mysip->resiveSipParameters(login, pass);
       mysip->startSip();
     });
