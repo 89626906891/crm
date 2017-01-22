@@ -71,7 +71,6 @@ void sip::startSip()
     }
 
 
-
     // Just wait for ENTER key
     std::cout << "Press ENTER to quit..." << std::endl;
     std::cin.get();

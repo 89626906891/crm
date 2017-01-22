@@ -131,3 +131,41 @@
 2017-01-22 11:53:19.788 DBG default:"m7quhX5r1"
 2017-01-22 11:53:20.543 DBG default:"user7"
 2017-01-22 11:53:20.543 DBG default:"m7quhX5r1"
+2017-01-22 12:07:52.264 DBG default:New user is logged. Welcome: "admin"
+2017-01-22 12:07:52.382 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_todayPushButton_clicked()
+2017-01-22 12:07:52.413 INFInfo:selected: "2017-01-22"
+2017-01-22 12:07:53.954 DBG default:"user7"
+2017-01-22 12:07:53.955 DBG default:"m7quhX5r1"
+2017-01-22 12:07:54.725 DBG default:"user7"
+2017-01-22 12:07:54.725 DBG default:"m7quhX5r1"
+2017-01-22 12:12:40.148 DBG default:New user is logged. Welcome: "admin"
+2017-01-22 12:12:40.269 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_todayPushButton_clicked()
+2017-01-22 12:12:40.298 INFInfo:selected: "2017-01-22"
+2017-01-22 12:12:43.182 INFInfo:selected: "2017-01-17"
+2017-01-22 12:12:43.687 INFInfo:selected: "2017-01-18"
+2017-01-22 12:13:27.018 INFInfo:order to edit =  4
+2017-01-22 12:13:38.786 DBG default:cancel
+2017-01-22 12:13:40.943 INFInfo:"user admin is logout"
+2017-01-22 12:43:35.080 DBG default:New user is logged. Welcome: "admin"
+2017-01-22 12:43:35.202 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_todayPushButton_clicked()
+2017-01-22 12:43:35.229 INFInfo:selected: "2017-01-22"
+2017-01-22 12:43:40.098 INFInfo:selected: "2017-01-19"
+2017-01-22 12:43:40.785 INFInfo:selected: "2017-01-22"
+2017-01-22 12:43:42.057 DBG default:"user7"
+2017-01-22 12:43:42.058 DBG default:"m7quhX5r1"
+2017-01-22 12:43:42.815 DBG default:"user7"
+2017-01-22 12:43:42.815 DBG default:"m7quhX5r1"
+2017-01-22 14:25:59.535 DBG default:New user is logged. Welcome: "admin"
+2017-01-22 14:25:59.663 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_todayPushButton_clicked()
+2017-01-22 14:25:59.691 INFInfo:selected: "2017-01-22"
+2017-01-22 14:26:01.353 DBG default:"user7"
+2017-01-22 14:26:01.353 DBG default:"m7quhX5r1"
+2017-01-22 14:26:02.083 DBG default:"user7"
+2017-01-22 14:26:02.083 DBG default:"m7quhX5r1"
+2017-01-22 14:27:52.861 DBG default:New user is logged. Welcome: "admin"
+2017-01-22 14:27:52.970 WRN default:QMetaObject::connectSlotsByName: No matching signal for on_todayPushButton_clicked()
+2017-01-22 14:27:52.998 INFInfo:selected: "2017-01-22"
+2017-01-22 14:27:54.343 DBG default:"user7"
+2017-01-22 14:27:54.343 DBG default:"m7quhX5r1"
+2017-01-22 14:27:55.017 DBG default:"user7"
+2017-01-22 14:27:55.017 DBG default:"m7quhX5r1"

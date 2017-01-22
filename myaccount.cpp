@@ -18,7 +18,8 @@ void MyAccount::removeCall(Call *call)
     for (std::vector<Call *>::iterator it = calls.begin();
          it != calls.end(); ++it)
     {
-        if (*it == call) {
+        if (*it == call)
+        {
             calls.erase(it);
             break;
         }

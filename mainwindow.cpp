@@ -989,6 +989,10 @@ void MainWindow::on_pushButton_2_clicked()
     mysip->resiveSipParameters(login,pass); //передаем логин и пароль в sip.cpp для запуска авторизации
     mysip->startSip();
 
-  //  connect(&sip_thread,SIGNAL(started()),&mysip,SLOT()
+  //  connect(sip_thread,SIGNAL(started()),mysip,SLOT()
+    connect(sip_thread, &QThread::started, mysip, [&login, &pass, mysip]() {
+      mysip->resiveSipParameters(login, pass);
+      mysip->startSip();
+    });
 
 }
