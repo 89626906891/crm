@@ -45,6 +45,9 @@
 #include "sip.h"
 
 
+//graphics
+#include "qcustomplot.h"
+
 
 
 //sip
@@ -177,6 +180,8 @@ private slots:
     QString getSipLogin();
     QString getSipPassword();
 
+
+    void on_actionGraphic_triggered();
 
 private:
     Ui::MainWindow *ui;

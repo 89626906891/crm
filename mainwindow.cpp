@@ -983,16 +983,45 @@ void MainWindow::on_pushButton_2_clicked()
     sip *mysip = new sip;
     QThread *sip_thread = new QThread(this);
 
-    mysip->moveToThread(sip_thread);
-    sip_thread->start();
 
-//    mysip->resiveSipParameters(login,pass); //передаем логин и пароль в sip.cpp для запуска авторизации
-//    mysip->startSip();
+//    QObject::connect(sip_thread, &QThread::started, mysip, [&login, &pass, mysip]() {
+//        mysip->resiveSipParameters(login, pass);
+//        mysip->startSip();
+//      });
 
-  //  connect(sip_thread,SIGNAL(started()),mysip,SLOT()
-    QObject::connect(sip_thread, &QThread::started, mysip, [&login, &pass, mysip]() {
-      mysip->resiveSipParameters(login, pass);
-      mysip->startSip();
-    });
+     mysip->moveToThread(sip_thread);
+     sip_thread->start();
 
+//   mysip->resiveSipParameters(login,pass); //передаем логин и пароль в sip.cpp для запуска авторизации
+//   mysip->startSip();
+  // connect(sip_thread,SIGNAL(started()),mysip,SLOT()
+
+
+}
+
+void MainWindow::on_actionGraphic_triggered()
+{
+    QMainWindow *graph_window = new QMainWindow;
+
+    // setup customPlot as central widget of window:
+    QCustomPlot *customPlot = new QCustomPlot;
+    graph_window->setCentralWidget(customPlot);
+
+
+    // create plot (from quadratic plot example):
+    QVector<double> x(101), y(101);
+    for (int i=0; i<101; ++i)
+    {
+      x[i] = i/50.0 - 1;
+      y[i] = x[i]*x[i];
+    }
+    customPlot->addGraph();
+    customPlot->graph(0)->setData(x, y);
+    customPlot->xAxis->setLabel("x");
+    customPlot->yAxis->setLabel("y");
+    customPlot->rescaleAxes();
+
+    graph_window->setGeometry(100, 100, 500, 400);
+    moveToCenter(graph_window);
+    graph_window->show();
 }

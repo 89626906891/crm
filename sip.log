@@ -1,0 +1,28 @@
+15:25:54.229 sip_endpoint.c  .Module "mod-pjsua-log" registered
+15:25:54.229 sip_endpoint.c  .Module "mod-tsx-layer" registered
+15:25:54.229 sip_endpoint.c  .Module "mod-stateful-util" registered
+15:25:54.229 sip_endpoint.c  .Module "mod-ua" registered
+15:25:54.229 sip_endpoint.c  .Module "mod-100rel" registered
+15:25:54.229 sip_endpoint.c  .Module "mod-pjsua" registered
+15:25:54.230 sip_endpoint.c  .Module "mod-invite" registered
+15:25:54.262     alsa_dev.c  ..Added sound device default
+15:25:54.266     alsa_dev.c  ..Added sound device pulse
+15:25:54.270     alsa_dev.c  ..Added sound device sysdefault:CARD=SB
+15:25:54.271     alsa_dev.c  ..Added sound device front:CARD=SB,DEV=0
+15:25:54.271     alsa_dev.c  ..Added sound device surround21:CARD=SB,DEV=0
+15:25:54.272     alsa_dev.c  ..Added sound device surround40:CARD=SB,DEV=0
+15:25:54.272     alsa_dev.c  ..Added sound device surround41:CARD=SB,DEV=0
+15:25:54.273     alsa_dev.c  ..Added sound device surround50:CARD=SB,DEV=0
+15:25:54.273     alsa_dev.c  ..Added sound device surround51:CARD=SB,DEV=0
+15:25:54.274     alsa_dev.c  ..Added sound device surround71:CARD=SB,DEV=0
+15:25:54.274     alsa_dev.c  ..Added sound device hdmi:CARD=SB,DEV=0
+15:25:54.275     alsa_dev.c  ..Added sound device dmix:CARD=SB,DEV=0
+15:25:54.276     alsa_dev.c  ..Added sound device dmix:CARD=SB,DEV=3
+15:25:54.277     alsa_dev.c  ..Added sound device dsnoop:CARD=SB,DEV=0
+15:25:54.278     alsa_dev.c  ..Added sound device hw:CARD=SB,DEV=0
+15:25:54.278     alsa_dev.c  ..Added sound device hw:CARD=SB,DEV=3
+15:25:54.278     alsa_dev.c  ..Added sound device plughw:CARD=SB,DEV=0
+15:25:54.278     alsa_dev.c  ..Added sound device plughw:CARD=SB,DEV=3
+15:25:54.288     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=0
+15:25:54.300     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=1
+15:25:54.312     alsa_dev.c  ..Added sound device hdmi:CARD=NVidia,DEV=2

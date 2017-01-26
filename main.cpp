@@ -8,6 +8,7 @@
 #include <QDateTime>
 #include <QTextStream>
 #include <QFile>
+#include <QtPrintSupport/QPrinter>
 
 
 // Умный указатель на файл логирования

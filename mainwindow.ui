@@ -562,7 +562,7 @@
     <property name="title">
      <string>Графики</string>
     </property>
-    <addaction name="action_2"/>
+    <addaction name="actionGraphic"/>
    </widget>
    <addaction name="menuMenu"/>
    <addaction name="menu"/>
@@ -623,7 +623,7 @@
     <string>История Звонков</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="actionGraphic">
    <property name="text">
     <string>График Заказов</string>
    </property>
